@@ -3,6 +3,8 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="genweb6.upc">
 
-<!-- -*- extra stuff goes here -*- -->
+    <records
+        interface="genweb6.upc.controlpanel.IUPCSettings"
+        purge="False"/>
 
 </registry>
