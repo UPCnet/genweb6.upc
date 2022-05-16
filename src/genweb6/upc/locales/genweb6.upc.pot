@@ -169,7 +169,7 @@ msgstr ""
 msgid "label_select"
 msgstr ""
 
-#. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
+#. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
 #: ../content/packet/templates/configure.pt:14
 msgid "packet_help"
 msgstr ""
