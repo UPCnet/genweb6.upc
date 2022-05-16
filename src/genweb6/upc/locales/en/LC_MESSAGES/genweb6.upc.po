@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-09 10:0+0000\n"
+"PO-Revision-Date: 2022-05-09 10:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: genweb6.upc\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: en\n"
+
+#. "packet"
+msgid "packet"
+msgstr "UPC content"
+
+#. "id_estudi"
+msgid "id_estudi"
+msgstr "Grade ID"
+
+#. "Configure message"
+msgid "This packet is not configured yet. Please, do it in the 'configure' tab."
+msgstr "This packet is not configured yet. Please, do it in the <a href=configure>Configure</a> tab."
+
+msgid "packet_help"
+msgstr "We offer you information on degree courses and scientific output that is published on the UPC website and includes data taken from the information systems of PRISMA, DRAC and the Communications and Promotion Service. This is our proposal to help you keep your website content up to date. "
+
+msgid "Fitxa de grau"
+msgstr "Bachelor’s degree file"
+
+msgid "Informació sobre un estudi d'un grau específic"
+msgstr "<p>File containing basic information on a bachelor’s degree</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the bachelor’s degree for PRISMA</p><p class=\"muted\">For example, the UPC code of the bachelor's degree in Engineering Physics is <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">UPC codes of the bachelor’s degree <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a><strong>.<br></strong></p><p class=\"muted\"><strong>Select: </strong>UPC code</p></p>"
+
+msgid "Pla d'estudi de grau"
+msgstr "Bachelor’s degree curriculum"
+
+msgid "Informació sobre el pla d'estudis d'un grau específic"
+msgstr "<p>Curriculum for a bachelor’s degree and access to the course guide.</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the bachelor’s degree for PRISMA.</p><p class=\"muted\">For example, the UPC code of the bachelor's degree in Engineering Physics is <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">UPC codes of the bachelor’s degree <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>UPC code</p>"
+
+msgid "Fitxa de màster"
+msgstr "Master’s degree file"
+
+msgid "Informació sobre un màster específic"
+msgstr "<p>File containing basic information on a master’s degree.</p><p class=\"muted\"><strong>Parameter:</strong> Identifier of the master’s degree.</p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Identifiers of the master’s degree<img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Identifier</p>"
+
+msgid "Pla d'estudis de màster"
+msgstr "Master’s degree curriculum"
+
+msgid "Informació sobre un pla d'estudis de màster específic"
+msgstr "<p>Available for all master except interuniversity</p><p>Curriculum for a master’s degree and access to the course guide.</p><p class=\"muted\"><strong>Parameter:</strong> Identifier of the master’s degree.</p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Identifiers of the master’s degree<img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Identifier</p>"
+
+msgid "Grups de recerca"
+msgstr "Research groups"
+
+msgid "Grups de recerca d'un departament específic"
+msgstr "<p>List of the research groups belonging to a department.</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the department.</p><p class=\"muted\">For example, the code of the Department of Electronic Engineering is <strong>710.</strong></p><p><a target=\"_blank\" href=\"https://gpaq.upc.edu/eines/?op=unitats\" class=\"external-link\">UPC codes<img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>UPC code</p>"
+
+msgid "Investigadors d'un grup de recerca"
+msgstr "Researchers in a research group"
+
+msgid "Investigadors d'un grup de recerca d'un departament específic"
+msgstr "<p>List of the researchers in a research group.</p><p class=\"muted\"><strong>Parameter:</strong> Acronym for the research group as published in DRAC.</p><p class=\"muted\">For example, the acronym for the Architecture, Energy and the Environment research group is AIEM</p><p><a target=\"_blank\" href=\"http://futur.upc.edu/organitzacio/os/Z3J1cHJlY2VyY2E=#produccio\" class=\"external-link\">Research group acronyms<img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Acronym</p>"
+
+msgid "pla_grau"
+msgstr "Bachelor’s degree curriculum"
+
+msgid "fitxa_grau"
+msgstr "Bachelor’s degree file"
+
+msgid "grups_recerca"
+msgstr "Research groups"
+
+msgid "fitxa_master"
+msgstr "Master’s degree file"
+
+msgid "grups_recerca_people"
+msgstr "Researchers in a research group"
+
+msgid "<strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:"
+msgstr "<strong>Information for web editors:</strong><br />The type of this UPC Package is:"
+
+msgid "configurat amb l'identificador:"
+msgstr "configured with id:"
+
+msgid "ERROR: Unknown identifier. This page does not exist."
+msgstr "<h2>ERROR: Unknown identifier. This page does not exist.</h2>"
+
+msgid "Contingut d'una pàgina externa"
+msgstr ""
+"<p>Shows the part that we specify of the existing page</p><p class=\"muted"
+"\">You should specify an URL and an id or class inside the content</p>"
+
+msgid "url_contingut"
+msgstr "Complete content URL"
+
+msgid "element"
+msgstr "Element that we want to show, like #content-core"

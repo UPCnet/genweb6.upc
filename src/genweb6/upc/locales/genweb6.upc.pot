@@ -1,0 +1,179 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-05-14 13:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: genweb6.upc\n"
+
+#: ../content/packet/templates/view.pt:23
+msgid "<strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:"
+msgstr ""
+
+#: ../content/packet/adapters.py:120
+msgid "Contingut d'una pàgina externa"
+msgstr ""
+
+#: ../content/packet/adapters.py:119
+msgid "Contingut existent"
+msgstr ""
+
+#: ../content/packet/packet.py:128
+msgid "ERROR. Autoreference"
+msgstr ""
+
+#: ../content/packet/packet.py:130
+msgid "ERROR. There was a timeout while waiting for '{0}'"
+msgstr ""
+
+#: ../content/packet/packet.py:132
+msgid "ERROR. This URL does not exist."
+msgstr ""
+
+#: ../content/packet/packet.py:104
+msgid "ERROR. This element does not exist."
+msgstr ""
+
+#: ../content/packet/packet.py:134
+msgid "ERROR. Unexpected exception."
+msgstr ""
+
+#: ../content/packet/packet.py:106
+msgid "ERROR: Unknown identifier. This page does not exist."
+msgstr ""
+
+#: ../content/packet/adapters.py:19
+msgid "Fitxa de grau"
+msgstr ""
+
+#: ../content/packet/adapters.py:53
+msgid "Fitxa de màster"
+msgstr ""
+
+#: ../content/packet/adapters.py:87
+msgid "Grups de recerca"
+msgstr ""
+
+#: ../content/packet/adapters.py:88
+msgid "Grups de recerca d'un departament específic"
+msgstr ""
+
+#: ../content/packet/adapters.py:36
+msgid "Informació sobre el pla d'estudis d'un grau específic"
+msgstr ""
+
+#: ../content/packet/adapters.py:20
+msgid "Informació sobre un estudi d'un grau específic"
+msgstr ""
+
+#: ../content/packet/adapters.py:54
+msgid "Informació sobre un màster específic"
+msgstr ""
+
+#: ../content/packet/adapters.py:72
+msgid "Informació sobre un pla d'estudis de màster específic"
+msgstr ""
+
+#: ../configure.zcml:20
+msgid "Installs the genweb6.upc add-on."
+msgstr ""
+
+#: ../content/packet/adapters.py:103
+msgid "Investigadors d'un grup de recerca"
+msgstr ""
+
+#: ../content/packet/adapters.py:104
+msgid "Investigadors d'un grup de recerca d'un departament específic"
+msgstr ""
+
+#: ../content/packet/adapters.py:35
+msgid "Pla d'estudi de grau"
+msgstr ""
+
+#: ../content/packet/adapters.py:71
+msgid "Pla d'estudis de màster"
+msgstr ""
+
+#: ../content/packet/templates/view.pt:40
+msgid "This packet is not configured yet. Please, do it in the 'configure' tab."
+msgstr ""
+
+#: ../configure.zcml:29
+msgid "Uninstalls the genweb6.upc add-on."
+msgstr ""
+
+#: ../content/packet/adapters.py:106
+msgid "acronim"
+msgstr ""
+
+#: ../content/packet/adapters.py:90
+msgid "codi_departament"
+msgstr ""
+
+#: ../content/packet/adapters.py:22
+msgid "codi_grau"
+msgstr ""
+
+#: ../content/packet/adapters.py:56
+msgid "codi_master"
+msgstr ""
+
+#: ../content/packet/adapters.py:74
+msgid "codi_pla_master"
+msgstr ""
+
+#: ../content/packet/templates/configure.pt:36
+msgid "configurat amb l'element:"
+msgstr ""
+
+#: ../content/packet/templates/configure.pt:32
+#: ../content/packet/templates/view.pt:25
+msgid "configurat amb l'identificador:"
+msgstr ""
+
+#: ../content/packet/adapters.py:122
+msgid "element"
+msgstr ""
+
+#: ../configure.zcml:20
+msgid "genweb6.upc"
+msgstr ""
+
+#: ../configure.zcml:29
+msgid "genweb6.upc (uninstall)"
+msgstr ""
+
+#. Default: "Close"
+#: ../content/packet/templates/configure.pt:83
+msgid "label_close"
+msgstr ""
+
+#. Default: "Save changes"
+#: ../content/packet/templates/configure.pt:84
+msgid "label_save_changes"
+msgstr ""
+
+#. Default: "Select"
+#: ../content/packet/templates/configure.pt:52
+msgid "label_select"
+msgstr ""
+
+#. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
+#: ../content/packet/templates/configure.pt:14
+msgid "packet_help"
+msgstr ""
+
+#: ../content/packet/adapters.py:122
+msgid "url_contingut"
+msgstr ""

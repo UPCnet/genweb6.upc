@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb6.upc">
+
+    <i18n:registerTranslations directory="locales" />
+
+    <include package=".browser" />
+    <include package=".content" />
+
+    <include file="permissions.zcml" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="genweb6.upc"
+        directory="profiles/default"
+        description="Installs the genweb6.upc add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.post_install"
+        />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="genweb6.upc (uninstall)"
+        directory="profiles/uninstall"
+        description="Uninstalls the genweb6.upc add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.uninstall"
+        />
+
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="genweb6.upc-hiddenprofiles"
+        />
+
+</configure>

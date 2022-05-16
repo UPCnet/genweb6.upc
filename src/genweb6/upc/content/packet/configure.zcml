@@ -1,0 +1,55 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="genweb6.upc">
+
+    <browser:page
+        name="view"
+        for="genweb6.upc.content.packet.packet.Ipacket"
+        class=".packet.View"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="configure"
+        for="genweb6.upc.content.packet.packet.Ipacket"
+        class=".packet.Configure"
+        permission="zope2.View"
+        />
+
+    <adapter
+        factory=".adapters.FitxaGrau"
+        name="fitxa_grau"
+        />
+
+    <adapter
+        factory=".adapters.PlaEstudisGrau"
+        name="pla_grau"
+        />
+
+    <adapter
+        factory=".adapters.FitxaMaster"
+        name="fitxa_master"
+        />
+
+    <adapter
+        factory=".adapters.PlaEstudisMaster"
+        name="pla_estudis_master"
+        />
+
+    <adapter
+        factory=".adapters.GrupsRecercaDepartament"
+        name="grups_recerca"
+        />
+
+    <adapter
+        factory=".adapters.InvestigadorsGrupRecercaDepartament"
+        name="grups_recerca_people"
+        />
+
+    <adapter
+        factory=".adapters.ContingutGenweb"
+        name="contingut_genweb"
+        />
+
+</configure>

@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-09 10:0+0000\n"
+"PO-Revision-Date: 2022-05-09 10:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: ca\n"
+"Language-Name: Catalan\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: genweb6.upc\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: ca\n"
+
+#. "packet"
+msgid "packet"
+msgstr "Contingut UPC"
+
+#. "id_estudi"
+msgid "id_estudi"
+msgstr "Identificador de l'estudi"
+
+#. "Configure message"
+msgid "This packet is not configured yet. Please, do it in the 'configure' tab."
+msgstr "Aquest Contingut UPC encara no està configurat. Accediu a la pestanya <a href=configure>Configura</a> per fer-ho."
+
+msgid "packet_help"
+msgstr "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació, </strong>perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta proposta pretén ajudar-vos a mantenir els vostres continguts actualitzats.<br /><br />Consulteu tota la informació referent als <a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\">.</a>"
+
+msgid "Fitxa de grau"
+msgstr "Fitxa de grau"
+
+msgid "Informació sobre un estudi d'un grau específic"
+msgstr "<p>Fitxa amb la informació bàsica d'un grau.</p><p class=\"muted\">Indiqueu el codi UPC de l’estudi que l’identifica a PRISMA.</p><p class=\"muted\">Exemple: el codi UPC del Grau en Enginyeria Física és <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">Llista dels codis UPC dels estudis de grau <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p></p>"
+
+msgid "Pla d'estudi de grau"
+msgstr "Pla d'estudi de grau"
+
+msgid "Informació sobre el pla d'estudis d'un grau específic"
+msgstr "<p>Pla d'estudis d'un grau amb accés a les guies docents.</p><p class=\"muted\">Indiqueu el codi UPC del grau que l’identifica a PRISMA.</p><p class=\"muted\">Exemple: el codi UPC del Grau en Enginyeria Física és <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">Llista dels codis UPC dels estudis de grau <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a>.</p>"
+
+msgid "Fitxa de màster"
+msgstr "Fitxa de màster"
+
+msgid "Informació sobre un màster específic"
+msgstr "<p>Fitxa amb la informació bàsica d'un màster.</p><p class=\"muted\">Indiqueu l'identificador del màster al sistema d'informació del Servei de Comunicació.</p><p class=\"muted\">Exemple: l'identificador del Màster universitari en Aqüicultura és <strong>19.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Llista dels identificadors dels estudis de màster <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p>"
+
+msgid "Pla d'estudis de màster"
+msgstr "Pla d'estudis de màster"
+
+msgid "Informació sobre un pla d'estudis de màster específic"
+msgstr "<p>Disponible per tots els màsters excepte els interuniversitaris.</p><p>Pla d’estudis d’un màster amb accés a les guies docents.</p><p class=\"muted\">Indiqueu l'identificador del màster al sistema d'informació del Servei de Comunicació.</p><p class=\"muted\">Exemple: l'identificador del Màster universitari en Enginyeria de l'Energia és <strong>35.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Llista dels identificadors dels estudis de màster <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p>"
+
+msgid "Grups de recerca"
+msgstr "Grups de recerca"
+
+msgid "Grups de recerca d'un departament específic"
+msgstr "<p>Llistat dels grups de recerca que pertanyen a un departament.</p><p class=\"muted\">Indiqueu  el codi UPC del departament.</p><p class=\"muted\">Exemple:  el codi del Departament d’Enginyeria Electrònica és <strong>710.</strong></p><p><a target=\"_blank\" href=\"https://gpaq.upc.edu/eines/?op=unitats\" class=\"external-link\">Llista dels codis UPC de les unitats <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p>"
+
+msgid "Investigadors d'un grup de recerca"
+msgstr "Investigadors d'un grup de recerca"
+
+msgid "Investigadors d'un grup de recerca d'un departament específic"
+msgstr "<p>Llistat dels investigadors d'un grup de recerca.</p><p class=\"muted\">Indiqueu l’acrònim del grup de recerca definit a DRAC.</p><p class=\"muted\">Exemple: l'acrònim del Grup de recerca en Arquitectura, energia i medi ambient és <strong>AIEM</strong>.</p><p><a target=\"_blank\" href=\"http://futur.upc.edu/organitzacio/os/Z3J1cHJlY2VyY2E=#produccio\" class=\"external-link\"><span class=\"external-link\"><span class=\"external-link\">Llista d'acrònims dels grups de recerca <img src=\"++genweb++static/images/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></span><strong>.</strong></span></a></p>"
+
+msgid "codi_grau"
+msgstr "Codi UPC del Grau"
+
+msgid "codi_departament"
+msgstr "Codi UPC del Departament"
+
+msgid "codi_master"
+msgstr "Codi UPC del Màster"
+
+msgid "codi"
+msgstr "codi"
+
+msgid "pla_grau"
+msgstr "Pla d'estudi de grau"
+
+msgid "fitxa_grau"
+msgstr "Fitxa de grau"
+
+msgid "grups_recerca"
+msgstr "Grups de recerca"
+
+msgid "fitxa_master"
+msgstr "Fitxa de màster"
+
+msgid "grups_recerca_people"
+msgstr "Investigadors d'un grup de recerca"
+
+msgid "acronim"
+msgstr "acrònim"
+
+msgid "<strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:"
+msgstr "<strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:"
+
+msgid "configurat amb l'identificador:"
+msgstr "configurat amb l'identificador:"
+
+msgid "ERROR: Unknown identifier. This page does not exist."
+msgstr "<h2>ERROR: Identificador incorrecte. La pàgina no existeix.</h2>"
+
+msgid "label_select"
+msgstr "Identificador"
+
+msgid "label_close"
+msgstr "Tanca"
+
+msgid "label_save_changes"
+msgstr "Desa"
+
+msgid "Contingut d'una pàgina externa"
+msgstr ""
+"<p>Mostra la part que especifiquem d'una pàgina existent</p><p class=\"muted"
+"\">Cal especificar la URL i un id o class existent dins aquesta URL</p>"
+
+msgid "url_contingut"
+msgstr "URL completa del contingut"
+
+msgid "element"
+msgstr "Element que volem mostrar, per exemple #content-core"

@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="genweb6.upc">
+<head>
+  <div metal:fill-slot="javascript_head_slot" tal:omit-tag="">
+  </div>
+</head>
+
+<body class="packet-edit">
+ <div metal:fill-slot="main">
+  <div i18n:translate="packet_help"
+        class="lead">Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats.
+        <br /><br />Consulteu tota la informació referent als <a href="https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc">continguts UPC <img src="++genweb++static/images/blank_blau.png" class="img_blank" alt="(obriu en una finestra nova)">
+        </a>.
+  </div>
+  <h1 id="parent-fieldname-title" class="documentFirstHeading" tal:content="view/getTitle">Title</h1>
+
+  <tal:def define="selectedPacket view/selectedPacket">
+      <script>
+        $(document).ready(function(){
+          $('a.data-toggle-modal').click(function(){
+            $('.modal-body dl dd:first-of-type input').val($('#value-actual').text());
+            $('.modal-body dl dd:last-of-type input').val($('#element-actual').text());
+          });
+        })
+      </script>
+    <p class="lead-small" tal:condition="view/isAlreadyConfigured">
+      <strong><tal:omit-tag i18n:translate="" tal:content="selectedPacket/packet_key"></tal:omit-tag>,</strong>
+      <tal:message i18n:translate="">configurat amb l'identificador:</tal:message>
+      <strong><tal:omit-tag tal:content="selectedPacket/value"></tal:omit-tag></strong>
+      <span tal:condition="selectedPacket/element">
+        ,
+        <tal:message i18n:translate="">configurat amb l'element:</tal:message>
+        <strong><tal:omit-tag tal:content="selectedPacket/element"></tal:omit-tag></strong>
+      </span>
+    </p>
+
+    <section tal:define="packets view/getAvailablePacketsInfo"
+             tal:condition="packets">
+      <tal:available repeat="packet packets">
+        <div class="row">
+          <div class="col-md-3">
+            <p><strong tal:content="python:packet[1].title"></strong></p>
+          </div>
+          <div class="col-md-6">
+            <tal:omit-tag tal:content="structure python:packet[1].description"></tal:omit-tag>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" tal:attributes="data-bs-target python:'#' + packet[0]"
+                    i18n:translate="label_select">
+              Select
+            </button>
+          </div>
+        </div>
+      </tal:available>
+
+      <tal:configmodals repeat="packet packets">
+        <form method="POST"
+              tal:attributes="action python:context.absolute_url() + '/@@configure'">
+
+          <input type="hidden" name="packet_type"
+                 tal:attributes="value python:packet[0]" />
+
+          <div class="modal fade" tabindex="-1" aria-hidden="true"
+               tal:attributes="id python:packet[0];
+                               aria-labelledby python:packet[0] + 'Label'">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" tal:attributes="id python:packet[0] + 'Label'">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <dl>
+                    <tal:fields repeat="field python:packet[1].fields">
+                        <dt tal:content="field">Label name</dt>
+                        <dd><input type="text" tal:attributes="name python:field.lower()" /></dd>
+                    </tal:fields>
+                  </dl>
+                  <dl tal:condition="view/isAlreadyConfigured">
+                    <dt>Valor actual:</dt>
+                    <dd id='value-actual' tal:content="selectedPacket/value">valor actual</dd>
+                    <dd id='element-actual' tal:content="selectedPacket/element">element actual</dd>
+                  </dl>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" i18n:translate="label_close">Close</button>
+                  <button type="submit" class="btn btn-primary submit" i18n:translate="label_save_changes">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </tal:configmodals>
+    </section>
+  </tal:def>
+ </div>
+
+</body>
+</html>
