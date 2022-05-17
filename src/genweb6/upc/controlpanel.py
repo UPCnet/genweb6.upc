@@ -108,6 +108,7 @@ class IUPCSettings(model.Schema):
         default=False,
     )
 
+    # form.widget(contact_emails_table=DataGridFieldFactory)
     # contact_emails_table = schema.List(
     #     title=_(u'Contact emails'),
     #     description=_(u'help_emails_table',
