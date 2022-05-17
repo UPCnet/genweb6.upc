@@ -7,4 +7,12 @@
         interface="genweb6.upc.controlpanel.IUPCSettings"
         purge="False"/>
 
+    <records
+        interface="genweb6.upc.controlpanel.IBusSOASettings"
+        purge="False"/>
+
+    <records
+        interface="genweb6.upc.controlpanel.IIdentitatDigitalSettings"
+        purge="False"/>
+
 </registry>

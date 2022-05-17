@@ -39,12 +39,7 @@ class IUPCSettings(model.Schema):
     model.fieldset('Contact information', _(u'Contact information'),
                    fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
                            'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
-                           'contacte_multi_email'])
-
-    # model.fieldset('Contact information', _(u'Contact information'),
-    #                fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
-    #                        'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
-    #                        'contacte_multi_email', 'contact_emails_table'])
+                           'contacte_multi_email', 'contact_emails_table'])
 
     contacte_id = schema.TextLine(
         title=_(u"contacte_id",
@@ -108,7 +103,6 @@ class IUPCSettings(model.Schema):
         default=False,
     )
 
-    # form.widget(contact_emails_table=DataGridFieldFactory)
     # contact_emails_table = schema.List(
     #     title=_(u'Contact emails'),
     #     description=_(u'help_emails_table',
@@ -118,44 +112,7 @@ class IUPCSettings(model.Schema):
     #     required=False,
     # )
 
-    model.fieldset('BUS SOA', _(u'BUS SOA'),
-                   fields=['bus_url', 'bus_user', 'bus_password', 'bus_apikey'])
-
-    bus_url = schema.TextLine(
-        title=_(u'URL'),
-        description=_(u'URL to access the bus'),
-        required=False,
-    )
-
-    bus_user = schema.TextLine(
-        title=_(u'User'),
-        description=_('User to connect to the bus'),
-        required=False,
-    )
-
-    bus_password = schema.Password(
-        title=_(u'Password'),
-        required=False,
-    )
-
-    bus_apikey = schema.Password(
-        title=_(u'APIKEY'),
-        required=False,
-    )
-
-    model.fieldset('Identitat Digital', _(u'Identitat Digital'),
-                   fields=['identitat_url', 'identitat_apikey'])
-
-    identitat_url = schema.TextLine(
-        title=_(u'URL'),
-        description=_(u'URL to access the digital identity'),
-        required=False,
-    )
-
-    identitat_apikey = schema.Password(
-        title=_(u'APIKEY'),
-        required=False,
-    )
+    # form.widget(contact_emails_table=DataGridFieldFactory)
 
 
 class UPCSettingsForm(controlpanel.RegistryEditForm):
@@ -203,3 +160,106 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
 
 class UPCSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
     form = UPCSettingsForm
+
+
+class IBusSOASettings(model.Schema):
+
+    bus_url = schema.TextLine(
+        title=_(u'URL'),
+        description=_(u'URL to access the bus'),
+        required=False,
+    )
+
+    bus_user = schema.TextLine(
+        title=_(u'User'),
+        description=_('User to connect to the bus'),
+        required=False,
+    )
+
+    bus_password = schema.Password(
+        title=_(u'Password'),
+        required=False,
+    )
+
+    bus_apikey = schema.Password(
+        title=_(u'APIKEY'),
+        required=False,
+    )
+
+
+class BusSOASettingsForm(controlpanel.RegistryEditForm):
+
+    schema = IBusSOASettings
+    label = _(u'Bus SOA Settings')
+
+    def updateFields(self):
+        super(BusSOASettingsForm, self).updateFields()
+
+    def updateWidgets(self):
+        super(BusSOASettingsForm, self).updateWidgets()
+
+    @button.buttonAndHandler(_('Save'), name='save')
+    def handleSave(self, action):
+        data, errors = self.extractData()
+        if errors:
+            self.status = self.formErrorsMessage
+            return
+
+        self.applyChanges(data)
+        IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
+        self.request.response.redirect(self.request.getURL())
+
+    @button.buttonAndHandler(_("Cancel"), name='cancel')
+    def handleCancel(self, action):
+        IStatusMessage(self.request).addStatusMessage(_("Changes canceled."), "info")
+        self.request.response.redirect(self.context.absolute_url() + '/' + self.control_panel_view)
+
+
+class BusSOASettingsControlPanel(controlpanel.ControlPanelFormWrapper):
+    form = BusSOASettingsForm
+
+
+class IIdentitatDigitalSettings(model.Schema):
+
+    identitat_url = schema.TextLine(
+        title=_(u'URL'),
+        description=_(u'URL to access the digital identity'),
+        required=False,
+    )
+
+    identitat_apikey = schema.Password(
+        title=_(u'APIKEY'),
+        required=False,
+    )
+
+
+class IdentitatDigitalSettingsForm(controlpanel.RegistryEditForm):
+
+    schema = IIdentitatDigitalSettings
+    label = _(u'Identitat Digital Settings')
+
+    def updateFields(self):
+        super(IdentitatDigitalSettingsForm, self).updateFields()
+
+    def updateWidgets(self):
+        super(IdentitatDigitalSettingsForm, self).updateWidgets()
+
+    @button.buttonAndHandler(_('Save'), name='save')
+    def handleSave(self, action):
+        data, errors = self.extractData()
+        if errors:
+            self.status = self.formErrorsMessage
+            return
+
+        self.applyChanges(data)
+        IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
+        self.request.response.redirect(self.request.getURL())
+
+    @button.buttonAndHandler(_("Cancel"), name='cancel')
+    def handleCancel(self, action):
+        IStatusMessage(self.request).addStatusMessage(_("Changes canceled."), "info")
+        self.request.response.redirect(self.context.absolute_url() + '/' + self.control_panel_view)
+
+
+class IdentitatDigitalSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
+    form = IdentitatDigitalSettingsForm

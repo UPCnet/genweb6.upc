@@ -36,22 +36,29 @@
         name="genweb6.upc-hiddenprofiles"
         />
 
-    <!-- CONTROLPANEL -->
-
-    <permission id="genweb.upc.controlpanel"
-                title="Genweb UPC: Edit Controlpanel">
-
-        <role name="WebMaster"/>
-        <role name="Manager"/>
-    </permission>
+    <!-- CONTROLPANELS -->
 
     <browser:page
         name="upc-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".controlpanel.UPCSettingsControlPanel"
-        permission="genweb.upc.controlpanel"
+        permission="genweb.superadmin"
         />
 
-    <!-- END CONTROLPANEL -->
+    <browser:page
+        name="bussoa-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.BusSOASettingsControlPanel"
+        permission="genweb.manager"
+        />
+
+    <browser:page
+        name="identitatdigital-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.IdentitatDigitalSettingsControlPanel"
+        permission="genweb.manager"
+        />
+
+    <!-- FIN CONTROLPANELS -->
 
 </configure>

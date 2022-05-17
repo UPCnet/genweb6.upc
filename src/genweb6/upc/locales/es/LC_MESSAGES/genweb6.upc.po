@@ -111,3 +111,30 @@ msgstr "URL completa del contenido"
 
 msgid "element"
 msgstr "Elemento que queremos mostrar, por ejemplo #content-core"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "URL to access the bus"
+msgstr "URL para acceder al bus"
+
+msgid "URL to access the digital identity"
+msgstr "URL para acceder a la identidad digital"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "User to connect to the bus"
+msgstr "Usuario para conectar el bus"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "APIKEY"
+msgstr "Clave API"
+
+msgid "Bus SOA Settings"
+msgstr "Bus SOA Configuración"
+
+msgid "Identitat Digital Settings"
+msgstr "Identidad Digital Configuración"

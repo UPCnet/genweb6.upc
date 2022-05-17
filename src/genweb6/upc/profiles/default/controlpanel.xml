@@ -11,7 +11,33 @@
         icon_expr="string:gear"
         visible="True">
 
-        <permission>genweb.upc.controlpanel</permission>
+        <permission>genweb.superadmin</permission>
+    </configlet>
+
+    <configlet
+        title="BUS SOA"
+        action_id="genweb6.upc.bussoa"
+        appId="genweb6.upc.bussoa"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@bussoa-controlpanel"
+        icon_expr="string:server"
+        visible="True">
+
+        <permission>genweb.manager</permission>
+    </configlet>
+
+    <configlet
+        title="Identitat Digital"
+        action_id="genweb6.upc.identitatdigital"
+        appId="genweb6.upc.identitatdigital"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@identitatdigital-controlpanel"
+        icon_expr="string:server"
+        visible="True">
+
+        <permission>genweb.manager</permission>
     </configlet>
 
 </object>
