@@ -5,6 +5,8 @@ from Products.statusmessages.interfaces import IStatusMessage
 # from collective.z3cform.datagridfield.registry import DictRow
 from plone import api
 from plone.app.registry.browser import controlpanel
+from plone.autoform.directives import read_permission
+from plone.autoform.directives import write_permission
 from plone.registry import field
 from plone.registry import Record
 from plone.registry.interfaces import IRegistry
@@ -46,6 +48,8 @@ class IUPCSettings(model.Schema):
     #                        'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
     #                        'contacte_multi_email', 'contact_emails_table'])
 
+    read_permission(contacte_id='genweb.superadmin')
+    write_permission(contacte_id='genweb.webmaster')
     contacte_id = schema.TextLine(
         title=_(u"contacte_id",
                 default=u"ID contacte de la unitat"),
@@ -81,6 +85,8 @@ class IUPCSettings(model.Schema):
         default=False,
     )
 
+    read_permission(directori_filtrat='genweb.superadmin')
+    write_permission(directori_filtrat='genweb.webmaster')
     directori_filtrat = schema.Bool(
         title=_(u"directori_filtrat",
                 default=u"Directori UPC filtrat a les eines"),
