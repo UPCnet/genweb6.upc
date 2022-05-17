@@ -9,6 +9,7 @@
     <i18n:registerTranslations directory="locales" />
 
     <include package=".browser" />
+    <include package=".cas" />
     <include package=".content" />
 
     <include file="permissions.zcml" />
@@ -34,6 +35,13 @@
     <utility
         factory=".setuphandlers.HiddenProfiles"
         name="genweb6.upc-hiddenprofiles"
+        />
+
+    <genericsetup:importStep
+        name="genweb6.upc.setupstep"
+        title="genweb6.upc special import handlers"
+        description=""
+        handler="genweb6.upc.setuphandlers.setupVarious"
         />
 
     <!-- CONTROLPANELS -->

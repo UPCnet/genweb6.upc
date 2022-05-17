@@ -3,6 +3,8 @@ from Products.CMFPlone.interfaces import INonInstallable
 
 from zope.interface import implementer
 
+from genweb6.upc.cas.setup import setupCASUPC
+
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
@@ -26,3 +28,17 @@ def post_install(context):
 def uninstall(context):
     """Uninstall script"""
     # Do something at the end of the uninstallation of this package.
+
+
+def setupVarious(context):
+
+    # Ordinarily, GenericSetup handlers check for the existence of XML files.
+    # Here, we are not parsing an XML file, but we use this text file as a
+    # flag to check that we actually meant for this import step to be run.
+    # The file is found in profiles/default.
+
+    if context.readDataFile('genweb6.upc_various.txt') is None:
+        return
+
+    # TODO Comentado porque no funciona el paquete de anz.casclient
+    # setupCASUPC(context)
