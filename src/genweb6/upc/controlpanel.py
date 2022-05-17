@@ -39,7 +39,12 @@ class IUPCSettings(model.Schema):
     model.fieldset('Contact information', _(u'Contact information'),
                    fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
                            'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
-                           'contacte_multi_email', 'contact_emails_table'])
+                           'contacte_multi_email'])
+
+    # model.fieldset('Contact information', _(u'Contact information'),
+    #                fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
+    #                        'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
+    #                        'contacte_multi_email', 'contact_emails_table'])
 
     contacte_id = schema.TextLine(
         title=_(u"contacte_id",
@@ -111,8 +116,6 @@ class IUPCSettings(model.Schema):
     #                        schema=ITableEmailContact),
     #     required=False,
     # )
-
-    # form.widget(contact_emails_table=DataGridFieldFactory)
 
 
 class UPCSettingsForm(controlpanel.RegistryEditForm):
