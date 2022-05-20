@@ -5,39 +5,39 @@
         title="Genweb UPC"
         action_id="genweb6.upc"
         appId="genweb6.upc"
-        category="Products"
+        category="genweb-advanced"
         condition_expr=""
         url_expr="string:${portal_url}/@@upc-controlpanel"
         icon_expr="string:gear"
         visible="True">
 
-        <permission>genweb.superadmin</permission>
+        <permission>Genweb: Superadmin Users</permission>
     </configlet>
 
     <configlet
         title="BUS SOA"
         action_id="genweb6.upc.bussoa"
         appId="genweb6.upc.bussoa"
-        category="Products"
+        category="genweb-connection"
         condition_expr=""
         url_expr="string:${portal_url}/@@bussoa-controlpanel"
         icon_expr="string:server"
         visible="True">
 
-        <permission>genweb.manager</permission>
+        <permission>Genweb: Manager Users</permission>
     </configlet>
 
     <configlet
         title="Identitat Digital"
         action_id="genweb6.upc.identitatdigital"
         appId="genweb6.upc.identitatdigital"
-        category="Products"
+        category="genweb-connection"
         condition_expr=""
         url_expr="string:${portal_url}/@@identitatdigital-controlpanel"
         icon_expr="string:server"
         visible="True">
 
-        <permission>genweb.manager</permission>
+        <permission>Genweb: Manager Users</permission>
     </configlet>
 
 </object>
