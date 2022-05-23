@@ -1,0 +1,158 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal" xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en"
+  i18n:domain="plone">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title i18n:domain="genweb6.upc" i18n:translate="">Create a Genweb UPC</title>
+  <link rel="stylesheet"
+        type="text/css"
+        href="${string:${context/absolute_url}/++theme++barceloneta/css/barceloneta.min.css}" />
+  <link rel="stylesheet"
+        type="text/css"
+        href="${string:${context/absolute_url}/++resource++plone-admin-ui.css}" />
+  <script type="text/javascript" tal:attributes="src string:${context/absolute_url}/++resource++jstz-1.0.4.min.js">
+  </script>
+  <script type="text/javascript" tal:attributes="src string:${context/absolute_url}/++resource++plone-admin-ui.js">
+  </script>
+</head>
+
+<body>
+
+  <div class="container admin mt-5 mb-5 p-4 ">
+    <header class="row">
+      <p><img src="/++resource++plone-logo.png"
+               width="215" height="56"
+               tal:attributes="src string:${context/absolute_url}/++resource++plone-logo.png"
+               alt="Plone logo"
+               i18n:attributes="alt" /></p>
+    </header>
+    <form action="#"
+          method="post"
+          tal:attributes="action string:${context/absolute_url}/@@addGenwebUPC"
+          tal:define="profiles view/profiles;
+                      base_profiles profiles/base;
+                      default_profile profiles/default;
+                      extension_profiles profiles/extensions;
+                      advanced request/advanced|nothing;">
+      <article class="row">
+        <div class="col-md-12">
+          <h1><span i18n:domain="genweb6.upc" i18n:translate="">Create a Genweb UPC</span></h1>
+          <p class="lead" i18n:translate="">Adds a new Plone content management system site to the underlying application server.</p>
+        </div>
+
+          <div class="col-md-12 mb-3 mb-3">
+            <label for="site_id" class="form-label" i18n:translate="">
+              Path identifier
+            </label>
+
+            <input type="text"
+                  name="site_id"
+                  size="20" id="site_id"
+                  class="form-control"
+                  tal:attributes="value request/site_id|nothing" />
+
+            <div class="form-text" i18n:translate="">
+              The ID of the site. No special characters or spaces are allowed. This ends up as part of the URL unless hidden by an upstream web server.
+            </div>
+
+          </div>
+
+          <div class="col-md-12 mb-3">
+            <label for="title" class="form-label" i18n:translate="label_title">Title</label>
+
+            <input type="text" name="title" size="30" value="Site" class="form-control" i18n:attributes="value text_default_site_title;" />
+
+            <div class="form-text" i18n:translate="">
+              A short title for the site. This will be shown as part of the title of the browser window on each page.
+            </div>
+
+          </div>
+
+          <div class="col-md-12 mb-3">
+            <label for="default_language" class="form-label" i18n:translate="">Language</label>
+
+            <select name="default_language" class="form-select"
+                    tal:define="browser_language view/browser_language;
+                                grouped_languages python:view.grouped_languages(browser_language)">
+              <optgroup tal:repeat="group grouped_languages"
+                        tal:attributes="label group/label">
+
+                <option value="en"
+                        tal:repeat="lang group/languages"
+                        tal:attributes="value python:lang['langcode'];
+                                        selected python:lang['langcode'] == browser_language"
+                        tal:content="python: lang['label']">
+                  English
+                </option>
+
+              </optgroup>
+            </select>
+
+            <div class="form-text" i18n:translate="">
+              The main language of the site.
+            </div>
+
+          </div>
+
+          <div class="col-md-12 mb-3 tzx">
+            <label for="portal_timezone" i18n:translate="" class="form-label">
+              Default timezone
+            </label>
+
+            <select id="portal_timezone"
+                    name="portal_timezone"
+                    class="form-select"
+                    tal:define="tz_list view/timezones">
+              <optgroup tal:repeat="group tz_list"
+                        tal:attributes="label group">
+                <option value="UTC" tal:repeat="tz python:tz_list[group]" tal:attributes="value tz/value"
+                  tal:content="tz/label">
+                  UTC
+                </option>
+              </optgroup>
+            </select>
+            <div class="form-text" i18n:translate="">
+              The default timezone setting of the portal.
+              Users will be able to set their own timezone, if available timezones are defined in the date and time settings.
+            </div>
+          </div>
+
+          <div class="col-md-12"
+               tal:condition="python: len(base_profiles) > 1">
+            <div class="mb-3">
+              <p class="lead" i18n:translate="">Base configuration</p>
+
+              <div tal:repeat="info base_profiles"
+                  class="form-check mb-3">
+                <input type="radio"
+                      name="profile_id:string"
+                      value="profile"
+                      class="form-check-input"
+                      tal:attributes="id info/id;
+                                      value info/id;
+                                      checked python: default_profile==info['id'] and 'checked' or nothing" />
+                <label class="form-check-label" tal:attributes="for info/id">${info/title}</label>
+                <div class="form-text" tal:content="info/description">${info/description}</div>
+              </div>
+
+              <div class="form-text" i18n:translate="">
+                You normally don't need to change anything here unless you have specific reasons and know what you are doing.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-12 mt-3">
+            <input type="hidden" name="form.submitted:boolean" value="True" />
+            <button class="btn btn-success mt-3" type="submit" name="submit" i18n:translate="">Create Plone Site</button>
+          </div>
+      </article>
+    </form>
+  </div>
+</body>
+
+</html>

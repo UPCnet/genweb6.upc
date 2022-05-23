@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb6.upc">
+
+    <include package="z3c.jbot" file="meta.zcml" />
+
+    <browser:page
+        for="OFS.interfaces.IApplication"
+        name="addGenweb"
+        class=".add.addGenwebUPC"
+        permission="zope2.ViewManagementScreens"
+        template="add.pt"
+        />
+
+    <browser:page
+        for="OFS.Folder.Folder"
+        name="addGenweb"
+        class=".add.addGenwebUPC"
+        permission="zope2.ViewManagementScreens"
+        template="add.pt"
+        />
+
+</configure>
