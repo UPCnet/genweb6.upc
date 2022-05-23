@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <object name="packet" meta_type="Dexterity FTI" i18n:domain="genweb.packets"
-   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <property name="title" i18n:translate="">packet</property>
     <property name="description" i18n:translate=""></property>
+    <property name="icon_expr">string:box</property>
     <property name="allow_discussion">False</property>
     <property name="global_allow">True</property>
     <property name="filter_content_types">False</property>
@@ -13,7 +14,6 @@
     <property name="schema"></property>
     <property name="klass">genweb6.upc.content.packet.packet.Packet</property>
     <property name="add_permission">cmf.AddPortalContent</property>
-    <property name="icon_expr"></property>
     <property name="factory">packet</property>
     <property name="link_target"></property>
     <property name="immediate_view">view</property>
