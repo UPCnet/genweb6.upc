@@ -69,4 +69,12 @@
 
     <!-- FIN CONTROLPANELS -->
 
+    <browser:page
+        name="genweb.upc.utils"
+        for="*"
+        class=".utils.genwebUPCUtils"
+        permission="zope2.Public"
+        allowed_interface=".interfaces.IGenweb6UpcLayer"
+        />
+
 </configure>

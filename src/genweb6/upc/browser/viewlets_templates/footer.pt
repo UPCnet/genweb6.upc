@@ -1,0 +1,81 @@
+<footer id="peu" role="contentinfo"
+        tal:define="portal_url context/@@plone_portal_state/portal_url;
+                    plone_view context/@@plone;
+                    view nocall:view | nocall: plone_view;
+                    dades_unitat context/@@genweb.upc.utils/getDadesUnitat;
+                    upc_config context/@@genweb.upc.utils/genwebUPCConfig;
+                    home_link view/getHomeLink"
+        i18n:domain="genweb6.upc">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          <a tal:attributes="href home_link" target="_blank">
+            <abbr rel="tooltip" data-placement="top" title="Universitat Politècnica de Catalunya · BarcelonaTech">UPC</abbr>
+          </a>.
+          <tal:signatura content="python:getattr(upc_config, 'signatura_unitat_%s' % view.pref_lang(), '')">
+                Servei de Comunicació i Promoció
+          </tal:signatura>
+        </p>
+        <address tal:condition="python:getattr(upc_config, 'contacte_al_peu', False)">
+          <p tal:condition="python:dades_unitat and not dades_unitat.get('error', False)">
+            <tal:adreca content="dades_unitat/adreca | nothing">
+              Edifici Til·lers. Jordi Girona, 31.
+            </tal:adreca>.
+            <tal:codi content="dades_unitat/codi_postal | nothing">
+                08034
+            </tal:codi>
+            <tal:localitat content="dades_unitat/localitat | nothing">
+              Barcelona
+            </tal:localitat> -
+            <abbr rel="tooltip" data-placement="top" title="Telèfon">
+              Tel.</abbr>:
+            <tal:tel content="dades_unitat/telefon | nothing">
+              +34 93 401 63 12
+            </tal:tel>
+          </p>
+        </address>
+      </div>
+      <div class="col-md-4" role="complementary" aria-labelledby="titol-sobre-el-web">
+        <h2 class="goout" id="titol-sobre-el-web"
+          i18n:translate="label_about"> Sobre el web </h2>
+        <ul class="pull-right sobreElWeb" role="menu"
+            tal:define="link view/getLinksPeu" >
+          <li role="menuitem">
+            <a href="#" accesskey="0"
+               tal:attributes="href string:${portal_url}/${link/accessibility}"
+               i18n:translate="genweb-accessibility">
+                Accessibilitat
+            </a>
+          </li>
+          <li role="menuitem">
+            <a href="#" target="_blank"
+               tal:attributes="href link/disclaimer"
+               i18n:translate="genweb-disclaimer">
+                Disclaimer
+            </a>
+          </li>
+          <li role="menuitem">
+            <a href="#"
+               tal:attributes="href link/cookies"
+               i18n:translate="cookie_policy">
+                Cookie Policy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!--[if !IE]> -->
+<footer id="canvia-vista" role="complementary">
+  <p>
+    <a class="reView" data-defaultText="Versió móbil" data-coreText="Versió d'escriptori" href="javascript:void(0)">
+      Versió d'escriptori
+    </a>
+  </p>
+</footer>
+<!-- <![endif]-->
