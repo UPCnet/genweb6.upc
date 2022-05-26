@@ -32,7 +32,7 @@
     </header>
     <form action="#"
           method="post"
-          tal:attributes="action string:${context/absolute_url}/@@addGenwebUPC"
+          tal:attributes="action string:${context/absolute_url}/@@addGenweb"
           tal:define="profiles view/profiles;
                       base_profiles profiles/base;
                       default_profile profiles/default;

@@ -54,7 +54,6 @@ setup(
         'z3c.jbot',
         'plone.api>=1.8.4',
         'plone.app.dexterity',
-        'plone.formwidget.recaptcha'
         # 'anz.casclient'
         # 'collective.z3cform.datagridfield>=2.0.2',
     ],
