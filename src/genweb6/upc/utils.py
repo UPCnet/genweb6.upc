@@ -21,19 +21,23 @@ def _contact_ws_cachekey(method, self, unitat):
     return (unitat)
 
 
+def genwebUPCConfig():
+    """ Funcio que retorna les configuracions del controlpanel """
+    registry = queryUtility(IRegistry)
+    return registry.forInterface(IUPCSettings)
+
+
 class genwebUPCUtils(BrowserView):
     """ Convenience methods placeholder genweb.utils view. """
 
     def genwebUPCConfig(self):
         """ Funcio que retorna les configuracions del controlpanel """
-        registry = queryUtility(IRegistry)
-        return registry.forInterface(IUPCSettings)
+        return genwebUPCConfig()
 
     @ram.cache(_contact_ws_cachekey)
     def _queryInfoUnitatWS(self, unitat):
         try:
-            r = requests.get(
-                'https://bus-soa.upc.edu/SCP/InfoUnitatv1?id=%s' % unitat, timeout=10)
+            r = requests.get('https://bus-soa.upc.edu/SCP/InfoUnitatv1?id=%s' % unitat, timeout=10)
             return r.json()
         except:
             return {}

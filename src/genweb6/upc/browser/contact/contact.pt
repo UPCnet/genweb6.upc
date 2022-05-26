@@ -1,0 +1,159 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xml:lang="en" lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="genweb">
+
+    <body class="template-contacte" dir="ltr">
+
+        <metal:block metal:fill-slot="top_slot"
+        tal:define="dummy python:request.set('disable_border', 1)" />
+
+        <div metal:fill-slot="main">
+            <tal:main-macro metal:define-macro="main"
+                tal:define="dades context/@@genweb.upc.utils/getDadesContact;
+                            genweb_upc_config context/@@genweb.upc.utils/genwebUPCConfig;
+                            isCustomized view/getContactPersonalized;
+                            contact_address view/isContactAddress">
+                <h1 class="documentFirstHeading" i18n:translate="genweb_formContacte">Contact</h1>
+
+                <tal:block>
+
+                    <div class="row">
+
+                        <!-- FORMULARI DE CONTACTE -->
+                        <div tal:condition="contact_address" class="col-md-7 box box-gradient"
+                             tal:attributes="class python:(isCustomized or dades) and 'col-md-7 box box-gradient' or 'box box-gradient'">
+                                <metal:block use-macro="context/@@ploneform-macros/titlelessform" />
+                        </div>
+                        <!-- FI FORMULARI DE CONTACTE -->
+
+                        <!-- MISSATGE D'ERROR SI NO HI HA ADREÇA -->
+                        <div tal:condition="not: contact_address"
+                             tal:attributes="class python:isCustomized or dades and 'col-md-7 box box-gradient' or 'box box-gradient'">
+                             <h2 i18n:translate="heading_send_error">
+                                Site Administrator has not been contacted.
+                            </h2>
+
+                            <p i18n:translate="message_send_error">
+                                Misssatge d'error (SC)
+                            </p>
+                        </div>
+                        <!-- FI MISSATGE D'ERROR -->
+
+                        <!-- DADES DE CONTACTE -->
+                        <tal:co tal:condition="python:dades and not isCustomized">
+                            <div class="col-md-5"
+                                 tal:define="adreca dades/adreca_sencera;
+                                             telefon dades/telefon;
+                                             fax dades/fax;
+                                             email dades/email;
+                                             id_scp dades/id_scp;
+                                             codi_upc dades/codi_upc;
+                                             nom dades/nom"
+                                 tal:condition="adreca">
+
+                                <!-- DADES CONTACTE AUTOMÀTIQUES -->
+                                <tal:co tal:condition="not: isCustomized">
+                                   <h2 tal:content="nom">
+                                         Servei de Comunicació i Promoció
+                                  </h2>
+                                  <address>
+                                     <p tal:content="adreca">
+                                             Campus Diagonal Sud, Edifici H. Av. Diagonal, 647. 08028 Barcelona
+                                     </p>
+                                  </address>
+                                     <ul class="unstyled" id='contacte-dades' >
+                                         <li tal:condition="telefon">
+                                             <p>
+                                                 <tal:telmsg i18n:translate="genweb_telefon">Telèfon</tal:telmsg>
+                                                 <tal:telefon content="telefon">Telèfon 93 401 65 83 / 65 85</tal:telefon>
+                                             </p>
+                                         </li>
+                                         <li tal:condition="fax">
+                                             <p>
+                                                 <tal:faxmsg i18n:translate="genweb_fax">Fax</tal:faxmsg>
+                                                 <tal:fax content="fax">93 401 60 54</tal:fax>
+                                             </p>
+                                         </li>
+                                         <li tal:condition="email">
+                                             <p>
+                                                 <abbr rel="tooltip" data-placement="top"
+                                                       i18n:attributes="title genweb_ae;
+                                                                        alt genweb_ae"
+                                                       i18n:translate="genweb_ae">
+                                                     A/e
+                                                 </abbr>
+                                                 <a tal:attributes="href string:mailto:${email}"
+                                                    tal:content="email">
+                                                         director.oe@(upc.edu)
+                                                 </a>
+                                             </p>
+                                         </li>
+                                     </ul>
+                                     <ul class="unstyled" id='contacte-links'>
+                                         <li tal:condition="codi_upc">
+                                             <p>
+                                                 <a
+                                                     tal:attributes="href python:view.getURLDirectori(codi_upc); target string:_blank"
+                                                     class="show" rel="tooltip"
+                                                     i18n:attributes= "title title_dir_upc">
+                                                 <span class="icon-book"></span>
+                                                 <tal:dirupc i18n:translate="label_dir_upc">Directori UPC</tal:dirupc>
+                                                 <img class="img_blank" src="++theme++genweb6.theme/img/blank_blau.png"
+                                                      i18n:attributes="alt obrir_link_finestra_nova" />
+                                                 </a>
+                                             </p>
+                                         </li>
+                                         <tal:maps tal:condition="python:not getattr(genweb_upc_config, 'contacte_no_upcmaps', False)">
+                                             <li>
+                                                 <p>
+                                                     <a tal:attributes="href python:view.getURLUPCmaps(id_scp)"
+                                                        class="show"
+                                                        rel="tooltip"
+                                                        data-placement="bottom"
+                                                        i18n:attributes= "title title_upcmaps"
+                                                        target="_blank">
+                                                        <span class="icon-map-marker"></span> UPCmaps
+                                                        <img class="img_blank"
+                                                             src="++theme++genweb6.theme/img/blank_blau.png"
+                                                             i18n:attributes="alt obrir_link_finestra_nova" />
+                                                     </a>
+                                                 </p>
+                                             </li>
+                                         </tal:maps>
+                                     </ul>
+
+
+
+                                    <div tal:condition="python:not getattr(genweb_upc_config, 'contacte_no_upcmaps', False)">
+                                        <span class="img-mask">
+                                            <iframe  tal:attributes="src python:view.getURLMaps(id_scp)" border="0">
+                                            </iframe>
+                                        </span>
+                                    </div>
+                                </tal:co>
+                            </div>
+                        </tal:co>
+                                <!-- FI DADES CONTACTE AUTOMÀTIQUES -->
+
+                                <!-- DADES CONTACTE PERSONALITZADES -->
+
+                                <tal:co tal:condition="isCustomized">
+                                    <div class="col-md-5">
+                                        <div tal:replace="structure view/getContactPage">Cos de la pagina de contacte</div>
+                                    </div>
+                                </tal:co>
+
+                                <!-- FI DADES CONTACTE PERSONALITZADES -->
+
+                    </div>
+                <!-- FI DADES CONTACTE -->
+                </tal:block>
+
+            </tal:main-macro>
+        </div>
+    </body>
+</html>

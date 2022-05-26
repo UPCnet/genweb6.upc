@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb6.upc">
+
+    <include package="z3c.jbot" file="meta.zcml" />
+
+    <browser:page
+        name="contact"
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        class=".contact.ContactForm"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        template="contact.pt"
+        />
+
+    <browser:page
+        name="contact_feedback"
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        template="contact_feedback.pt"
+        />
+
+    <adapter
+        factory=".contact.noValueMessage"
+        name="noValueMessage"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        name="availableContacts"
+        factory=".contact.getEmailsContactNames"
+        />
+s
+</configure>
