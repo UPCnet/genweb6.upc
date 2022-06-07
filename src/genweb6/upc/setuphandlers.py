@@ -3,7 +3,7 @@ from Products.CMFPlone.interfaces import INonInstallable
 
 from zope.interface import implementer
 
-from genweb6.upc.cas.setup import setupCASUPC
+from genweb6.core.cas.controlpanel import setupCAS
 
 
 @implementer(INonInstallable)
@@ -40,5 +40,4 @@ def setupVarious(context):
     if context.readDataFile('genweb6.upc_various.txt') is None:
         return
 
-    # TODO Comentado porque no funciona el paquete de anz.casclient
-    # setupCASUPC(context)
+    setupCAS("https://sso.upc.edu/CAS/", "genweb", "UPC")

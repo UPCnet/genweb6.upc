@@ -54,7 +54,6 @@ setup(
         'z3c.jbot',
         'plone.api>=1.8.4',
         'plone.app.dexterity',
-        # 'anz.casclient'
         # 'collective.z3cform.datagridfield>=2.0.2',
     ],
     extras_require={
