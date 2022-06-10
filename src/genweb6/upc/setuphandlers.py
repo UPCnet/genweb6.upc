@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
 
+from plone.registry.interfaces import IRegistry
+from zope.component import queryUtility
 from zope.interface import implementer
 
 from genweb6.core.cas.controlpanel import setupCAS
+from genweb6.core.controlpanels.login import ILoginSettings
+
+import transaction
 
 
 @implementer(INonInstallable)
@@ -40,4 +45,12 @@ def setupVarious(context):
     if context.readDataFile('genweb6.upc_various.txt') is None:
         return
 
+    # Setup CAS settings
     setupCAS("https://sso.upc.edu/CAS/", "genweb", "UPC")
+
+    # Setup change password setting
+    registry = queryUtility(IRegistry)
+    login_settings = registry.forInterface(ILoginSettings)
+    login_settings.change_password_url = "http://www.upcnet.es/CanviContrasenyaUPC"
+
+    transaction.commit()
