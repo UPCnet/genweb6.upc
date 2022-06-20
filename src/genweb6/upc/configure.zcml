@@ -10,6 +10,7 @@
 
     <include package=".browser" />
     <include package=".content" />
+    <include package=".controlpanels" />
 
     <include file="permissions.zcml" />
 
@@ -42,31 +43,6 @@
         description=""
         handler="genweb6.upc.setuphandlers.setupVarious"
         />
-
-    <!-- CONTROLPANELS -->
-
-    <browser:page
-        name="upc-controlpanel"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".controlpanel.UPCSettingsControlPanel"
-        permission="genweb.superadmin"
-        />
-
-    <browser:page
-        name="bussoa-controlpanel"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".controlpanel.BusSOASettingsControlPanel"
-        permission="genweb.manager"
-        />
-
-    <browser:page
-        name="identitatdigital-controlpanel"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".controlpanel.IdentitatDigitalSettingsControlPanel"
-        permission="genweb.manager"
-        />
-
-    <!-- FIN CONTROLPANELS -->
 
     <browser:page
         name="genweb.upc.utils"

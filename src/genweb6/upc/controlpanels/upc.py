@@ -3,7 +3,6 @@ from Products.statusmessages.interfaces import IStatusMessage
 
 # from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 # from collective.z3cform.datagridfield.registry import DictRow
-from plone import api
 from plone.app.registry.browser import controlpanel
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
@@ -146,17 +145,17 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
         try:
             self.applyChanges(data)
         except:
-            registry = getUtility(IRegistry)
+            # registry = getUtility(IRegistry)
             # rec = registry.records
             # keys = [a for a in rec.keys()]
             # for k in keys:
             #     try:
             #         rec[k]
             #     except:
-            #         if k == 'genweb6.upc.controlpanel.IUPCSettings.contact_emails_table':
+            #         if k == 'genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table':
             #             old_values = data['contact_emails_table']
             #             registry.records[k] = Record(field.List(title=_(u'Contact emails'), description=_(u'help_emails_table', default=u'Add name and email by language'), value_type=DictRow(title=_(u'help_email_table'), schema=ITableEmailContact), required=False))
-            #             api.portal.set_registry_record(name='genweb6.upc.controlpanel.IUPCSettings.contact_emails_table', value=old_values)
+            #             api.portal.set_registry_record(name='genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table', value=old_values)
             #             log.error('Errors in contropanel? Solved field contact_emails_table in ' + self.context.absolute_url())
 
             IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
@@ -170,106 +169,3 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
 
 class UPCSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
     form = UPCSettingsForm
-
-
-class IBusSOASettings(model.Schema):
-
-    bus_url = schema.TextLine(
-        title=_(u'URL'),
-        description=_(u'URL to access the bus'),
-        required=False,
-    )
-
-    bus_user = schema.TextLine(
-        title=_(u'User'),
-        description=_('User to connect to the bus'),
-        required=False,
-    )
-
-    bus_password = schema.Password(
-        title=_(u'Password'),
-        required=False,
-    )
-
-    bus_apikey = schema.Password(
-        title=_(u'APIKEY'),
-        required=False,
-    )
-
-
-class BusSOASettingsForm(controlpanel.RegistryEditForm):
-
-    schema = IBusSOASettings
-    label = _(u'Bus SOA Settings')
-
-    def updateFields(self):
-        super(BusSOASettingsForm, self).updateFields()
-
-    def updateWidgets(self):
-        super(BusSOASettingsForm, self).updateWidgets()
-
-    @button.buttonAndHandler(_('Save'), name='save')
-    def handleSave(self, action):
-        data, errors = self.extractData()
-        if errors:
-            self.status = self.formErrorsMessage
-            return
-
-        self.applyChanges(data)
-        IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
-        self.request.response.redirect(self.request.getURL())
-
-    @button.buttonAndHandler(_("Cancel"), name='cancel')
-    def handleCancel(self, action):
-        IStatusMessage(self.request).addStatusMessage(_("Changes canceled."), "info")
-        self.request.response.redirect(self.context.absolute_url() + '/' + self.control_panel_view)
-
-
-class BusSOASettingsControlPanel(controlpanel.ControlPanelFormWrapper):
-    form = BusSOASettingsForm
-
-
-class IIdentitatDigitalSettings(model.Schema):
-
-    identitat_url = schema.TextLine(
-        title=_(u'URL'),
-        description=_(u'URL to access the digital identity'),
-        required=False,
-    )
-
-    identitat_apikey = schema.Password(
-        title=_(u'APIKEY'),
-        required=False,
-    )
-
-
-class IdentitatDigitalSettingsForm(controlpanel.RegistryEditForm):
-
-    schema = IIdentitatDigitalSettings
-    label = _(u'Identitat Digital Settings')
-
-    def updateFields(self):
-        super(IdentitatDigitalSettingsForm, self).updateFields()
-
-    def updateWidgets(self):
-        super(IdentitatDigitalSettingsForm, self).updateWidgets()
-
-    @button.buttonAndHandler(_('Save'), name='save')
-    def handleSave(self, action):
-        data, errors = self.extractData()
-        if errors:
-            self.status = self.formErrorsMessage
-            return
-
-        self.applyChanges(data)
-        IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
-        self.request.response.redirect(self.request.getURL())
-
-    @button.buttonAndHandler(_("Cancel"), name='cancel')
-    def handleCancel(self, action):
-        IStatusMessage(self.request).addStatusMessage(_("Changes canceled."), "info")
-        self.request.response.redirect(self.context.absolute_url() + '/' + self.control_panel_view)
-
-
-class IdentitatDigitalSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
-    form = IdentitatDigitalSettingsForm

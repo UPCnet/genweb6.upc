@@ -26,7 +26,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 from genweb6.core import _ as _core
 from genweb6.core.utils import pref_lang
-from genweb6.upc.controlpanel import IUPCSettings
+from genweb6.upc.controlpanels.upc import IUPCSettings
 from genweb6.upc.utils import genwebUPCConfig
 
 import re
@@ -190,7 +190,7 @@ class ContactForm(Form):
         # will not be present in the request.
         self.request['form.widgets.captcha'] = self.request.get('recaptcha_response_field')
         # Override the interface forced 'hidden' to 'input' for add form only
-        if not api.portal.get_registry_record(name='genweb6.upc.controlpanel.IUPCSettings.contacte_multi_email') or not self.getDataContact():
+        if not api.portal.get_registry_record(name='genweb6.upc.controlpanels.upc.IUPCSettings.contacte_multi_email') or not self.getDataContact():
             self.widgets['recipient'].mode = 'hidden'
 
     def get_captcha_error_instace(self):
@@ -240,7 +240,7 @@ class ContactForm(Form):
 
         to_name = api.portal.get_registry_record('plone.email_from_name').encode('utf-8')
 
-        if api.portal.get_registry_record(name='genweb6.upc.controlpanel.IUPCSettings.contacte_multi_email'):
+        if api.portal.get_registry_record(name='genweb6.upc.controlpanels.upc.IUPCSettings.contacte_multi_email'):
             contact_data = self.getDataContact()
             if contact_data != []:
                 if data['recipient']:

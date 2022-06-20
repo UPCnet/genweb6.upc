@@ -4,15 +4,15 @@
     i18n:domain="genweb6.upc">
 
     <records
-        interface="genweb6.upc.controlpanel.IUPCSettings"
+        interface="genweb6.upc.controlpanels.upc.IUPCSettings"
         purge="False"/>
 
     <records
-        interface="genweb6.upc.controlpanel.IBusSOASettings"
+        interface="genweb6.upc.controlpanels.bus_soa.IBusSOASettings"
         purge="False"/>
 
     <records
-        interface="genweb6.upc.controlpanel.IIdentitatDigitalSettings"
+        interface="genweb6.upc.controlpanels.identitat_digital.IIdentitatDigitalSettings"
         purge="False"/>
 
 </registry>

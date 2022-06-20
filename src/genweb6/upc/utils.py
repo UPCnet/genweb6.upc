@@ -6,7 +6,9 @@ from plone.registry.interfaces import IRegistry
 from zope.i18nmessageid import MessageFactory
 from zope.component import queryUtility
 
-from genweb6.upc.controlpanel import IUPCSettings
+from genweb6.upc.controlpanels.bus_soa import IBusSOASettings
+from genweb6.upc.controlpanels.identitat_digital import IIdentitatDigitalSettings
+from genweb6.upc.controlpanels.upc import IUPCSettings
 
 import logging
 import requests
@@ -21,8 +23,17 @@ def _contact_ws_cachekey(method, self, unitat):
     return (unitat)
 
 
+def genwebBusSOAConfig():
+    registry = queryUtility(IRegistry)
+    return registry.forInterface(IBusSOASettings)
+
+
+def genwebIdentitatDigitalConfig():
+    registry = queryUtility(IRegistry)
+    return registry.forInterface(IIdentitatDigitalSettings)
+
+
 def genwebUPCConfig():
-    """ Funcio que retorna les configuracions del controlpanel """
     registry = queryUtility(IRegistry)
     return registry.forInterface(IUPCSettings)
 
@@ -30,8 +41,13 @@ def genwebUPCConfig():
 class genwebUPCUtils(BrowserView):
     """ Convenience methods placeholder genweb.utils view. """
 
+    def genwebBusSOAConfig(self):
+        return genwebBusSOAConfig()
+
+    def genwebIdentitatDigitalConfig(self):
+        return genwebIdentitatDigitalConfig()
+
     def genwebUPCConfig(self):
-        """ Funcio que retorna les configuracions del controlpanel """
         return genwebUPCConfig()
 
     @ram.cache(_contact_ws_cachekey)
