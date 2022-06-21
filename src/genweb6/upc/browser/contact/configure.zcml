@@ -33,5 +33,5 @@
         name="availableContacts"
         factory=".contact.getEmailsContactNames"
         />
-s
+
 </configure>
