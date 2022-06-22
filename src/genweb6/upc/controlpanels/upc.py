@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from Products.statusmessages.interfaces import IStatusMessage
 
-# from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
-# from collective.z3cform.datagridfield.registry import DictRow
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.registry import DictRow
+from plone import api
 from plone.app.registry.browser import controlpanel
+from plone.autoform import directives
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
 from plone.registry import field
@@ -40,12 +42,7 @@ class IUPCSettings(model.Schema):
     model.fieldset('Contact information', _(u'Contact information'),
                    fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
                            'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
-                           'contacte_multi_email'])
-
-    # model.fieldset('Contact information', _(u'Contact information'),
-    #                fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
-    #                        'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
-    #                        'contacte_multi_email', 'contact_emails_table'])
+                           'contacte_multi_email', 'contact_emails_table'])
 
     read_permission(contacte_id='genweb.superadmin')
     write_permission(contacte_id='genweb.administrator')
@@ -113,15 +110,13 @@ class IUPCSettings(model.Schema):
         default=False,
     )
 
-    # form.widget(contact_emails_table=DataGridFieldFactory)
-    # contact_emails_table = schema.List(
-    #     title=_(u'Contact emails'),
-    #     description=_(u'help_emails_table',
-    #                   default=u'Add name and email by language'),
-    #     value_type=DictRow(title=_(u'help_email_table'),
-    #                        schema=ITableEmailContact),
-    #     required=False,
-    # )
+    directives.widget(contact_emails_table=DataGridFieldFactory)
+    contact_emails_table = schema.List(
+        title=_(u'Contact emails'),
+        description=_(u'help_emails_table', default=u'Add name and email by language'),
+        value_type=DictRow(schema=ITableEmailContact),
+        required=False,
+    )
 
 
 class UPCSettingsForm(controlpanel.RegistryEditForm):
@@ -145,18 +140,18 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
         try:
             self.applyChanges(data)
         except:
-            # registry = getUtility(IRegistry)
-            # rec = registry.records
-            # keys = [a for a in rec.keys()]
-            # for k in keys:
-            #     try:
-            #         rec[k]
-            #     except:
-            #         if k == 'genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table':
-            #             old_values = data['contact_emails_table']
-            #             registry.records[k] = Record(field.List(title=_(u'Contact emails'), description=_(u'help_emails_table', default=u'Add name and email by language'), value_type=DictRow(title=_(u'help_email_table'), schema=ITableEmailContact), required=False))
-            #             api.portal.set_registry_record(name='genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table', value=old_values)
-            #             log.error('Errors in contropanel? Solved field contact_emails_table in ' + self.context.absolute_url())
+            registry = getUtility(IRegistry)
+            rec = registry.records
+            keys = [a for a in rec.keys()]
+            for k in keys:
+                try:
+                    rec[k]
+                except:
+                    if k == 'genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table':
+                        old_values = data['contact_emails_table']
+                        registry.records[k] = Record(field.List(title=_(u'Contact emails'), description=_(u'help_emails_table', default=u'Add name and email by language'), value_type=DictRow(title=_(u'help_email_table'), schema=ITableEmailContact), required=False))
+                        api.portal.set_registry_record(name='genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table', value=old_values)
+                        log.error('Errors in contropanel? Solved field contact_emails_table in ' + self.context.absolute_url())
 
             IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
             self.request.response.redirect(self.request.getURL())
