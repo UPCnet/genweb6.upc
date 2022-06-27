@@ -5,20 +5,22 @@
   padding: 2em 4em;
 }
 /* line 6, ../scss/_footer.scss */
-.footer-contact h4 {
+.footer-contact h2 {
+  font-size: 1.5rem;
   margin-bottom: 1em;
 }
-/* line 12, ../scss/_footer.scss */
+/* line 13, ../scss/_footer.scss */
 .footer-contact .xarxes_socials a {
-  margin-right: 1em;
+  margin-right: 0.5em;
   color: var(--bs-primary);
   text-decoration: none;
+  font-size: 36px;
 }
-/* line 17, ../scss/_footer.scss */
+/* line 19, ../scss/_footer.scss */
 .footer-contact .xarxes_socials a:hover {
   color: var(--bs-primary-hover);
 }
-/* line 21, ../scss/_footer.scss */
+/* line 23, ../scss/_footer.scss */
 .footer-contact .xarxes_socials a[target="_blank"]::after {
   display: none;
   content: "";

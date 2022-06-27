@@ -102,8 +102,6 @@
                                                      i18n:attributes= "title title_dir_upc">
                                                  <span class="icon-book"></span>
                                                  <tal:dirupc i18n:translate="label_dir_upc">Directori UPC</tal:dirupc>
-                                                 <img class="img_blank" src="++theme++genweb6.theme/img/blank_blau.png"
-                                                      i18n:attributes="alt obrir_link_finestra_nova" />
                                                  </a>
                                              </p>
                                          </li>
@@ -117,9 +115,6 @@
                                                         i18n:attributes= "title title_upcmaps"
                                                         target="_blank">
                                                         <span class="icon-map-marker"></span> UPCmaps
-                                                        <img class="img_blank"
-                                                             src="++theme++genweb6.theme/img/blank_blau.png"
-                                                             i18n:attributes="alt obrir_link_finestra_nova" />
                                                      </a>
                                                  </p>
                                              </li>
