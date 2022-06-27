@@ -27,14 +27,19 @@ class ITableEmailContact(model.Schema):
 
     language = schema.Choice(
         title=_(u'Language'),
-        vocabulary=u'plone.app.vocabularies.SupportedContentLanguages',
+        vocabulary=u'plone.app.vocabularies.AvailableContentLanguages',
         required=False
     )
 
-    name = schema.TextLine(title=_(u'Name'),
-                           required=False)
-    email = schema.TextLine(title=_(u'E-mail'),
-                            required=False)
+    name = schema.TextLine(
+        title=_(u'Name'),
+        required=False
+    )
+
+    email = schema.TextLine(
+        title=_(u'E-mail'),
+        required=False
+    )
 
 
 class IUPCSettings(model.Schema):
@@ -45,7 +50,7 @@ class IUPCSettings(model.Schema):
                            'contacte_multi_email', 'contact_emails_table'])
 
     read_permission(contacte_id='genweb.superadmin')
-    write_permission(contacte_id='genweb.administrator')
+    write_permission(contacte_id='genweb.webmaster')
     contacte_id = schema.TextLine(
         title=_(u"contacte_id",
                 default=u"ID contacte de la unitat"),
@@ -82,7 +87,7 @@ class IUPCSettings(model.Schema):
     )
 
     read_permission(directori_filtrat='genweb.superadmin')
-    write_permission(directori_filtrat='genweb.administrator')
+    write_permission(directori_filtrat='genweb.webmaster')
     directori_filtrat = schema.Bool(
         title=_(u"directori_filtrat",
                 default=u"Directori UPC filtrat a les eines"),
@@ -137,24 +142,9 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
             self.status = self.formErrorsMessage
             return
 
-        try:
-            self.applyChanges(data)
-        except:
-            registry = getUtility(IRegistry)
-            rec = registry.records
-            keys = [a for a in rec.keys()]
-            for k in keys:
-                try:
-                    rec[k]
-                except:
-                    if k == 'genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table':
-                        old_values = data['contact_emails_table']
-                        registry.records[k] = Record(field.List(title=_(u'Contact emails'), description=_(u'help_emails_table', default=u'Add name and email by language'), value_type=DictRow(title=_(u'help_email_table'), schema=ITableEmailContact), required=False))
-                        api.portal.set_registry_record(name='genweb6.upc.controlpanels.upc.IUPCSettings.contact_emails_table', value=old_values)
-                        log.error('Errors in contropanel? Solved field contact_emails_table in ' + self.context.absolute_url())
-
-            IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
-            self.request.response.redirect(self.request.getURL())
+        self.applyChanges(data)
+        IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
+        self.request.response.redirect(self.request.getURL())
 
     @button.buttonAndHandler(_("Cancel"), name='cancel')
     def handleCancel(self, action):

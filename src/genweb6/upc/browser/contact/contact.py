@@ -30,6 +30,7 @@ from genweb6.upc.controlpanels.upc import IUPCSettings
 from genweb6.upc.utils import genwebUPCConfig
 
 import re
+import unicodedata
 
 
 MESSAGE_TEMPLATE_CA = u"""\
@@ -87,14 +88,14 @@ class getEmailsContactNames(object):
         lang = pref_lang()
         items = []
 
-        # if settings.contact_emails_table is not None:
-        #     for item in settings.contact_emails_table:
-        #         if lang == item['language']:
-        #             token = unicodedata.normalize('NFKD', item['name']).encode('ascii', 'ignore').lower()
-        #             items.append(SimpleVocabulary.createTerm(
-        #                 item['name'],
-        #                 token,
-        #                 item['name'],))
+        if settings.contact_emails_table is not None:
+            for item in settings.contact_emails_table:
+                if lang == item['language']:
+                    token = unicodedata.normalize('NFKD', item['name']).encode('ascii', 'ignore').lower()
+                    items.append(SimpleVocabulary.createTerm(
+                        item['name'],
+                        token,
+                        item['name'],))
         return SimpleVocabulary(items)
 
 
@@ -337,10 +338,10 @@ class ContactForm(Form):
         settings = registry.forInterface(IUPCSettings, check=False)
         items = []
 
-        # if settings.contact_emails_table is not None:
-        #     for item in settings.contact_emails_table:
-        #         if lang == item['language']:
-        #             items.append(item)
+        if settings.contact_emails_table is not None:
+            for item in settings.contact_emails_table:
+                if lang == item['language']:
+                    items.append(item)
         return items
 
     def isContactAddress(self):

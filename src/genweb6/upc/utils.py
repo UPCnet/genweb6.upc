@@ -66,9 +66,25 @@ class genwebUPCUtils(BrowserView):
             if 'error' in dades:
                 return False
             else:
+                lang = self.context.Language()
+                if not lang:
+                    lang = 'ca'
+                dades['google_maps'] = self.getGoogleMapsURL(dades.get('adreça', ''), lang)
                 return dades
         else:
             return False
+
+    def getGoogleMapsURL(self, address, lang):
+        return "https://maps.google.com/maps?" + \
+            "width=100%" + \
+            "&height=300" + \
+            "&hl=" + lang + \
+            "&q=" + address.replace(' ', '%20') + "+()" + \
+            "&t=" + \
+            "&z=15" + \
+            "&ie=UTF8" + \
+            "&iwloc=B" + \
+            "&output=embed"
 
     def getDadesContact(self):
         """ Retorna les dades proporcionades pel WebService del SCP

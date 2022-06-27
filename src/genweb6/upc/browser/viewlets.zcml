@@ -5,12 +5,25 @@
     i18n_domain="genweb6.upc">
 
     <browser:viewlet
-        name="genweb.upc.footer"
+        name="genweb.upc.footer.contact"
         manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-        class=".viewlets.gwUPCFooter"
+        class=".viewlets.footerContactViewlet"
         layer="..interfaces.IGenweb6UpcLayer"
         permission="zope2.View"
-        template="viewlets_templates/footer.pt"
+        template="viewlets_templates/footer/footer_contact.pt"
         />
+
+    <configure package="genweb6.core.browser">
+
+        <browser:viewlet
+            name="genweb.upc.footer"
+            manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+            class="genweb6.upc.browser.viewlets.footerViewlet"
+            layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+            permission="zope2.View"
+            template="viewlets_templates/footer/footer.pt"
+            />
+
+    </configure>
 
 </configure>

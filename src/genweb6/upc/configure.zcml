@@ -52,4 +52,10 @@
         allowed_interface=".interfaces.IGenweb6UpcLayer"
         />
 
+    <plone:static
+        directory="theme"
+        type="theme"
+        name="genweb6.upc"
+        />
+
 </configure>
