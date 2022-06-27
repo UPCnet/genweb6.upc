@@ -8,27 +8,17 @@
 .footer-contact h4 {
   margin-bottom: 1em;
 }
-/* line 10, ../scss/_footer.scss */
-.footer-contact a[target="_blank"]::after {
-  content: "\e91c";
-  font-family: "upc-icones";
-  font-size: 66.6666667%;
-  margin-left: 3px;
-  top: 0;
-  position: relative;
-  display: inline-block;
-}
-/* line 22, ../scss/_footer.scss */
+/* line 12, ../scss/_footer.scss */
 .footer-contact .xarxes_socials a {
   margin-right: 1em;
   color: var(--bs-primary);
   text-decoration: none;
 }
-/* line 27, ../scss/_footer.scss */
+/* line 17, ../scss/_footer.scss */
 .footer-contact .xarxes_socials a:hover {
   color: var(--bs-primary-hover);
 }
-/* line 31, ../scss/_footer.scss */
+/* line 21, ../scss/_footer.scss */
 .footer-contact .xarxes_socials a[target="_blank"]::after {
   display: none;
   content: "";
