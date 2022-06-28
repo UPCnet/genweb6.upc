@@ -17,7 +17,7 @@ class IIdentitatDigitalSettings(model.Schema):
         required=False,
     )
 
-    identitat_apikey = schema.Password(
+    identitat_apikey = schema.TextLine(
         title=_(u'APIKEY'),
         required=False,
     )

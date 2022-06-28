@@ -23,12 +23,12 @@ class IBusSOASettings(model.Schema):
         required=False,
     )
 
-    bus_password = schema.Password(
+    bus_password = schema.TextLine(
         title=_(u'Password'),
         required=False,
     )
 
-    bus_apikey = schema.Password(
+    bus_apikey = schema.TextLine(
         title=_(u'APIKEY'),
         required=False,
     )
