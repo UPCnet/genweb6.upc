@@ -4,7 +4,7 @@
            tal:condition="upc_config/contacte_al_peu"
            i18n:domain="genweb6.upc">
 
-  <div class="footer-contact" role="contentinfo" tal:condition="has_dades_unitat">
+  <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat">
     <div class="row">
       <div class="col-md-4">
         <h2 i18n:translate="">On som</h2>
@@ -51,23 +51,23 @@
 
         <h2 i18n:translate="">Xarxes Socials</h2>
         <a tal:condition="facebook" tal:attributes="href facebook"
-           class="facebook" target="_blank">
+           title="Facebook" alt="Facebook" class="facebook" target="_blank">
           <i class="bi bi-facebook"></i>
         </a>
         <a tal:condition="instagram" tal:attributes="href instagram"
-           class="instagram" target="_blank">
+           title="Instagram" alt="Instagram" class="instagram" target="_blank">
           <i class="bi bi-instagram"></i>
         </a>
         <a tal:condition="linkedin" tal:attributes="href linkedin"
-           class="linkedin" target="_blank">
+           title="LinkedIn" alt="LinkedIn" class="linkedin" target="_blank">
           <i class="bi bi-linkedin"></i>
         </a>
         <a tal:condition="twitter" tal:attributes="href twitter"
-           class="twitter" target="_blank">
+           title="Twitter" alt="Twitter" class="twitter" target="_blank">
           <i class="bi bi-twitter"></i>
         </a>
         <a tal:condition="youtube" tal:attributes="href youtube"
-           class="youtube" target="_blank">
+           title="Youtube" alt="Youtube" class="youtube" target="_blank">
           <i class="bi bi-youtube"></i>
         </a>
       </div>
