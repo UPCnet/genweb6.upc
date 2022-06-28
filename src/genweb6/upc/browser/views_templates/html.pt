@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="genweb">
+
+<head>
+  <div metal:fill-slot="javascript_head_slot" tal:omit-tag=""></div>
+</head>
+<body>
+
+  <metal:block fill-slot="top_slot"
+               tal:define="disable_column_one python:request.set('disable_plone.leftcolumn', 1);
+                           disable_column_two python:request.set('disable_plone.rightcolumn', 1);
+                           dummy python:request.set('disable_border', 1)" />
+
+  <div metal:fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+      <tal:page content="structure view/html"></tal:page>
+    </tal:main-macro>
+  </div>
+
+</body>
+</html>

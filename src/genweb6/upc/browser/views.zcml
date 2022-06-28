@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb6.upc">
+
+    <include package="z3c.jbot" file="meta.zcml" />
+
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="accessibility"
+        class=".views.Accessibility"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        template="views_templates/html.pt"
+        />
+
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="cookies-policy"
+        class=".views.Cookies"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        template="views_templates/html.pt"
+        />
+
+</configure>

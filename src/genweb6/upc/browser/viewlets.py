@@ -18,21 +18,21 @@ class footerViewlet(footerViewletBase):
 
         links = {"ca": {"contact":       {"url": self.root_url() + "/ca/contact", "target": "_self"},
                         "sitemap":       {"url": self.root_url() + "/ca/sitemap", "target": "_self"},
-                        "accessibility": {"url": self.root_url() + "/accessibilitat", "target": "_self"},
+                        "accessibility": {"url": self.root_url() + "/ca/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/ca/avis-legal", "target": "_blank"},
-                        "cookies":       {"url": self.root_url() + "/politica-de-cookies", "target": "_self"}},
+                        "cookies":       {"url": self.root_url() + "/ca/cookies-policy", "target": "_self"}},
 
                  "es": {"contact":       {"url": self.root_url() + "/es/contact", "target": "_self"},
                         "sitemap":       {"url": self.root_url() + "/es/sitemap", "target": "_self"},
-                        "accessibility": {"url": self.root_url() + "/accesibilidad", "target": "_self"},
+                        "accessibility": {"url": self.root_url() + "/es/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/es/aviso-legal", "target": "_blank"},
-                        "cookies":       {"url": self.root_url() + "/politica-de-cookies-es", "target": "_self"}},
+                        "cookies":       {"url": self.root_url() + "/es/cookies-policy", "target": "_self"}},
 
                  "en": {"contact":       {"url": self.root_url() + "/en/contact", "target": "_self"},
                         "sitemap":       {"url": self.root_url() + "/en/sitemap", "target": "_self"},
-                        "accessibility": {"url": self.root_url() + "/accessibility", "target": "_self"},
+                        "accessibility": {"url": self.root_url() + "/en/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/en/disclaimer", "target": "_blank"},
-                        "cookies":       {"url": self.root_url() + "/cookies-policy", "target": "_self"}}}
+                        "cookies":       {"url": self.root_url() + "/en/cookies-policy", "target": "_self"}}}
 
         return links[lang]
 

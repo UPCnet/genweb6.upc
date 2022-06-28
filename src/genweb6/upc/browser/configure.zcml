@@ -9,6 +9,7 @@
     <include package=".add_genweb_upc" />
     <include package=".contact" />
 
+    <include file="views.zcml" />
     <include file="viewlets.zcml" />
 
 </configure>
