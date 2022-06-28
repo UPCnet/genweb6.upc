@@ -40,3 +40,21 @@ class Accessibility(BrowserView):
             return page.content
         else:
             return None
+
+
+class RSS(BrowserView):
+
+    def html(self):
+        lang = self.context.language
+        if lang not in ['ca', 'es', 'en']:
+            lang = 'ca'
+
+        templates = {'ca': '/++theme++genweb6.upc/templates/rss-ca.html',
+                     'es': '/++theme++genweb6.upc/templates/rss-es.html',
+                     'en': '/++theme++genweb6.upc/templates/rss-en.html'}
+
+        page = requests.get(portal_url() + templates[lang])
+        if page.status_code == 200:
+            return page.content
+        else:
+            return None

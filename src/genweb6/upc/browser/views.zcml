@@ -24,4 +24,13 @@
         template="views_templates/html.pt"
         />
 
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="rss"
+        class=".views.RSS"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        template="views_templates/html.pt"
+        />
+
 </configure>
