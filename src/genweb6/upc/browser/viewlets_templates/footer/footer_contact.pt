@@ -43,31 +43,42 @@
       </div>
       <div class="col-md-3 xarxes_socials"
            tal:condition="not:upc_config/treu_icones_xarxes_socials"
-           tal:define="facebook dades_unitat/xarxes_socials/facebook;
+           tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window;
+                       facebook dades_unitat/xarxes_socials/facebook;
                        instagram dades_unitat/xarxes_socials/instagram;
                        linkedin dades_unitat/xarxes_socials/linkedin;
                        twitter dades_unitat/xarxes_socials/twitter;
                        youtube dades_unitat/xarxes_socials/youtube;">
 
         <h2 i18n:translate="">Xarxes Socials</h2>
-        <a tal:condition="facebook" tal:attributes="href facebook"
-           title="Facebook" alt="Facebook" class="facebook" target="_blank">
+        <a tal:condition="facebook" class="facebook" target="_blank"
+           tal:attributes="href facebook;
+                           title string:Facebook, ${lit_open_in_new_window};
+                           alt string:Facebook, ${lit_open_in_new_window};">
           <i class="bi bi-facebook"></i>
         </a>
-        <a tal:condition="instagram" tal:attributes="href instagram"
-           title="Instagram" alt="Instagram" class="instagram" target="_blank">
+        <a tal:condition="instagram" class="instagram" target="_blank"
+           tal:attributes="href instagram;
+                           title string:Instagram, ${lit_open_in_new_window};
+                           alt string:Instagram, ${lit_open_in_new_window};">
           <i class="bi bi-instagram"></i>
         </a>
-        <a tal:condition="linkedin" tal:attributes="href linkedin"
-           title="LinkedIn" alt="LinkedIn" class="linkedin" target="_blank">
+        <a tal:condition="linkedin" class="linkedin" target="_blank"
+           tal:attributes="href linkedin;
+                           title string:LinkedIn, ${lit_open_in_new_window};
+                           alt string:LinkedIn, ${lit_open_in_new_window};">
           <i class="bi bi-linkedin"></i>
         </a>
-        <a tal:condition="twitter" tal:attributes="href twitter"
-           title="Twitter" alt="Twitter" class="twitter" target="_blank">
+        <a tal:condition="twitter" lass="twitter" target="_blank"
+           tal:attributes="href twitter;
+                           title string:Twitter, ${lit_open_in_new_window};
+                           alt string:Twitter, ${lit_open_in_new_window};">
           <i class="bi bi-twitter"></i>
         </a>
-        <a tal:condition="youtube" tal:attributes="href youtube"
-           title="Youtube" alt="Youtube" class="youtube" target="_blank">
+        <a tal:condition="youtube" lass="youtube" target="_blank"
+           tal:attributes="href youtube;
+                           title string:Youtube, ${lit_open_in_new_window};
+                           alt string:Youtube, ${lit_open_in_new_window};">
           <i class="bi bi-youtube"></i>
         </a>
       </div>
