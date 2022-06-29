@@ -25,7 +25,7 @@ def busSoaInfoUserAltaTFE(self):
     return est
 
 
-class BSUserInfo(BrowserView):
+class BSUserInfoAltaTFE(BrowserView):
 
     @json_response
     def __call__(self):
