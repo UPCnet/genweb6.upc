@@ -44,11 +44,11 @@
       <div class="col-md-3 xarxes_socials"
            tal:condition="not:upc_config/treu_icones_xarxes_socials"
            tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window;
-                       facebook dades_unitat/xarxes_socials/facebook;
-                       instagram dades_unitat/xarxes_socials/instagram;
-                       linkedin dades_unitat/xarxes_socials/linkedin;
-                       twitter dades_unitat/xarxes_socials/twitter;
-                       youtube dades_unitat/xarxes_socials/youtube;">
+                       facebook dades_unitat/xarxes_socials/facebook | nothing;
+                       instagram dades_unitat/xarxes_socials/instagram | nothing;
+                       linkedin dades_unitat/xarxes_socials/linkedin | nothing;
+                       twitter dades_unitat/xarxes_socials/twitter | nothing;
+                       youtube dades_unitat/xarxes_socials/youtube | nothing;">
 
         <h2 i18n:translate="">Xarxes Socials</h2>
         <a tal:condition="facebook" class="facebook" target="_blank"
