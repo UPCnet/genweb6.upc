@@ -93,6 +93,9 @@ class genwebUPCUtils(BrowserView):
         dades = self.getDadesUnitat()
         if dades:
             idioma = self.context.Language()
+            if not idioma:
+                idioma = "ca"
+
             dict_contact = {
                 'ca': {
                     'adreca_sencera': ((dades.get('campus_ca', '') and
