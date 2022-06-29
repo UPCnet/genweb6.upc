@@ -3,8 +3,8 @@ from Products.CMFPlone.interfaces import INonInstallable
 
 from zope.component import getMultiAdapter
 from zope.component.hooks import getSite
-from zope.interface import implementer
 from zope.globalrequest import getRequest
+from zope.interface import implementer
 
 from genweb6.core.cas.controlpanel import setupCAS
 from genweb6.core.utils import genwebLoginConfig
