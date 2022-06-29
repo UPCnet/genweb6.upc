@@ -7,6 +7,7 @@ from zope.globalrequest import getRequest
 from zope.interface import implementer
 
 from genweb6.core.cas.controlpanel import setupCAS
+from genweb6.core.cas.utils import getCASSettings
 from genweb6.core.utils import genwebLoginConfig
 
 import transaction
@@ -34,6 +35,20 @@ def post_install(context):
 def uninstall(context):
     """Uninstall script"""
     # Do something at the end of the uninstallation of this package.
+    portal = getSite()
+
+    # Uninstall CAS settings
+    cas_settings = getCASSettings()
+    cas_settings.enabled = False
+    cas_settings.login_text_btn = ""
+
+    # Uninstall LDAP UPC
+    if getattr(portal.acl_users, 'ldapUPC', None):
+        portal.acl_users.manage_delObjects('ldapUPC')
+
+    # Setup change password setting
+    login_settings = genwebLoginConfig()
+    login_settings.change_password_url = ""
 
 
 def setupVarious(context):
