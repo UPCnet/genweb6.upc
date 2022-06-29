@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="genweb6.upc">>
+
+  <head>
+      <metal:block fill-slot="top_slot"/>
+  </head>
+  <body>
+    <metal:main fill-slot="content">
+      <tal:main-macro metal:define-macro="main">
+
+        <div id="utils-upc"
+             tal:define="portal_url context/@@plone_portal_state/portal_url;">
+
+          <h1 class="documentFirstHeading"
+              i18n:translate="">
+            Tools of the UPC
+          </h1>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <h2 i18n:translate="">Identitat Digital</h2>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" i18n:translate="">User information</h5>
+                  <form tal:attributes="action string:${portal_url}/id_user_info" method="get">
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="user" name="user">
+                    </div>
+                    <button type="submit" class="btn btn-primary" formtarget="_blank">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <h2 i18n:translate="">Bus SOA</h2>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" i18n:translate="">User information alta TFE</h5>
+                  <form tal:attributes="action string:${portal_url}/bs_user_info_alta_tfe" method="get">
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="user" name="user">
+                    </div>
+                    <button type="submit" class="btn btn-primary" formtarget="_blank">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </tal:main-macro>
+    </metal:main>
+  </body>
+</html>

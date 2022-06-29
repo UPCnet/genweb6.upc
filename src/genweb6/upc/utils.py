@@ -140,3 +140,10 @@ class genwebUPCUtils(BrowserView):
             return dict_contact[idioma]
         else:
             return ""
+
+
+def getTokenIdentitatDigital():
+    identitat_digital_tool = genwebIdentitatDigitalConfig()
+    urlGetToken = identitat_digital_tool.identitat_url + '/gcontrol/rest/acls/processos?idProces='
+    idProces = identitat_digital_tool.identitat_apikey
+    return requests.post(urlGetToken + idProces)
