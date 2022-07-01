@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<object name="portal_controlpanel" meta_type="Plone Control Panel Tool">
+
+    <configlet
+        title="Genweb UPC"
+        action_id="genweb6.upc"
+        appId="genweb6.upc"
+        category="genweb-advanced"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@upc-controlpanel"
+        icon_expr="string:gear"
+        remove="True">
+
+        <permission>Genweb: Superadmin Users</permission>
+    </configlet>
+
+    <configlet
+        title="BUS SOA"
+        action_id="genweb6.upc.bussoa"
+        appId="genweb6.upc.bussoa"
+        category="genweb-connection"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@bussoa-controlpanel"
+        icon_expr="string:server"
+        remove="True">
+
+        <permission>Genweb: Manager Users</permission>
+    </configlet>
+
+    <configlet
+        title="Identitat Digital"
+        action_id="genweb6.upc.identitatdigital"
+        appId="genweb6.upc.identitatdigital"
+        category="genweb-connection"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@identitatdigital-controlpanel"
+        icon_expr="string:server"
+        remove="True">
+
+        <permission>Genweb: Manager Users</permission>
+    </configlet>
+
+</object>
