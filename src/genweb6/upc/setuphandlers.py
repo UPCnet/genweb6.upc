@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
 
-from zope.component import getMultiAdapter
 from zope.component.hooks import getSite
-from zope.globalrequest import getRequest
 from zope.interface import implementer
 
+from genweb6.core.browser.helpers.helpers_ldap import setSetupLDAPUPC
 from genweb6.core.cas.controlpanel import setupCAS
 from genweb6.core.cas.utils import getCASSettings
 from genweb6.core.utils import genwebLoginConfig
@@ -65,7 +64,7 @@ def setupVarious(context):
     setupCAS("https://sso.upc.edu/CAS/", "genweb", "UPC")
 
     # Setup LDAP UPC
-    getMultiAdapter((getSite(), getRequest()), name="setupLDAPUPC")()
+    setSetupLDAPUPC()
 
     # Setup change password setting
     login_settings = genwebLoginConfig()
