@@ -14,7 +14,7 @@
           Google Maps
         </iframe>
       </div>
-      <div class="col-md-4 offset-md-1">
+      <div class="col-md-3 offset-md-1">
         <h2 i18n:translate="">Contacte</h2>
         <address>
           <p tal:content="dades_unitat/adreça | nothing">
@@ -41,7 +41,7 @@
              i18n:translate="">Directori UPC</a>
         </p>
       </div>
-      <div class="col-md-3 xarxes_socials"
+      <div class="col-md-3 offset-md-1 xarxes_socials"
            tal:condition="not:upc_config/treu_icones_xarxes_socials"
            tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window;
                        facebook dades_unitat/xarxes_socials/facebook | nothing;
