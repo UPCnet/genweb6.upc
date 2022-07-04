@@ -3,18 +3,13 @@ from Products.statusmessages.interfaces import IStatusMessage
 
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
-from plone import api
 from plone.app.registry.browser import controlpanel
 from plone.autoform import directives
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
-from plone.registry import field
-from plone.registry import Record
-from plone.registry.interfaces import IRegistry
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
-from zope.component import getUtility
 
 from genweb6.core import _
 
@@ -27,7 +22,7 @@ class ITableEmailContact(model.Schema):
 
     language = schema.Choice(
         title=_(u'Language'),
-        vocabulary=u'plone.app.vocabularies.AvailableContentLanguages',
+        vocabulary=u'plone.app.vocabularies.SupportedContentLanguages',
         required=False
     )
 
@@ -46,8 +41,8 @@ class IUPCSettings(model.Schema):
 
     model.fieldset('Contact information', _(u'Contact information'),
                    fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
-                           'directori_upc', 'directori_filtrat', 'contacte_no_upcmaps',
-                           'contacte_multi_email', 'contact_emails_table'])
+                           'treu_icones_xarxes_socials', 'directori_upc', 'directori_filtrat',
+                           'contacte_no_upcmaps', 'contacte_multi_email', 'contact_emails_table'])
 
     read_permission(contacte_id='genweb.superadmin')
     write_permission(contacte_id='genweb.webmaster')
@@ -151,7 +146,15 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
             self.status = self.formErrorsMessage
             return
 
+        replace_contact_emails_table = []
+        contact_emails_table = data.get('contact_emails_table', [])
+        for contact in contact_emails_table:
+            contact['language'] = contact['language'][0]
+            replace_contact_emails_table.append(contact)
+
+        data['contact_emails_table'] = replace_contact_emails_table
         self.applyChanges(data)
+
         IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
         self.request.response.redirect(self.request.getURL())
 
