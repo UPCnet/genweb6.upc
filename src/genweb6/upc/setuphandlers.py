@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
+from Products.CMFPlone.interfaces import ISiteSchema
 
+from plone.formwidget.namedfile.converter import b64encode_file
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.interface import implementer
 
 from genweb6.core.browser.helpers.helpers_ldap import setSetupLDAPUPC
 from genweb6.core.cas.controlpanel import setupCAS
 from genweb6.core.cas.utils import getCASSettings
+from genweb6.core.utils import genwebHeaderConfig
 from genweb6.core.utils import genwebLoginConfig
 
+import pkg_resources
 import transaction
 
 
@@ -45,9 +51,20 @@ def uninstall(context):
     if getattr(portal.acl_users, 'ldapUPC', None):
         portal.acl_users.manage_delObjects('ldapUPC')
 
-    # Setup change password setting
+    # Unsetup change password setting
     login_settings = genwebLoginConfig()
     login_settings.change_password_url = ""
+
+    # Unsetup logo
+    header_settings = genwebHeaderConfig()
+    header_settings.logo = None
+    header_settings.logo_responsive = None
+    header_settings.logo_alt = ""
+
+    # Unsetup favicon
+    registry = getUtility(IRegistry)
+    settings = registry.forInterface(ISiteSchema, prefix="plone")
+    settings.site_favicon = None
 
 
 def setupVarious(context):
@@ -60,6 +77,8 @@ def setupVarious(context):
     if context.readDataFile('genweb6.upc_various.txt') is None:
         return
 
+    egglocation = pkg_resources.get_distribution('genweb6.upc').location
+
     # Setup CAS settings
     setupCAS("https://sso.upc.edu/CAS/", "genweb", "UPC")
 
@@ -69,5 +88,22 @@ def setupVarious(context):
     # Setup change password setting
     login_settings = genwebLoginConfig()
     login_settings.change_password_url = "http://www.upcnet.es/CanviContrasenyaUPC"
+
+    # Setup logo
+    header_settings = genwebHeaderConfig()
+    logo = open('{}/genweb6/upc/theme/img/logo.png'.format(egglocation), 'rb').read()
+    encoded_data = b64encode_file(filename='logo.png', data=logo)
+    header_settings.logo = encoded_data
+    logo_responsive = open('{}/genweb6/upc/theme/img/logo-responsive.png'.format(egglocation), 'rb').read()
+    encoded_data = b64encode_file(filename='logo-responsive.png', data=logo_responsive)
+    header_settings.logo_responsive = encoded_data
+    header_settings.logo_alt = "Universitat Politècnica de Catalunya"
+
+    # Setup favicon
+    registry = getUtility(IRegistry)
+    settings = registry.forInterface(ISiteSchema, prefix="plone")
+    favicon = open('{}/genweb6/upc/theme/img/favicon.ico'.format(egglocation), 'rb').read()
+    encoded_data = b64encode_file(filename='favicon.ico', data=favicon)
+    settings.site_favicon = encoded_data
 
     transaction.commit()
