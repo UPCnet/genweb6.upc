@@ -18,6 +18,24 @@ import logging
 log = logging.getLogger('genweb6.upc')
 
 
+class IXarxesSocials(model.Schema):
+
+    title = schema.TextLine(
+        title=_(u'Títol'),
+        required=False
+    )
+
+    icon = schema.TextLine(
+        title=_(u'Icone'),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u'Enllaç'),
+        required=False
+    )
+
+
 class ITableEmailContact(model.Schema):
 
     language = schema.Choice(
@@ -40,7 +58,7 @@ class ITableEmailContact(model.Schema):
 class IUPCSettings(model.Schema):
 
     model.fieldset('Contact information', _(u'Contact information'),
-                   fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu',
+                   fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu', 'xarxes_socials',
                            'treu_icones_xarxes_socials', 'directori_upc', 'directori_filtrat',
                            'contacte_no_upcmaps', 'contacte_multi_email', 'contact_emails_table'])
 
@@ -70,6 +88,14 @@ class IUPCSettings(model.Schema):
                       default=u"La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."),
         required=False,
         default=False,
+    )
+
+    directives.widget(xarxes_socials=DataGridFieldFactory)
+    xarxes_socials = schema.List(
+        title=_(u'Xarxes Socials'),
+        description=_(u"Icone que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"),
+        value_type=DictRow(schema=IXarxesSocials),
+        required=False,
     )
 
     treu_icones_xarxes_socials = schema.Bool(
