@@ -20,15 +20,15 @@
           <p tal:content="dades_unitat/adreça | nothing">
             C. Jordi Girona, 1-3. 08034 Barcelona
           </p>
-          <p tal:condition="dades_unitat/telefon">
+          <p tal:condition="dades_unitat/telefon | nothing">
             <span i18n:translate="">Tel.</span>:
             <span tal:content="dades_unitat/telefon">93 401 00 00</span>
           </p>
-          <p tal:condition="dades_unitat/fax">
+          <p tal:condition="dades_unitat/fax | nothing">
             <span i18n:translate="">Fax</span>:
             <span tal:content="dades_unitat/fax">93 401 65 04</span>
           </p>
-          <p tal:condition="dades_unitat/email">
+          <p tal:condition="dades_unitat/email | nothing">
             <span i18n:translate="">E-mail</span>:
             <a tal:content="dades_unitat/email"
                tal:attributes="href string:mailto:${dades_unitat/email}">
@@ -36,7 +36,7 @@
             </a>
           </p>
         </address>
-        <p tal:condition="dades_unitat/codi_upc">
+        <p tal:condition="dades_unitat/codi_upc | nothing">
           <a tal:attributes="href string:https://directori.upc.edu/directori/dadesUE.jsp?id=${dades_unitat/codi_upc}" target="_blank"
              i18n:translate="">Directori UPC</a>
         </p>
