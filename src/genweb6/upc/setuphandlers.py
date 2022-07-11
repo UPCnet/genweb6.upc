@@ -60,6 +60,8 @@ def uninstall(context):
     header_settings.logo = None
     header_settings.logo_responsive = None
     header_settings.logo_alt = ""
+    header_settings.logo_url = ""
+    header_settings.logo_external_url = False
 
     # Unsetup favicon
     registry = getUtility(IRegistry)
@@ -98,6 +100,8 @@ def setupVarious(context):
     encoded_data = b64encode_file(filename='logo-responsive.png', data=logo_responsive)
     header_settings.logo_responsive = encoded_data
     header_settings.logo_alt = "Universitat Politècnica de Catalunya"
+    header_settings.logo_url = "https://www.upc.edu/ca"
+    header_settings.logo_external_url = True
 
     # Setup favicon
     registry = getUtility(IRegistry)
