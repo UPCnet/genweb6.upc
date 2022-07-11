@@ -52,8 +52,8 @@
 
           <a tal:repeat="xarxa xarxes_socials" target="_blank"
              tal:attributes="href xarxa/url;
-                             title string:{xarxa/title}, ${lit_open_in_new_window};
-                             alt string:{xarxa/title}, ${lit_open_in_new_window};">
+                             title string:${xarxa/title}, ${lit_open_in_new_window};
+                             alt string:${xarxa/title}, ${lit_open_in_new_window};">
             <i tal:attributes="class string:bi ${xarxa/icon}"></i>
           </a>
 
