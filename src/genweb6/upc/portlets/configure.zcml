@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="genweb">
+
+    <include package="plone.app.portlets" />
+
+    <plone:portlet
+        name="genweb.portlets.upcnews"
+        interface=".upcnews.upcnews.IUPCNewsPortlet"
+        assignment=".upcnews.upcnews.Assignment"
+        renderer=".upcnews.upcnews.Renderer"
+        addview=".upcnews.upcnews.AddForm"
+        />
+
+</configure>

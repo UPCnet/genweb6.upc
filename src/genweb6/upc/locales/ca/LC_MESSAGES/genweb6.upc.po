@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-09 10:0+0000\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -16,139 +16,460 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Language: ca\n"
 
-#. "packet"
-msgid "packet"
-msgstr "Contingut UPC"
-
-#. "id_estudi"
-msgid "id_estudi"
-msgstr "Identificador de l'estudi"
-
-#. "Configure message"
-msgid "This packet is not configured yet. Please, do it in the 'configure' tab."
-msgstr "Aquest Contingut UPC encara no està configurat. Accediu a la pestanya <a href=configure>Configura</a> per fer-ho."
-
-msgid "packet_help"
-msgstr "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació, </strong>perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta proposta pretén ajudar-vos a mantenir els vostres continguts actualitzats.<br /><br />Consulteu tota la informació referent als <a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\">.</a>"
-
-msgid "Fitxa de grau"
-msgstr "Fitxa de grau"
-
-msgid "Informació sobre un estudi d'un grau específic"
-msgstr "<p>Fitxa amb la informació bàsica d'un grau.</p><p class=\"muted\">Indiqueu el codi UPC de l’estudi que l’identifica a PRISMA.</p><p class=\"muted\">Exemple: el codi UPC del Grau en Enginyeria Física és <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">Llista dels codis UPC dels estudis de grau <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p></p>"
-
-msgid "Pla d'estudi de grau"
-msgstr "Pla d'estudi de grau"
-
-msgid "Informació sobre el pla d'estudis d'un grau específic"
-msgstr "<p>Pla d'estudis d'un grau amb accés a les guies docents.</p><p class=\"muted\">Indiqueu el codi UPC del grau que l’identifica a PRISMA.</p><p class=\"muted\">Exemple: el codi UPC del Grau en Enginyeria Física és <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">Llista dels codis UPC dels estudis de grau <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a>.</p>"
-
-msgid "Fitxa de màster"
-msgstr "Fitxa de màster"
-
-msgid "Informació sobre un màster específic"
-msgstr "<p>Fitxa amb la informació bàsica d'un màster.</p><p class=\"muted\">Indiqueu l'identificador del màster al sistema d'informació del Servei de Comunicació.</p><p class=\"muted\">Exemple: l'identificador del Màster universitari en Aqüicultura és <strong>19.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Llista dels identificadors dels estudis de màster <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p>"
-
-msgid "Pla d'estudis de màster"
-msgstr "Pla d'estudis de màster"
-
-msgid "Informació sobre un pla d'estudis de màster específic"
-msgstr "<p>Disponible per tots els màsters excepte els interuniversitaris.</p><p>Pla d’estudis d’un màster amb accés a les guies docents.</p><p class=\"muted\">Indiqueu l'identificador del màster al sistema d'informació del Servei de Comunicació.</p><p class=\"muted\">Exemple: l'identificador del Màster universitari en Enginyeria de l'Energia és <strong>35.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Llista dels identificadors dels estudis de màster <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p>"
-
-msgid "Grups de recerca"
-msgstr "Grups de recerca"
-
-msgid "Grups de recerca d'un departament específic"
-msgstr "<p>Llistat dels grups de recerca que pertanyen a un departament.</p><p class=\"muted\">Indiqueu  el codi UPC del departament.</p><p class=\"muted\">Exemple:  el codi del Departament d’Enginyeria Electrònica és <strong>710.</strong></p><p><a target=\"_blank\" href=\"https://gpaq.upc.edu/eines/?op=unitats\" class=\"external-link\">Llista dels codis UPC de les unitats <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></a><strong>.<br></strong></p>"
-
-msgid "Investigadors d'un grup de recerca"
-msgstr "Investigadors d'un grup de recerca"
-
-msgid "Investigadors d'un grup de recerca d'un departament específic"
-msgstr "<p>Llistat dels investigadors d'un grup de recerca.</p><p class=\"muted\">Indiqueu l’acrònim del grup de recerca definit a DRAC.</p><p class=\"muted\">Exemple: l'acrònim del Grup de recerca en Arquitectura, energia i medi ambient és <strong>AIEM</strong>.</p><p><a target=\"_blank\" href=\"http://futur.upc.edu/organitzacio/os/Z3J1cHJlY2VyY2E=#produccio\" class=\"external-link\"><span class=\"external-link\"><span class=\"external-link\">Llista d'acrònims dels grups de recerca <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"></span><strong>.</strong></span></a></p>"
-
-msgid "codi_grau"
-msgstr "Codi UPC del Grau"
-
-msgid "codi_departament"
-msgstr "Codi UPC del Departament"
-
-msgid "codi_master"
-msgstr "Codi UPC del Màster"
-
-msgid "codi"
-msgstr "codi"
-
-msgid "pla_grau"
-msgstr "Pla d'estudi de grau"
-
-msgid "fitxa_grau"
-msgstr "Fitxa de grau"
-
-msgid "grups_recerca"
-msgstr "Grups de recerca"
-
-msgid "fitxa_master"
-msgstr "Fitxa de màster"
-
-msgid "grups_recerca_people"
-msgstr "Investigadors d'un grup de recerca"
-
-msgid "acronim"
-msgstr "acrònim"
-
+#: ../content/packet/templates/view.pt:23
 msgid "<strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:"
 msgstr "<strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:"
 
-msgid "configurat amb l'identificador:"
-msgstr "configurat amb l'identificador:"
-
-msgid "ERROR: Unknown identifier. This page does not exist."
-msgstr "<h2>ERROR: Identificador incorrecte. La pàgina no existeix.</h2>"
-
-msgid "label_select"
-msgstr "Identificador"
-
-msgid "label_close"
-msgstr "Tanca"
-
-msgid "label_save_changes"
-msgstr "Desa"
-
-msgid "Contingut d'una pàgina externa"
-msgstr ""
-"<p>Mostra la part que especifiquem d'una pàgina existent</p><p class=\"muted"
-"\">Cal especificar la URL i un id o class existent dins aquesta URL</p>"
-
-msgid "url_contingut"
-msgstr "URL completa del contingut"
-
-msgid "element"
-msgstr "Element que volem mostrar, per exemple #content-core"
-
-msgid "URL"
-msgstr "URL"
-
-msgid "URL to access the bus"
-msgstr "URL per accedir al bus"
-
-msgid "URL to access the digital identity"
-msgstr "URL per accedir a la identitat digital"
-
-msgid "User"
-msgstr "Usuari"
-
-msgid "User to connect to the bus"
-msgstr "Usuari per conectar-se al bus"
-
-msgid "Password"
-msgstr "Contrasenya"
-
+#: ../controlpanels/bus_soa.py:32
+#: ../controlpanels/identitat_digital.py:21
 msgid "APIKEY"
 msgstr "Clau API"
 
-msgid "Bus SOA Settings"
-msgstr "Bus SOA Configuració"
+#: ../browser/utils/templates/utils.pt:43
+msgid "Bus SOA"
+msgstr "Bus SOA"
 
+#: ../controlpanels/bus_soa.py:40
+msgid "Bus SOA Settings"
+msgstr "Configuració Bus SOA"
+
+#: ../controlpanels/bus_soa.py:59
+#: ../controlpanels/identitat_digital.py:48
+#: ../controlpanels/upc.py:187
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: ../controlpanels/bus_soa.py:61
+#: ../controlpanels/identitat_digital.py:50
+#: ../controlpanels/upc.py:189
+msgid "Changes canceled."
+msgstr "S'han cancel·lat els canvis."
+
+#: ../controlpanels/bus_soa.py:56
+#: ../controlpanels/identitat_digital.py:45
+#: ../controlpanels/upc.py:184
+msgid "Changes saved"
+msgstr "Canvis desats"
+
+#: ../controlpanels/upc.py:150
+msgid "Contact emails"
+msgstr "Adreces de contacte"
+
+#: ../controlpanels/upc.py:60
+msgid "Contact information"
+msgstr "Informació de contacte"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:18
+msgid "Contacte"
+msgstr "Contacte"
+
+#: ../content/packet/adapters.py:120
+msgid "Contingut d'una pàgina externa"
+msgstr "<p>Mostra la part que especifiquem d'una pàgina existent</p><p class=\"muted\">Cal especificar la URL i un id o class existent dins aquesta URL</p>"
+
+#: ../content/packet/adapters.py:119
+msgid "Contingut existent"
+msgstr "Contingut existent"
+
+#: ../browser/add_genweb_upc/add.pt:10
+msgid "Create a Genweb UPC"
+msgstr "Crear Genweb UPC"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:40
+msgid "Directori UPC"
+msgstr "Directori UPC"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:32
+#: ../controlpanels/upc.py:53
+msgid "E-mail"
+msgstr "E-mail"
+
+#: ../content/packet/packet.py:129
+msgid "ERROR. Autoreference"
+msgstr "ERROR. Autoreferencia"
+
+#: ../content/packet/packet.py:131
+msgid "ERROR. There was a timeout while waiting for '{0}'"
+msgstr "ERROR. Timeout mentre s'esperava '{0}'"
+
+#: ../content/packet/packet.py:133
+msgid "ERROR. This URL does not exist."
+msgstr "ERROR. La URL no existeix"
+
+#: ../content/packet/packet.py:105
+msgid "ERROR. This element does not exist."
+msgstr "ERROR. L'element no existeix"
+
+#: ../content/packet/packet.py:135
+msgid "ERROR. Unexpected exception."
+msgstr "ERROR. Excepció inesperada"
+
+#: ../content/packet/packet.py:107
+msgid "ERROR: Unknown identifier. This page does not exist."
+msgstr "ERROR: no s'ha trobat l'identificador. La pàgina no existeix."
+
+#: ../controlpanels/upc.py:34
+msgid "Enllaç"
+msgstr "Enllaç"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:28
+msgid "Fax"
+msgstr "Fax"
+
+#: ../content/packet/adapters.py:19
+msgid "Fitxa de grau"
+msgstr "Fitxa de grau"
+
+#: ../content/packet/adapters.py:53
+msgid "Fitxa de màster"
+msgstr "Fitxa de màster"
+
+#: ../content/packet/adapters.py:87
+msgid "Grups de recerca"
+msgstr "Grups de recerca"
+
+#: ../content/packet/adapters.py:88
+msgid "Grups de recerca d'un departament específic"
+msgstr "Grups de recerca d'un departament específic"
+
+#: ../controlpanels/upc.py:29
+msgid "Icona"
+msgstr "Icona"
+
+#: ../controlpanels/upc.py:96
+msgid "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
+msgstr "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
+
+#: ../browser/utils/templates/utils.pt:26
+msgid "Identitat Digital"
+msgstr "Identitat Digital"
+
+#: ../controlpanels/identitat_digital.py:29
 msgid "Identitat Digital Settings"
-msgstr "Identitat Digital Configuració"
+msgstr "Configuració Identitat Digital"
+
+#: ../content/packet/adapters.py:36
+msgid "Informació sobre el pla d'estudis d'un grau específic"
+msgstr "Informació sobre el pla d'estudis d'un grau específic"
+
+#: ../content/packet/adapters.py:20
+msgid "Informació sobre un estudi d'un grau específic"
+msgstr "Informació sobre un estudi d'un grau específic"
+
+#: ../content/packet/adapters.py:54
+msgid "Informació sobre un màster específic"
+msgstr "Informació sobre un màster específic"
+
+#: ../content/packet/adapters.py:72
+msgid "Informació sobre un pla d'estudis de màster específic"
+msgstr "Informació sobre un pla d'estudis de màster específic"
+
+#: ../configure.zcml:25
+msgid "Installs the genweb6.upc add-on."
+msgstr "Instal·lar el paquet genweb6.upc"
+
+#: ../browser/contact/contact.py:103
+msgid "Invalid email address"
+msgstr "Adreça de correu electrònic invàlid "
+
+#: ../content/packet/adapters.py:103
+msgid "Investigadors d'un grup de recerca"
+msgstr "Investigadors d'un grup de recerca"
+
+#: ../content/packet/adapters.py:104
+msgid "Investigadors d'un grup de recerca d'un departament específic"
+msgstr "Investigadors d'un grup de recerca d'un departament específic"
+
+#. Default: "Language"
+#: ../controlpanels/upc.py:42
+msgid "Language"
+msgstr "Idioma"
+
+#: ../browser/contact/contact.py:292
+msgid "Mail sent."
+msgstr "Missatge enviat"
+
+#: ../controlpanels/upc.py:48
+msgid "Name"
+msgstr "Nom"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:10
+msgid "On som"
+msgstr "On som"
+
+#: ../controlpanels/bus_soa.py:27
+msgid "Password"
+msgstr "Contrasenya"
+
+#: ../content/packet/adapters.py:35
+msgid "Pla d'estudi de grau"
+msgstr "Pla d'estudi de grau"
+
+#: ../content/packet/adapters.py:71
+msgid "Pla d'estudis de màster"
+msgstr "Pla d'estudis de màster"
+
+#: ../controlpanels/bus_soa.py:48
+#: ../controlpanels/identitat_digital.py:37
+#: ../controlpanels/upc.py:168
+msgid "Save"
+msgstr "Desa"
+
+#: ../browser/contact/contact.py:216
+msgid "Send"
+msgstr "envia"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:24
+msgid "Tel."
+msgstr "Tel."
+
+#. "Configure message"
+#: ../content/packet/templates/view.pt:40
+msgid "This packet is not configured yet. Please, do it in the 'configure' tab."
+msgstr "Aquest Contingut UPC encara no està configurat. Accediu a la pestanya <a href=configure>Configura</a> per fer-ho."
+
+#: ../browser/utils/templates/utils.pt:19
+msgid "Tools of the UPC"
+msgstr "Eines de la UPC"
+
+#: ../controlpanels/upc.py:24
+msgid "Títol"
+msgstr "Títol"
+
+#: ../controlpanels/upc.py:160
+msgid "UPC Settings"
+msgstr "Configuració UPC"
+
+#: ../portlets/upcnews/upcnews.py:24
+msgid "UPCNews"
+msgstr "Actualitat UPC"
+
+#: ../controlpanels/bus_soa.py:15
+#: ../controlpanels/identitat_digital.py:15
+msgid "URL"
+msgstr "URL"
+
+#: ../controlpanels/bus_soa.py:16
+msgid "URL to access the bus"
+msgstr "URL per accedir al bus"
+
+#: ../controlpanels/identitat_digital.py:16
+msgid "URL to access the digital identity"
+msgstr "URL per accedir a la identitat digital"
+
+#: ../configure.zcml:34
+msgid "Uninstalls the genweb6.upc add-on."
+msgstr "Desinstal·lar el paquet genweb6.upc"
+
+#: ../controlpanels/bus_soa.py:21
+msgid "User"
+msgstr "Usuari"
+
+#: ../browser/utils/templates/utils.pt:30
+msgid "User information"
+msgstr "Informació del usuari"
+
+#: ../browser/utils/templates/utils.pt:47
+msgid "User information alta TFE"
+msgstr "Informació del usuari TFE"
+
+#: ../controlpanels/bus_soa.py:22
+msgid "User to connect to the bus"
+msgstr "Usuari per conectar-se al bus"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:51
+#: ../controlpanels/upc.py:95
+msgid "Xarxes Socials"
+msgstr "Xarxes Socials"
+
+#: ../content/packet/adapters.py:106
+msgid "acronim"
+msgstr "acrònim"
+
+#: ../content/packet/adapters.py:90
+msgid "codi_departament"
+msgstr "Codi del departament"
+
+#: ../content/packet/adapters.py:22
+msgid "codi_grau"
+msgstr "Codi del grau"
+
+#: ../content/packet/adapters.py:56
+msgid "codi_master"
+msgstr "Codi del màster"
+
+#: ../content/packet/adapters.py:74
+msgid "codi_pla_master"
+msgstr "Codi màster"
+
+#: ../content/packet/templates/configure.pt:36
+msgid "configurat amb l'element:"
+msgstr "configurat amb l'element:"
+
+#: ../content/packet/templates/configure.pt:32
+#: ../content/packet/templates/view.pt:25
+msgid "configurat amb l'identificador:"
+msgstr "configurat amb l'identificador:"
+
+#. "Página de contacte personalitzada"
+#. Default: "Página de contacte personalitzada"
+#: ../controlpanels/upc.py:76
+msgid "contacte_BBBDD_or_page"
+msgstr "Pàgina de contacte alternativa"
+
+#. "Adreça de contacte al peu"
+#. Default: "Adreça de contacte al peu"
+#: ../controlpanels/upc.py:85
+msgid "contacte_al_peu"
+msgstr "Adreça de contacte al peu"
+
+#. "ID contacte de la unitat"
+#. Default: "ID contacte de la unitat"
+#: ../controlpanels/upc.py:68
+msgid "contacte_id"
+msgstr "ID contacte de la unitat"
+
+#. "Contacte sense UPCmaps"
+#. Default: "Contacte sense UPCmaps"
+#: ../controlpanels/upc.py:131
+msgid "contacte_no_upcmaps"
+msgstr "Desactivar UPCmaps"
+
+#. Default: "Directori UPC filtrat a les eines"
+#: ../controlpanels/upc.py:122
+msgid "directori_filtrat"
+msgstr "Filtrat per unitat?"
+
+#. "Directori UPC a les eines"
+#. Default: "Directori UPC a les eines"
+#: ../controlpanels/upc.py:111
+msgid "directori_upc"
+msgstr "Directori UPC a les eines"
+
+#: ../content/packet/adapters.py:122
+msgid "element"
+msgstr "Element que volem mostrar, per exemple #content-core"
+
+#: ../configure.zcml:25
+msgid "genweb6.upc"
+msgstr "genweb6.upc"
+
+#: ../configure.zcml:34
+msgid "genweb6.upc (uninstall)"
+msgstr "genweb6.upc (desinstal·lar)"
+
+#. Default: "Please enter the message you want to send."
+#: ../browser/contact/contact.py:151
+msgid "genweb_help_message"
+msgstr "Escriviu el missatge que voleu enviar"
+
+#. Default: "Message"
+#: ../browser/contact/contact.py:150
+msgid "genweb_message"
+msgstr "Missatge"
+
+#. Default: "E-Mail"
+#: ../browser/contact/contact.py:139
+msgid "genweb_sender_from_address"
+msgstr "Adreça electrònica"
+
+#. Default: "Name"
+#: ../browser/contact/contact.py:134
+msgid "genweb_sender_fullname"
+msgstr "Nom"
+
+#. Default: "Subject"
+#: ../browser/contact/contact.py:145
+msgid "genweb_subject"
+msgstr "Assumpte"
+
+#. "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
+#. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
+#: ../controlpanels/upc.py:78
+msgid "help_contacte_BBBDD_or_page"
+msgstr "Per defecte, la informació de contacte s'alimenta de la base de dades del Servei de Comunicació."
+
+#. "La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."
+#. Default: "La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."
+#: ../controlpanels/upc.py:87
+msgid "help_contacte_al_peu"
+msgstr "L'adreça i telèfon provinents de la base de dades del Servei de Comunicació es visualitza al peu de pàgina."
+
+#. "Afegiu el id de contacte de la base de dades de màsters."
+#. Default: "Afegiu el id de contacte de la base de dades de màsters."
+#: ../controlpanels/upc.py:70
+msgid "help_contacte_id"
+msgstr "Afegiu l'id de la base de dades del Servei de Comunicació corresponent a la unitat."
+
+#. Default: "Es pot seleccionar a qui s'envia el missatge de contacte."
+#: ../controlpanels/upc.py:142
+msgid "help_contacte_multi_email"
+msgstr "Es pot seleccionar a qui s'envia el missatge de contacte."
+
+#. "Es mostra la informació d'UPCmaps al contacte."
+#. Default: "Es mostra la informació d'UPCmaps al contacte."
+#: ../controlpanels/upc.py:133
+msgid "help_contacte_no_upcmaps"
+msgstr "Marqui aquesta opció si desitja amagar la informació de UPCmaps al contacte."
+
+#. Default: "S'obrirà el Directori UPC, carregant les dades de la unitat."
+#: ../controlpanels/upc.py:124
+msgid "help_directori_filtrat"
+msgstr "S'obrirà el Directori UPC, carregant les dades de la unitat."
+
+#. "Es mostra l'enllaç al directori UPC a la barra d'eines La informació prové de la base de dades de SCP."
+#. Default: "Es mostrarà a la part superior l'enllaç al Directori UPC."
+#: ../controlpanels/upc.py:113
+msgid "help_directori_upc"
+msgstr "Es mostrarà a la part superior l'enllaç al Directori UPC."
+
+#. Default: "Add name and email by language"
+#: ../controlpanels/upc.py:151
+msgid "help_emails_table"
+msgstr "Afegeix nom i correu electrònic per idioma"
+
+#. "Treu les icones per compartir en xarxes socials ..."
+#. Default: "Treu les icones per compartir en xarxes socials ..."
+#: ../controlpanels/upc.py:104
+msgid "help_treu_icones_xarxes_socials"
+msgstr "Treu les icones per compartir en xarxes socials ..."
+
+#. Default: "Close"
+#: ../content/packet/templates/configure.pt:90
+msgid "label_close"
+msgstr "Tanca"
+
+#. Default: "Save changes"
+#: ../content/packet/templates/configure.pt:91
+msgid "label_save_changes"
+msgstr "Desa"
+
+#. Default: "Select"
+#: ../content/packet/templates/configure.pt:52
+msgid "label_select"
+msgstr "Seleccionar:"
+
+#. Default: "Seleccionar l'adreça d'enviament"
+#: ../controlpanels/upc.py:140
+msgid "multi_email"
+msgstr "Seleccionar l'adreça d'enviament"
+
+#. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
+#: ../content/packet/templates/configure.pt:14
+msgid "packet_help"
+msgstr "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació, </strong>perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta proposta pretén ajudar-vos a mantenir els vostres continguts actualitzats.<br /><br />Consulteu tota la informació referent als <a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC.</a>"
+
+#. Default: "Recipient"
+#: ../browser/contact/contact.py:128
+msgid "to_address"
+msgstr "Destinatari"
+
+#. "Treu les icones per compartir en xarxes socials"
+#. Default: "Treu les icones per compartir en xarxes socials"
+#: ../controlpanels/upc.py:102
+msgid "treu_icones_xarxes_socials"
+msgstr "Treu les icones per compartir en xarxes socials"
+
+#: ../content/packet/adapters.py:122
+msgid "url_contingut"
+msgstr "URL completa del contingut"

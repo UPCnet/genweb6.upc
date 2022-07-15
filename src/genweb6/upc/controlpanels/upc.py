@@ -26,7 +26,7 @@ class IXarxesSocials(model.Schema):
     )
 
     icon = schema.TextLine(
-        title=_(u'Icone'),
+        title=_(u'Icona'),
         required=False
     )
 
@@ -93,7 +93,7 @@ class IUPCSettings(model.Schema):
     directives.widget(xarxes_socials=DataGridFieldFactory)
     xarxes_socials = schema.List(
         title=_(u'Xarxes Socials'),
-        description=_(u"Icone que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"),
+        description=_(u"Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"),
         value_type=DictRow(schema=IXarxesSocials),
         required=False,
     )
