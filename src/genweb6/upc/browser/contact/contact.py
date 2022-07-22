@@ -37,7 +37,7 @@ MESSAGE_TEMPLATE_CA = u"""\
 Reply-To: %(from_address)s
 
 Heu rebut aquest correu perquè en/na %(name)s (%(from_address)s) ha enviat \
-comentaris desde de l'espai Genweb \
+comentaris des de l'espai Genweb \
 
 %(genweb)s
 
