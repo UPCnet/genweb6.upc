@@ -284,7 +284,7 @@ class ContactForm(Form):
 
         mailhost.send(escape(safe_unicode(message)),
                       mto=to_address,
-                      mfrom=api.portal.get_registry_record('plone.email_from_address'),
+                      mfrom=data['from_address'],
                       subject=subject,
                       charset=email_charset,
                       msg_type='text/plain')
