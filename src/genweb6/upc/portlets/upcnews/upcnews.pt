@@ -1,4 +1,4 @@
-<div class="portlet portlet-upcnews"
+<div class="portlet portlet-upcnews portlet-list"
      tal:define="entries view/getRSS;"
      tal:condition="entries"
      i18n:domain="plone" >
