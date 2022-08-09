@@ -1,9 +1,10 @@
 <div class="portlet portlet-upcnews portlet-list"
      tal:define="entries view/getRSS;"
      tal:condition="entries"
-     i18n:domain="plone" >
+     i18n:domain="plone">
 
-    <h3 class="portlet-title" i18n:translate="genweb-actualitat">Actualitat UPC</h3>
+    <h3 class="portlet-title" i18n:domain="genweb6.upc"
+        i18n:translate="genweb-actualitat">Actualitat UPC</h3>
 
     <ul class="list-group list-group-flush mb-2">
 
