@@ -4,6 +4,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
+from zope.component import getMultiAdapter
 from zope.interface import implementer
 
 from genweb6.core import utils
@@ -26,6 +27,10 @@ class Assignment (base.Assignment):
 
 class Renderer(base.Renderer):
     render = ViewPageTemplateFile('upcnews.pt')
+
+    def toLocalizedTime(self, time):
+        plone_view = getMultiAdapter((self.context, self.request), name=u"plone")
+        return plone_view.toLocalizedTime(time)
 
     def mes(self, mes):
         return self.utils.mes(mes)
@@ -68,17 +73,21 @@ class Renderer(base.Renderer):
         return url
 
     def getRSS(self):
-
         url = self.getUrlRSSPremsa()
         items = []
 
         d = feedparser.parse(url)
         for item in d['items']:
             try:
+                date = item.get('updated', None)
+                if date:
+                    date = self.toLocalizedTime(date)
+
                 itemdict = {
                     'title': item.title,
                     'url': item.link,
                     'summary': item.get('description', ''),
+                    'date': date
                 }
             except AttributeError:
                 continue

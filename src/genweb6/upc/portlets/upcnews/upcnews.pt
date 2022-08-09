@@ -1,35 +1,45 @@
-<tal:block tal:define="entries view/getRSS;
-                       toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                       utils context/@@genweb.utils;
-                       plone_view context/@@plone"
-           tal:condition="entries"
-           i18n:domain="genweb">
+<div class="portlet portlet-upcnews"
+     tal:define="entries view/getRSS;"
+     tal:condition="entries"
+     i18n:domain="plone" >
 
-    <div class="portlet portlet-noticies">
-        <h2 i18n:translate="genweb-actualitat" > Actualitat UPC </h2>
-        <ul class="list-portlet">
-            <li tal:repeat="entry entries">
-                <a href=""
-                   tal:attributes="title entry/summary | nothing; href entry/url | nothing"
-                   target="_blank">
-                    <span tal:replace="entry/title | nothing">
-                        Notícies RSS
-                    </span>
+    <h3 class="portlet-title" i18n:translate="genweb-actualitat">Actualitat UPC</h3>
+
+    <ul class="list-group list-group-flush mb-2">
+
+        <tal:item tal:repeat="entry entries">
+
+            <li class="list-group-item ps-0">
+
+                <a href="#" class="d-block text-decoration-none"
+                   tal:attributes="href entry/url | nothing;
+                                   title entry/summary | nothing">
+
+                    <span tal:replace="entry/title | nothing">Title</span>
+
                 </a>
+
+                <time tal:condition="entry/date" class="time smaller"
+                      tal:content="entry/date">
+                    Date
+                </time>
+
             </li>
-        </ul>
-        <div class="portlet-footer">
-            <a href=""
-               tal:attributes="href view/getUrlRSSPremsa">
-                <span class="icon-rss pull-left"></span>
-            </a>
-            <a href=""
-               tal:attributes="href view/getURLPremsa"
-               i18n:domain="plone"
-               i18n:translate="more_news_link"
-               target="_blank">
-                   More news&hellip;
-            </a>
-        </div>
+
+        </tal:item>
+
+    </ul>
+
+    <div class="portlet-footer">
+
+        <a class="portlet-show-more small text-decoration-none" tal:attributes="href view/getUrlRSSPremsa">
+            <i class="bi bi-rss"></i>
+        </a>
+
+        <a class="portlet-show-more small text-decoration-none" tal:attributes="href view/getURLPremsa">
+            <span i18n:domain="genweb" i18n:translate="more_url">More</span>
+        </a>
+
     </div>
-</tal:block>
+
+</div>
