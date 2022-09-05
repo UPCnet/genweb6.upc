@@ -12,6 +12,11 @@
 
             <li class="list-group-item ps-0">
 
+                <time tal:condition="entry/date" class="time smaller"
+                      tal:content="entry/date">
+                    Date
+                </time>
+
                 <a href="#" class="d-block text-decoration-none"
                    tal:attributes="href entry/url | nothing;
                                    title entry/summary | nothing">
@@ -19,11 +24,6 @@
                     <span tal:replace="entry/title | nothing">Title</span>
 
                 </a>
-
-                <time tal:condition="entry/date" class="time smaller"
-                      tal:content="entry/date">
-                    Date
-                </time>
 
             </li>
 
