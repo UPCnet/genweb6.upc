@@ -12,14 +12,14 @@
 
             <li class="list-group-item ps-0">
 
-                <div class="row">
+                <div class="d-flex flex-row">
 
-                    <a class="col-md-1 external-url-icon text-decoration-none"
+                    <a class="external-url-icon text-decoration-none pe-4"
                        target="_blank"
                        tal:attributes="href entry/url | nothing;
                                        title entry/summary | nothing"></a>
 
-                    <div class="col-md-11">
+                    <div>
 
                         <time tal:condition="entry/date" class="time smaller"
                               tal:content="entry/date">
