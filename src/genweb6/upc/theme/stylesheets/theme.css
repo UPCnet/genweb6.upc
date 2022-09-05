@@ -1,3 +1,13 @@
+/* line 5, ../scss/_portlet_upcnews.scss */
+.portlet.portlet-upcnews ul.list-group li:first-child {
+  padding-top: 0px;
+}
+/* line 10, ../scss/_portlet_upcnews.scss */
+.portlet.portlet-upcnews a[target="_blank"]::after {
+  display: none;
+  content: "";
+}
+
 /* line 1, ../scss/_footer.scss */
 #footer-contact {
   background-color: #FBFBFC;

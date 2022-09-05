@@ -12,18 +12,32 @@
 
             <li class="list-group-item ps-0">
 
-                <time tal:condition="entry/date" class="time smaller"
-                      tal:content="entry/date">
-                    Date
-                </time>
+                <div class="row">
 
-                <a href="#" class="d-block text-decoration-none"
-                   tal:attributes="href entry/url | nothing;
-                                   title entry/summary | nothing">
+                    <a class="col-md-1 external-url-icon text-decoration-none"
+                       target="_blank"
+                       tal:attributes="href entry/url | nothing;
+                                       title entry/summary | nothing"></a>
 
-                    <span tal:replace="entry/title | nothing">Title</span>
+                    <div class="col-md-11">
 
-                </a>
+                        <time tal:condition="entry/date" class="time smaller"
+                              tal:content="entry/date">
+                            Date
+                        </time>
+
+                        <a href="#" class="d-block text-decoration-none"
+                           target="_blank"
+                           tal:attributes="href entry/url | nothing;
+                                           title entry/summary | nothing">
+
+                            <span tal:replace="entry/title | nothing">Title</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
 
             </li>
 
@@ -33,11 +47,13 @@
 
     <div class="portlet-footer">
 
-        <a class="portlet-show-more small text-decoration-none" tal:attributes="href view/getUrlRSSPremsa">
+        <a class="portlet-show-more small text-decoration-none" target="_blank"
+           tal:attributes="href view/getUrlRSSPremsa">
             <i class="bi bi-rss"></i>
         </a>
 
-        <a class="portlet-show-more small text-decoration-none" tal:attributes="href view/getURLPremsa">
+        <a class="portlet-show-more small text-decoration-none" target="_blank"
+           tal:attributes="href view/getURLPremsa">
             <span i18n:domain="genweb" i18n:translate="more_url">More</span>
         </a>
 

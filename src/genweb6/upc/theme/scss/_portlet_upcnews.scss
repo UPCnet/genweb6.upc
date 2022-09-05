@@ -1,0 +1,14 @@
+.portlet.portlet-upcnews {
+
+    ul.list-group {
+
+        li:first-child {
+            padding-top: 0px;
+        }
+    }
+
+    a[target="_blank"]::after {
+        display: none;
+        content: "";
+    }
+}
