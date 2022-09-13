@@ -54,7 +54,18 @@
              tal:attributes="href xarxa/url;
                              title string:${xarxa/title}, ${lit_open_in_new_window};
                              alt string:${xarxa/title}, ${lit_open_in_new_window};">
-            <i tal:attributes="class string:bi ${xarxa/icon}"></i>
+
+            <tal:block tal:define="icon xarxa/icon;
+                                   icon_upc python:'gw-icon-' in icon">
+
+              <i tal:condition="not:icon_upc"
+                 tal:attributes="class string:bi ${icon}"></i>
+
+              <i tal:condition="icon_upc"
+                 tal:attributes="class string:${icon}"></i>
+
+            </tal:block>
+
           </a>
 
         </tal:condition>
