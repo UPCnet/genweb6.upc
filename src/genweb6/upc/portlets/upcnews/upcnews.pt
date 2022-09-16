@@ -47,10 +47,10 @@
 
     <div class="portlet-footer">
 
-        <a class="portlet-show-more small text-decoration-none" target="_blank"
+        <!-- <a class="portlet-show-more small text-decoration-none" target="_blank"
            tal:attributes="href view/getUrlRSSPremsa">
             <i class="bi bi-rss"></i>
-        </a>
+        </a> -->
 
         <a class="portlet-show-more small text-decoration-none" target="_blank"
            tal:attributes="href view/getURLPremsa">
