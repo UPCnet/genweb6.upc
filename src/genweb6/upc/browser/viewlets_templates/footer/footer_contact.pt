@@ -7,7 +7,7 @@
   <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat">
     <div class="row">
       <div class="col-md-4">
-        <h2 class="text-white" i18n:translate="">On som</h2>
+        <h2 i18n:translate="">On som</h2>
         <iframe class="footer-contact-map" width="100%" height="300" frameborder="0"
                 scrolling="no" marginheight="0" marginwidth="0"
                 tal:attributes="src dades_unitat/google_maps | nothing">
@@ -15,7 +15,7 @@
         </iframe>
       </div>
       <div class="col-md-3 offset-md-1">
-        <h2 class="text-white" i18n:translate="">Contacte</h2>
+        <h2 i18n:translate="">Contacte</h2>
         <address>
           <p tal:content="dades_unitat/adreça | nothing">
             C. Jordi Girona, 1-3. 08034 Barcelona
@@ -48,7 +48,7 @@
 
         <tal:condition condition="xarxes_socials">
 
-          <h2 class="text-white" i18n:translate="">Xarxes Socials</h2>
+          <h2 i18n:translate="">Xarxes Socials</h2>
 
           <a tal:repeat="xarxa xarxes_socials" target="_blank"
              tal:attributes="href xarxa/url;
