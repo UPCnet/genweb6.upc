@@ -33,3 +33,17 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+
+  #footer-contact {
+
+    .map {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -6,7 +6,7 @@
 
   <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 map">
         <h2 i18n:translate="">On som</h2>
         <iframe class="footer-contact-map" width="100%" height="300" frameborder="0"
                 scrolling="no" marginheight="0" marginwidth="0"
@@ -14,7 +14,7 @@
           Google Maps
         </iframe>
       </div>
-      <div class="col-md-3 offset-md-1">
+      <div class="col-md-3 offset-md-1 contact">
         <h2 i18n:translate="">Contacte</h2>
         <address>
           <p tal:content="dades_unitat/adreça | nothing">

@@ -41,3 +41,14 @@
   display: none;
   content: "";
 }
+
+@media (max-width: 768px) {
+  /* line 41, ../scss/_footer.scss */
+  #footer-contact .map {
+    margin-bottom: 1.5rem;
+  }
+  /* line 45, ../scss/_footer.scss */
+  #footer-contact .contact {
+    margin-bottom: 1rem;
+  }
+}
