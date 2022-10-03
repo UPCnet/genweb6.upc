@@ -16,38 +16,46 @@
   padding: 2em 4em;
 }
 /* line 7, ../scss/_footer.scss */
-#footer-contact a {
-  color: var(--bs-primary);
-  text-decoration: none;
-  font-weight: 400;
+#footer-contact h2 {
+  text-transform: capitalize;
+  font-variant: small-caps;
+  color: var(--bs-white);
+  font-weight: 500;
+  font-size: 2rem !important;
 }
-/* line 12, ../scss/_footer.scss */
+/* line 15, ../scss/_footer.scss */
+#footer-contact a {
+  color: var(--bs-white);
+  text-decoration: none;
+  font-weight: 500;
+}
+/* line 20, ../scss/_footer.scss */
 #footer-contact a:hover {
   color: var(--bs-link-hover-color);
 }
-/* line 19, ../scss/_footer.scss */
+/* line 27, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a {
   margin-right: 0.5em;
   color: var(--bs-gray-200);
   text-decoration: none;
   font-size: 25px;
 }
-/* line 25, ../scss/_footer.scss */
+/* line 33, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a:hover {
   color: var(--bs-primary-hover);
 }
-/* line 29, ../scss/_footer.scss */
+/* line 37, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a[target="_blank"]::after {
   display: none;
   content: "";
 }
 
 @media (max-width: 768px) {
-  /* line 41, ../scss/_footer.scss */
+  /* line 49, ../scss/_footer.scss */
   #footer-contact .map {
     margin-bottom: 1.5rem;
   }
-  /* line 45, ../scss/_footer.scss */
+  /* line 53, ../scss/_footer.scss */
   #footer-contact .contact {
     margin-bottom: 1rem;
   }

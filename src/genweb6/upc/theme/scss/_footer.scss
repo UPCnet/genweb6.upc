@@ -4,10 +4,18 @@
   box-shadow: 500px 0 0 0 #F2F5F6, -500px 0 0 0 #F2F5F6;
   padding: 2em 4em;
 
+  h2 {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    color: var(--bs-white);
+    font-weight: 500;
+    font-size: 2rem !important;
+  }
+
   a {
-    color: var(--bs-primary);
+    color: var(--bs-white);
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
 
     &:hover {
       color: var(--bs-link-hover-color);
