@@ -17,8 +17,8 @@
   <viewlet name="plone.global_sections"/>
  </order>
  <order manager="plone.portalfooter" skinname="Plone Default">
-  <viewlet name="genweb.upc.footer.contact"/>
   <viewlet name="genweb.logosfooter"/>
+  <viewlet name="genweb.upc.footer.contact"/>
   <viewlet name="genweb.upc.footer"/>
   <viewlet name="genweb.footer"/>
   <viewlet name="genweb.cookies"/>
