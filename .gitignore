@@ -36,4 +36,5 @@ report.html
 .tox/
 reports/
 venv/
+screenlog.0
 # excludes
