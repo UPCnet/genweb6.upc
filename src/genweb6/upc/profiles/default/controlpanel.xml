@@ -11,7 +11,7 @@
         icon_expr="string:gear"
         visible="True">
 
-        <permission>Genweb: Superadmin Users</permission>
+        <permission>Genweb: Webmaster Users</permission>
     </configlet>
 
     <configlet

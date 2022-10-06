@@ -8,7 +8,7 @@
         name="upc-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".upc.UPCSettingsControlPanel"
-        permission="genweb.superadmin"
+        permission="genweb.webmaster"
         />
 
     <browser:page

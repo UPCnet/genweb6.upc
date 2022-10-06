@@ -62,8 +62,8 @@ class IUPCSettings(model.Schema):
                            'treu_icones_xarxes_socials', 'directori_upc', 'directori_filtrat',
                            'contacte_no_upcmaps', 'contacte_multi_email', 'contact_emails_table'])
 
-    read_permission(contacte_id='genweb.superadmin')
-    write_permission(contacte_id='genweb.webmaster')
+    read_permission(contacte_id='genweb.webmaster')
+    write_permission(contacte_id='genweb.manager')
     contacte_id = schema.TextLine(
         title=_(u"contacte_id",
                 default=u"ID contacte de la unitat"),
@@ -116,8 +116,8 @@ class IUPCSettings(model.Schema):
         default=False,
     )
 
-    read_permission(directori_filtrat='genweb.superadmin')
-    write_permission(directori_filtrat='genweb.webmaster')
+    read_permission(directori_filtrat='genweb.webmaster')
+    write_permission(directori_filtrat='genweb.manager')
     directori_filtrat = schema.Bool(
         title=_(u"directori_filtrat",
                 default=u"Directori UPC filtrat a les eines"),
