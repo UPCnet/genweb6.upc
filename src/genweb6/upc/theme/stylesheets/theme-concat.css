@@ -10,12 +10,11 @@
 
 /* line 1, ../scss/_footer.scss */
 #footer-contact {
-  background-color: var(--bs-dark);
   color: var(--bs-body-bg);
   box-shadow: 500px 0 0 0 #F2F5F6, -500px 0 0 0 #F2F5F6;
   padding: 2em 4em;
 }
-/* line 7, ../scss/_footer.scss */
+/* line 6, ../scss/_footer.scss */
 #footer-contact h2 {
   text-transform: capitalize;
   font-variant: small-caps;
@@ -23,39 +22,39 @@
   font-weight: 500;
   font-size: 2rem !important;
 }
-/* line 15, ../scss/_footer.scss */
+/* line 14, ../scss/_footer.scss */
 #footer-contact a {
   color: var(--bs-white);
   text-decoration: none;
   font-weight: 500;
 }
-/* line 20, ../scss/_footer.scss */
+/* line 19, ../scss/_footer.scss */
 #footer-contact a:hover {
   color: var(--bs-link-hover-color);
 }
-/* line 27, ../scss/_footer.scss */
+/* line 26, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a {
   margin-right: 0.5em;
   color: var(--bs-gray-200);
   text-decoration: none;
   font-size: 25px;
 }
-/* line 33, ../scss/_footer.scss */
+/* line 32, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a:hover {
   color: var(--bs-primary-hover);
 }
-/* line 37, ../scss/_footer.scss */
+/* line 36, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a[target="_blank"]::after {
   display: none;
   content: "";
 }
 
 @media (max-width: 768px) {
-  /* line 49, ../scss/_footer.scss */
+  /* line 48, ../scss/_footer.scss */
   #footer-contact .map {
     margin-bottom: 1.5rem;
   }
-  /* line 53, ../scss/_footer.scss */
+  /* line 52, ../scss/_footer.scss */
   #footer-contact .contact {
     margin-bottom: 1rem;
   }

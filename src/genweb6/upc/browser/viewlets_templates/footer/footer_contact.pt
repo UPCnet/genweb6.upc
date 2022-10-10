@@ -1,10 +1,12 @@
-<tal:block tal:define="dades_unitat context/@@genweb.upc.utils/getDadesUnitat;
-                       has_dades_unitat python:dades_unitat and not dades_unitat.get('error', False);
-                       upc_config context/@@genweb.upc.utils/genwebUPCConfig;"
+<tal:block tal:define="upc_utils context/@@genweb.upc.utils;
+                       upc_config upc_utils/genwebUPCConfig;
+                       dades_unitat upc_utils/getDadesUnitat;
+                       has_dades_unitat python:dades_unitat and not dades_unitat.get('error', False);"
            tal:condition="upc_config/contacte_al_peu"
            i18n:domain="genweb6.upc">
 
-  <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat">
+  <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat"
+       tal:attributes="class context/@@genweb.utils/class_footer_image">
     <div class="row">
       <div class="col-md-4 map">
         <h2 i18n:translate="">On som</h2>
