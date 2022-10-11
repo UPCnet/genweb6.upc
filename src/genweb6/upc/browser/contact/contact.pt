@@ -9,7 +9,8 @@
     <body class="template-contacte" dir="ltr">
 
         <metal:block metal:fill-slot="top_slot"
-        tal:define="dummy python:request.set('disable_border', 1)" />
+        tal:define="disable_column_one python:request.set('disable_plone.leftcolumn', 1);
+                    dummy python:request.set('disable_border', 1)" />
 
         <div metal:fill-slot="main">
             <tal:main-macro metal:define-macro="main"
