@@ -19,12 +19,12 @@
           </h1>
         </div>
         <div tal:condition="view/show_extended_info">
-          <p class="lead-small">
+          <div class="alert alert-info" role="alert">
             <tal:message i18n:translate=""><strong>Avís pels editors:</strong><br />Aquest Contingut UPC és del tipus:</tal:message>
             <strong><tal:omit-tag i18n:translate="" tal:content="packet/packet_key"></tal:omit-tag>,</strong>
             <tal:message i18n:translate="">configurat amb l'identificador:</tal:message>
             <strong><tal:omit-tag tal:content="packet/value"></tal:omit-tag></strong>
-          </p>
+          </div>
         </div>
         <tal:packet replace="structure view/getPacket"></tal:packet>
       </tal:def>
@@ -36,11 +36,11 @@
           Title
         </h1>
       </div>
-      <p class="lead-small">
+      <div class="alert alert-info" role="alert">
         <tal:message i18n:translate="">
           This packet is not configured yet. Please, do it in the 'configure' tab.
         </tal:message>
-      </p>
+      </div>
     </tal:notconfigured>
 
   </div>
