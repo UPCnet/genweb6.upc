@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-07-15 11:08+0000\n"
+"POT-Creation-Date: 2022-10-20 09:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Contact information"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:18
+#: ../browser/viewlets_templates/footer/footer_contact.pt:20
 msgid "Contacte"
 msgstr ""
 
@@ -80,11 +80,11 @@ msgstr ""
 msgid "Create a Genweb UPC"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:40
+#: ../browser/viewlets_templates/footer/footer_contact.pt:42
 msgid "Directori UPC"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:32
+#: ../browser/viewlets_templates/footer/footer_contact.pt:34
 #: ../controlpanels/upc.py:53
 msgid "E-mail"
 msgstr ""
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Enllaç"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:28
+#: ../browser/viewlets_templates/footer/footer_contact.pt:30
 msgid "Fax"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:10
+#: ../browser/viewlets_templates/footer/footer_contact.pt:12
 msgid "On som"
 msgstr ""
 
@@ -223,7 +223,7 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:24
+#: ../browser/viewlets_templates/footer/footer_contact.pt:26
 msgid "Tel."
 msgstr ""
 
@@ -243,7 +243,7 @@ msgstr ""
 msgid "UPC Settings"
 msgstr ""
 
-#: ../portlets/upcnews/upcnews.py:24
+#: ../portlets/upcnews/upcnews.py:25
 msgid "UPCNews"
 msgstr ""
 
@@ -280,7 +280,7 @@ msgstr ""
 msgid "User to connect to the bus"
 msgstr ""
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:51
+#: ../browser/viewlets_templates/footer/footer_contact.pt:53
 #: ../controlpanels/upc.py:95
 msgid "Xarxes Socials"
 msgstr ""
@@ -346,6 +346,11 @@ msgstr ""
 
 #: ../content/packet/adapters.py:122
 msgid "element"
+msgstr ""
+
+#. Default: "Actualitat UPC"
+#: ../portlets/upcnews/upcnews.pt:6
+msgid "genweb-actualitat"
 msgstr ""
 
 #: ../configure.zcml:25
@@ -444,6 +449,10 @@ msgstr ""
 #. Default: "Seleccionar l'adreça d'enviament"
 #: ../controlpanels/upc.py:140
 msgid "multi_email"
+msgstr ""
+
+#: ../profiles/default/types/packet.xml
+msgid "packet"
 msgstr ""
 
 #. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."

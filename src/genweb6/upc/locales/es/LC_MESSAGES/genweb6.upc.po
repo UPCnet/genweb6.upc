@@ -59,7 +59,7 @@ msgstr "Direcciones de correo"
 msgid "Contact information"
 msgstr "Información de contacto"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:18
+#: ../browser/viewlets_templates/footer/footer_contact.pt:20
 msgid "Contacte"
 msgstr "Contacto"
 
@@ -75,11 +75,11 @@ msgstr "Contenido existente"
 msgid "Create a Genweb UPC"
 msgstr "Crear Genweb UPC"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:40
+#: ../browser/viewlets_templates/footer/footer_contact.pt:42
 msgid "Directori UPC"
 msgstr "DirectoriO UPC"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:32
+#: ../browser/viewlets_templates/footer/footer_contact.pt:34
 #: ../controlpanels/upc.py:53
 msgid "E-mail"
 msgstr "Correo"
@@ -112,7 +112,7 @@ msgstr "ERROR: Identificador incorrecto. La página no existe."
 msgid "Enllaç"
 msgstr "Enlace"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:28
+#: ../browser/viewlets_templates/footer/footer_contact.pt:30
 msgid "Fax"
 msgstr "Fax"
 
@@ -192,7 +192,7 @@ msgstr "Correo enviado."
 msgid "Name"
 msgstr "Nombre"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:10
+#: ../browser/viewlets_templates/footer/footer_contact.pt:12
 msgid "On som"
 msgstr "Donde estamos"
 
@@ -218,7 +218,7 @@ msgstr "Guardar"
 msgid "Send"
 msgstr "envía"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:24
+#: ../browser/viewlets_templates/footer/footer_contact.pt:26
 msgid "Tel."
 msgstr "Tel."
 
@@ -239,7 +239,7 @@ msgstr "Título"
 msgid "UPC Settings"
 msgstr "Herramientas UPC"
 
-#: ../portlets/upcnews/upcnews.py:24
+#: ../portlets/upcnews/upcnews.py:25
 msgid "UPCNews"
 msgstr "Actualidad UPC"
 
@@ -276,7 +276,7 @@ msgstr "Información del usuario alta TFE"
 msgid "User to connect to the bus"
 msgstr "Usuario para conectar el bus"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:51
+#: ../browser/viewlets_templates/footer/footer_contact.pt:53
 #: ../controlpanels/upc.py:95
 msgid "Xarxes Socials"
 msgstr "Redes Sociales"
@@ -343,6 +343,11 @@ msgstr "Directorio UPC"
 #: ../content/packet/adapters.py:122
 msgid "element"
 msgstr "Elemento que queremos mostrar, por ejemplo #content-core"
+
+#. Default: "Actualitat UPC"
+#: ../portlets/upcnews/upcnews.pt:6
+msgid "genweb-actualitat"
+msgstr "Actualidad UPC"
 
 #: ../configure.zcml:25
 msgid "genweb6.upc"
@@ -445,6 +450,10 @@ msgstr "Seleccionar:"
 #: ../controlpanels/upc.py:140
 msgid "multi_email"
 msgstr "Seleccionar l'adreça d'enviament"
+
+#: ../profiles/default/types/packet.xml
+msgid "packet"
+msgstr "Contenido UPC"
 
 #. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
 #: ../content/packet/templates/configure.pt:14
