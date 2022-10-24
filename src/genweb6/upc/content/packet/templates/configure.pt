@@ -27,7 +27,7 @@
           });
         })
       </script>
-    <p class="lead-small" tal:condition="view/isAlreadyConfigured">
+    <p class="alert alert-info" tal:condition="view/isAlreadyConfigured">
       <strong><tal:omit-tag i18n:translate="" tal:content="selectedPacket/packet_key"></tal:omit-tag>,</strong>
       <tal:message i18n:translate="">configurat amb l'identificador:</tal:message>
       <strong><tal:omit-tag tal:content="selectedPacket/value"></tal:omit-tag></strong>
@@ -41,7 +41,7 @@
     <section tal:define="packets view/getAvailablePacketsInfo"
              tal:condition="packets">
       <tal:available repeat="packet packets">
-        <div class="row">
+        <div class="row border-bottom mb-3">
           <div class="col-md-3">
             <p><strong tal:content="python:packet[1].title"></strong></p>
           </div>
@@ -70,7 +70,8 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" tal:attributes="id python:packet[0] + 'Label'">Modal title</h5>
+                  <h5 class="modal-title" tal:attributes="id python:packet[0] + 'Label'"
+                      tal:content="python:packet[1].title"></h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

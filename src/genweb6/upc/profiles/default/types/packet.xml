@@ -48,7 +48,8 @@
     </action>
 
     <action title="Configure" action_id="configure" category="object" condition_expr=""
-            url_expr="string:${object_url}/@@configure" visible="True">
+            url_expr="string:${object_url}/@@configure" visible="True"
+            i18n:attributes="title">
 
         <permission value="Modify portal content" />
     </action>

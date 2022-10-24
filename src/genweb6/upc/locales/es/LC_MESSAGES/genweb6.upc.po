@@ -51,6 +51,11 @@ msgstr "Cambios cancelados."
 msgid "Changes saved"
 msgstr "Cambios guardados"
 
+#: ../content/packet/__init__.py:9
+#: ../profiles/default/types/packet.xml
+msgid "Configure"
+msgstr "Configura"
+
 #: ../controlpanels/upc.py:150
 msgid "Contact emails"
 msgstr "Direcciones de correo"
@@ -106,7 +111,7 @@ msgstr "ERROR. Excepción inesperada"
 
 #: ../content/packet/packet.py:107
 msgid "ERROR: Unknown identifier. This page does not exist."
-msgstr "ERROR: Identificador incorrecto. La página no existe."
+msgstr "<h2>ERROR: Identificador incorrecto. La página no existe.</h2>"
 
 #: ../controlpanels/upc.py:34
 msgid "Enllaç"
@@ -330,6 +335,10 @@ msgstr "ID contacto de la unidad"
 msgid "contacte_no_upcmaps"
 msgstr "Desactivar UPCmaps"
 
+#: ../content/packet/__init__.py:8
+msgid "contingut_genweb"
+msgstr "Contenido existente"
+
 #. Default: "Directori UPC filtrat a les eines"
 #: ../controlpanels/upc.py:122
 msgid "directori_filtrat"
@@ -343,6 +352,14 @@ msgstr "Directorio UPC"
 #: ../content/packet/adapters.py:122
 msgid "element"
 msgstr "Elemento que queremos mostrar, por ejemplo #content-core"
+
+#: ../content/packet/__init__.py:6
+msgid "fitxa_grau"
+msgstr "Ficha de grado"
+
+#: ../content/packet/__init__.py:6
+msgid "fitxa_master"
+msgstr "Ficha de master"
 
 #. Default: "Actualitat UPC"
 #: ../portlets/upcnews/upcnews.pt:6
@@ -384,6 +401,14 @@ msgstr "Nombre"
 #: ../browser/contact/contact.py:145
 msgid "genweb_subject"
 msgstr "Asunto"
+
+#: ../content/packet/__init__.py:7
+msgid "grups_recerca"
+msgstr "Grupos de investigación"
+
+#: ../content/packet/__init__.py:8
+msgid "grups_recerca_people"
+msgstr "Investigadores de un grupo de investigación"
 
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
 #: ../controlpanels/upc.py:78
@@ -431,34 +456,43 @@ msgid "help_treu_icones_xarxes_socials"
 msgstr "Oculta los iconos para compartir en redes sociales"
 
 #. Default: "Close"
-#: ../content/packet/templates/configure.pt:90
+#: ../content/packet/templates/configure.pt:91
 msgid "label_close"
 msgstr "Cerrar"
 
 #. Default: "Save changes"
-#: ../content/packet/templates/configure.pt:91
+#: ../content/packet/templates/configure.pt:92
 msgid "label_save_changes"
 msgstr "Guardar"
 
 #. Default: "Select"
 #: ../content/packet/templates/configure.pt:52
-#, fuzzy
 msgid "label_select"
-msgstr "Seleccionar:"
+msgstr "Identificador"
 
 #. Default: "Seleccionar l'adreça d'enviament"
 #: ../controlpanels/upc.py:140
 msgid "multi_email"
 msgstr "Seleccionar l'adreça d'enviament"
 
+#. "packet"
 #: ../profiles/default/types/packet.xml
 msgid "packet"
 msgstr "Contenido UPC"
 
 #. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
 #: ../content/packet/templates/configure.pt:14
+#, fuzzy
 msgid "packet_help"
 msgstr "Os ofrecemos contenidos ya existentes en la web UPC, que consultan los datos de los <strong>sistemas de información de PRISMA, DRAC y del Servicio de Comunicación, </strong>para que los podáis incorporar en la web  ya maquetadas con información de estudios y de la producción científica. Esta es la propuesta para ayudaros a mantener vuestros contenidos actualizados.<br /><br />Consulte toda la información referente a los <a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-empaquetats\">contenidos UPC.</a>"
+
+#: ../content/packet/__init__.py:7
+msgid "pla_estudis_master"
+msgstr "Plan de estudios del máster"
+
+#: ../content/packet/__init__.py:6
+msgid "pla_grau"
+msgstr "Plan de estudios de grado"
 
 #. Default: "Recipient"
 #: ../browser/contact/contact.py:128

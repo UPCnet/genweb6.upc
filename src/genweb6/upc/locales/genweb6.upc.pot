@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-10-20 09:00+0000\n"
+"POT-Creation-Date: 2022-10-24 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,11 @@ msgstr ""
 #: ../controlpanels/identitat_digital.py:45
 #: ../controlpanels/upc.py:184
 msgid "Changes saved"
+msgstr ""
+
+#: ../content/packet/__init__.py:9
+#: ../profiles/default/types/packet.xml
+msgid "Configure"
 msgstr ""
 
 #: ../controlpanels/upc.py:150
@@ -334,6 +339,10 @@ msgstr ""
 msgid "contacte_no_upcmaps"
 msgstr ""
 
+#: ../content/packet/__init__.py:8
+msgid "contingut_genweb"
+msgstr ""
+
 #. Default: "Directori UPC filtrat a les eines"
 #: ../controlpanels/upc.py:122
 msgid "directori_filtrat"
@@ -346,6 +355,14 @@ msgstr ""
 
 #: ../content/packet/adapters.py:122
 msgid "element"
+msgstr ""
+
+#: ../content/packet/__init__.py:6
+msgid "fitxa_grau"
+msgstr ""
+
+#: ../content/packet/__init__.py:6
+msgid "fitxa_master"
 msgstr ""
 
 #. Default: "Actualitat UPC"
@@ -384,6 +401,14 @@ msgstr ""
 #. Default: "Subject"
 #: ../browser/contact/contact.py:145
 msgid "genweb_subject"
+msgstr ""
+
+#: ../content/packet/__init__.py:7
+msgid "grups_recerca"
+msgstr ""
+
+#: ../content/packet/__init__.py:8
+msgid "grups_recerca_people"
 msgstr ""
 
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
@@ -432,12 +457,12 @@ msgid "help_treu_icones_xarxes_socials"
 msgstr ""
 
 #. Default: "Close"
-#: ../content/packet/templates/configure.pt:90
+#: ../content/packet/templates/configure.pt:91
 msgid "label_close"
 msgstr ""
 
 #. Default: "Save changes"
-#: ../content/packet/templates/configure.pt:91
+#: ../content/packet/templates/configure.pt:92
 msgid "label_save_changes"
 msgstr ""
 
@@ -458,6 +483,14 @@ msgstr ""
 #. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
 #: ../content/packet/templates/configure.pt:14
 msgid "packet_help"
+msgstr ""
+
+#: ../content/packet/__init__.py:7
+msgid "pla_estudis_master"
+msgstr ""
+
+#: ../content/packet/__init__.py:6
+msgid "pla_grau"
 msgstr ""
 
 #. Default: "Recipient"

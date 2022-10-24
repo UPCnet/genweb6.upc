@@ -51,6 +51,11 @@ msgstr "Changes canceled"
 msgid "Changes saved"
 msgstr "Changes saved"
 
+#: ../content/packet/__init__.py:9
+#: ../profiles/default/types/packet.xml
+msgid "Configure"
+msgstr "Configure"
+
 #: ../controlpanels/upc.py:150
 msgid "Contact emails"
 msgstr "Contact emails"
@@ -106,7 +111,7 @@ msgstr "ERROR. Unexpected exception."
 
 #: ../content/packet/packet.py:107
 msgid "ERROR: Unknown identifier. This page does not exist."
-msgstr "ERROR: Unknown identifier. This page does not exist."
+msgstr "<h2>ERROR: Unknown identifier. This page does not exist.</h2>"
 
 #: ../controlpanels/upc.py:34
 msgid "Enllaç"
@@ -150,19 +155,19 @@ msgstr "Digital Identity Settings"
 
 #: ../content/packet/adapters.py:36
 msgid "Informació sobre el pla d'estudis d'un grau específic"
-msgstr "<p>Curriculum for a bachelor’s degree and access to the course guide.</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the bachelor’s degree for PRISMA.</p><p class=\"muted\">For example, the UPC code of the bachelor's degree in Engineering Physics is <strong>23010611.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/ca/comunicacio/www/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">UPC codes of the bachelor’s degree <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>UPC code</p>"
+msgstr "<p>Curriculum for a bachelor’s degree and access to the course guide.</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the bachelor’s degree for PRISMA.</p><p class=\"muted\">For example, the UPC code of the bachelor's degree in Engineering Physics is <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">UPC codes of the bachelor’s degree <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>UPC code</p>"
 
 #: ../content/packet/adapters.py:20
 msgid "Informació sobre un estudi d'un grau específic"
-msgstr "<p>File containing basic information on a bachelor’s degree</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the bachelor’s degree for PRISMA</p><p class=\"muted\">For example, the UPC code of the bachelor's degree in Engineering Physics is <strong>23010611.</strong></p><p><a target=\"_blank\" href=\"http://www.upc.edu/comunicacio/www/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">UPC codes of the bachelor’s degree <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a><strong>.<br></strong></p><p class=\"muted\"><strong>Select: </strong>UPC code</p></p>"
+msgstr "<p>File containing basic information on a bachelor’s degree</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the bachelor’s degree for PRISMA</p><p class=\"muted\">For example, the UPC code of the bachelor's degree in Engineering Physics is <strong>823.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/codis-upc-del-estudis-de-grau\" class=\"external-link\">UPC codes of the bachelor’s degree <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a><strong>.<br></strong></p><p class=\"muted\"><strong>Select: </strong>UPC code</p></p>"
 
 #: ../content/packet/adapters.py:54
 msgid "Informació sobre un màster específic"
-msgstr "<p>File containing basic information on a master’s degree.</p><p class=\"muted\"><strong>Parameter:</strong> Identifier of the master’s degree.</p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Identifiers of the master’s degree<img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Identifier</p>"
+msgstr "<p>File containing basic information on a master’s degree.</p><p class=\"muted\"><strong>Parameter:</strong> Identifier of the master’s degree.</p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Identifiers of the master’s degree<img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Identifier</p>"
 
 #: ../content/packet/adapters.py:72
 msgid "Informació sobre un pla d'estudis de màster específic"
-msgstr "<p>Available for all master except interuniversity</p><p>Curriculum for a master’s degree and access to the course guide.</p><p class=\"muted\"><strong>Parameter:</strong> Identifier of the master’s degree.</p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Identifiers of the master’s degree<img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Identifier</p>"
+msgstr "<p>Available for all master except interuniversity</p><p>Curriculum for a master’s degree and access to the course guide.</p><p class=\"muted\"><strong>Parameter:</strong> Identifier of the master’s degree.</p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Identifiers of the master’s degree<img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Identifier</p>"
 
 #: ../configure.zcml:25
 msgid "Installs the genweb6.upc add-on."
@@ -334,6 +339,10 @@ msgstr "The unit’s contact ID"
 msgid "contacte_no_upcmaps"
 msgstr "Disable UPCmaps"
 
+#: ../content/packet/__init__.py:8
+msgid "contingut_genweb"
+msgstr "Existing content"
+
 #. Default: "Directori UPC filtrat a les eines"
 #: ../controlpanels/upc.py:122
 msgid "directori_filtrat"
@@ -348,6 +357,14 @@ msgstr "UPC directory in the toolbar"
 #: ../content/packet/adapters.py:122
 msgid "element"
 msgstr "Element that we want to show, like #content-core"
+
+#: ../content/packet/__init__.py:6
+msgid "fitxa_grau"
+msgstr "Bachelor’s degree file"
+
+#: ../content/packet/__init__.py:6
+msgid "fitxa_master"
+msgstr "Master’s degree file"
 
 #. Default: "Actualitat UPC"
 #: ../portlets/upcnews/upcnews.pt:6
@@ -386,6 +403,14 @@ msgstr "Name"
 #: ../browser/contact/contact.py:145
 msgid "genweb_subject"
 msgstr "Subject"
+
+#: ../content/packet/__init__.py:7
+msgid "grups_recerca"
+msgstr "Research groups"
+
+#: ../content/packet/__init__.py:8
+msgid "grups_recerca_people"
+msgstr "Researchers in a research group"
 
 #. "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
@@ -439,12 +464,12 @@ msgid "help_treu_icones_xarxes_socials"
 msgstr "Hide icons to share in social networks ..."
 
 #. Default: "Close"
-#: ../content/packet/templates/configure.pt:90
+#: ../content/packet/templates/configure.pt:91
 msgid "label_close"
 msgstr "Close"
 
 #. Default: "Save changes"
-#: ../content/packet/templates/configure.pt:91
+#: ../content/packet/templates/configure.pt:92
 msgid "label_save_changes"
 msgstr "Save changes"
 
@@ -458,14 +483,24 @@ msgstr "Select"
 msgid "multi_email"
 msgstr "Select shipping address"
 
+#. "packet"
 #: ../profiles/default/types/packet.xml
 msgid "packet"
 msgstr "UPC content"
 
 #. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
 #: ../content/packet/templates/configure.pt:14
+#, fuzzy
 msgid "packet_help"
-msgstr "We offer you existing content on the UPC website, which consults the data from the <strong>PRISMA, DRAC and Communication Service information systems</strong>, so that you can incorporate them into the website already laid out with study information and scientific production. This is the proposal to help you keep your content updated.<br /><br />See all the information regarding the <a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-empaquetats\">UPC contents.</a>"
+msgstr "We offer you information on degree courses and scientific output that is published on the UPC website and includes data taken from the information systems of PRISMA, DRAC and the Communications and Promotion Service. This is our proposal to help you keep your website content up to date. "
+
+#: ../content/packet/__init__.py:7
+msgid "pla_estudis_master"
+msgstr "Master’s degree curriculum"
+
+#: ../content/packet/__init__.py:6
+msgid "pla_grau"
+msgstr "Bachelor’s degree curriculum"
 
 #. Default: "Recipient"
 #: ../browser/contact/contact.py:128
