@@ -2,7 +2,13 @@
 .portlet.portlet-upcnews ul.list-group li:first-child {
   padding-top: 0px;
 }
-/* line 10, ../scss/_portlet_upcnews.scss */
+/* line 9, ../scss/_portlet_upcnews.scss */
+.portlet.portlet-upcnews ul.list-group .external-url-icon::before {
+  font-size: 100%;
+  vertical-align: top;
+  padding-top: 0.7em;
+}
+/* line 16, ../scss/_portlet_upcnews.scss */
 .portlet.portlet-upcnews a[target="_blank"]::after {
   display: none;
   content: "";
