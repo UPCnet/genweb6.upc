@@ -30,7 +30,10 @@ class Ipacket(IFolder):
 
 @implementer(Ipacket)
 class Packet(Container):
-    pass
+
+    @property
+    def b_icon_expr(self):
+        return "box"
 
 
 class IpacketDefinition(Interface):
