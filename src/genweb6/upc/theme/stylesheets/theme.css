@@ -32,11 +32,11 @@
 #footer-contact a {
   color: var(--bs-white);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 /* line 19, ../scss/_footer.scss */
 #footer-contact a:hover {
-  color: var(--bs-link-hover-color);
+  font-weight: 500;
 }
 /* line 26, ../scss/_footer.scss */
 #footer-contact .xarxes_socials a {
