@@ -18,7 +18,7 @@ class FitxaGrau(BasePacket):
         self.context = context
         self.title = _(u"Fitxa de grau")
         self.description = _(u"Informació sobre un estudi d'un grau específic")
-        self.URL_schema = 'http://www.upc.edu/grau/fitxa_grau.php?codi=%(codi_grau)s&lang=%(lang)s&sense_titol&contingut_upc=true'
+        self.URL_schema = 'http://www.upc.edu/grau/fitxa_grau.php?codi=%(codi_grau)s&lang=%(lang)s&sense_titol&contingut_upc=true&version=5'
         self.fields = [_(u'codi_grau')]
         self.default = dict([(field, '') for field in self.fields])
         self.mapui = dict(codi=u'codi_grau')
@@ -34,7 +34,7 @@ class PlaEstudisGrau(BasePacket):
         self.context = context
         self.title = _(u"Pla d'estudi de grau")
         self.description = _(u"Informació sobre el pla d'estudis d'un grau específic")
-        self.URL_schema = 'http://www.upc.edu/grau/fitxa_grau.php?codi=%(codi_grau)s&lang=%(lang)s&pla_estudis&sense_titol&contingut_upc=true'
+        self.URL_schema = 'http://www.upc.edu/grau/fitxa_grau.php?codi=%(codi_grau)s&lang=%(lang)s&pla_estudis&sense_titol&contingut_upc=true&version=5'
         self.fields = [_(u'codi_grau')]
         self.default = dict([(field, '') for field in self.fields])
         self.mapui = dict(codi=u'codi_grau')
@@ -52,7 +52,7 @@ class FitxaMaster(BasePacket):
 
         self.title = _(u"Fitxa de màster")
         self.description = _(u"Informació sobre un màster específic")
-        self.URL_schema = 'http://www.upc.edu/master/fitxa_master.php?id_estudi=%(codi_master)s&lang=%(lang)s&sense_titol&contingut_upc=true'
+        self.URL_schema = 'http://www.upc.edu/master/fitxa_master.php?id_estudi=%(codi_master)s&lang=%(lang)s&sense_titol&contingut_upc=true&version=5'
         self.fields = [_(u'codi_master')]
         self.default = dict([(field, '') for field in self.fields])
         self.mapui = dict(codi=u'codi_master')
@@ -70,7 +70,7 @@ class PlaEstudisMaster(BasePacket):
 
         self.title = _(u"Pla d'estudis de màster")
         self.description = _(u"Informació sobre un pla d'estudis de màster específic")
-        self.URL_schema = 'http://www.upc.edu/master/fitxa_master.php?id_estudi=%(codi_pla_master)s&lang=%(lang)s&pla_estudis&sense_titol&contingut_upc=true'
+        self.URL_schema = 'http://www.upc.edu/master/fitxa_master.php?id_estudi=%(codi_pla_master)s&lang=%(lang)s&pla_estudis&sense_titol&contingut_upc=true&version=5'
         self.fields = [_(u'codi_pla_master')]
         self.default = dict([(field, '') for field in self.fields])
         self.mapui = dict(codi=u'codi_pla_master')

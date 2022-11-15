@@ -230,8 +230,11 @@ msgstr "Tel."
 
 #. "Configure message"
 #: ../content/packet/templates/view.pt:40
-msgid "This packet is not configured yet. Please, do it in the 'configure' tab."
-msgstr "Aquest Contingut UPC encara no està configurat. Accediu a la pestanya <a href=configure>Configura</a> per fer-ho."
+msgid "This packet is not configured yet. Please, do it in the ${configure_url} tab."
+msgstr "Aquest Contingut UPC encara no està configurat. Accediu a ${configure_url} per fer-ho."
+
+msgid "Configure"
+msgstr "Configura"
 
 #: ../browser/utils/templates/utils.pt:19
 msgid "Tools of the UPC"

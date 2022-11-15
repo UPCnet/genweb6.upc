@@ -38,7 +38,13 @@
       </div>
       <div class="alert alert-info" role="alert">
         <tal:message i18n:translate="">
-          This packet is not configured yet. Please, do it in the 'configure' tab.
+          This packet is not configured yet. Please, do it in the <a href=""
+             tal:attributes="href python:context.absolute_url() + '/@@configure'"
+             i18n:name="configure_url">
+
+            <span i18n:translate="Configure">Configure</span>
+
+          </a> tab.
         </tal:message>
       </div>
     </tal:notconfigured>
