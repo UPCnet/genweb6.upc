@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
-from genweb6.core.browser.viewlets import viewletBase
+from html import escape
+from plone.app.layout.viewlets.common import TitleViewlet
+from plone.base.utils import safe_text
+from zope.component import getMultiAdapter
+
 from genweb6.core.browser.viewlets import footerViewlet as footerViewletBase
+from genweb6.core.browser.viewlets import viewletBase
 from genweb6.core.utils import genwebFooterConfig
+from genweb6.core.utils import genwebHeaderConfig
+
+import re
 
 
 class footerViewlet(footerViewletBase):
@@ -39,3 +47,32 @@ class footerViewlet(footerViewletBase):
 
 class footerContactViewlet(viewletBase):
     pass
+
+
+class titleViewlet(TitleViewlet, viewletBase):
+
+    def update(self):
+        portal_state = getMultiAdapter(
+            (self.context, self.request), name="plone_portal_state"
+        )
+
+        context_state = getMultiAdapter(
+            (self.context, self.request), name="plone_context_state"
+        )
+
+        page_title = escape(safe_text(context_state.object_title()))
+        portal_title = escape(safe_text(portal_state.navigation_root_title()))
+
+        genweb_title = getattr(genwebHeaderConfig(), 'html_title_%s' % self.pref_lang(), 'Genweb UPC')
+
+        if not genweb_title:
+            genweb_title = 'Genweb UPC'
+
+        genweb_title = escape(safe_text(re.sub(r'(<.*?>)', r'', genweb_title)))
+
+        marca_UPC = escape(safe_text(u"UPC. Universitat Politècnica de Catalunya"))
+
+        if page_title == portal_title:
+            self.site_title = u"%s &mdash; %s" % (genweb_title, marca_UPC)
+        else:
+            self.site_title = u"%s &mdash; %s &mdash; %s" % (page_title, genweb_title, marca_UPC)

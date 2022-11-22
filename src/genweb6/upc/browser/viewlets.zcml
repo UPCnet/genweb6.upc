@@ -26,4 +26,14 @@
 
     </configure>
 
+    <!-- TITLE -->
+
+    <browser:viewlet
+        name="plone.htmlhead.title"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".viewlets.titleViewlet"
+        layer="..interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        />
+
 </configure>
