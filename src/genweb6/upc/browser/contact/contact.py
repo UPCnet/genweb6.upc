@@ -27,7 +27,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 from genweb6.core import _ as _core
 from genweb6.core.utils import pref_lang
 from genweb6.upc.controlpanels.upc import IUPCSettings
-from genweb6.upc.utils import genwebUPCConfig
 
 import re
 import unicodedata
@@ -307,30 +306,6 @@ class ContactForm(Form):
         lang = self.context.Language()
         return "https://maps.upc.edu/?iu=%s&lang=%s" % (codi, lang)
 
-    def getContactPersonalized(self):
-        return genwebUPCConfig().contacte_BBDD_or_page
-
-    def getContactPage(self):
-        """
-        Funcio que retorna la pagina de contacte personalitzada
-        """
-        context = aq_inner(self.context)
-        lang = self.context.Language()
-        if lang == 'ca':
-            customized_page = getattr(context, 'contactepersonalitzat', False)
-        elif lang == 'es':
-            customized_page = getattr(context, 'contactopersonalizado', False)
-        elif lang == 'en':
-            customized_page = getattr(context, 'customizedcontact', False)
-
-        try:
-            state = api.content.get_state(customized_page)
-            if state == 'published':
-                return customized_page.text.raw
-            else:
-                return ''
-        except:
-            return ''
 
     def getDataContact(self):
         lang = pref_lang()

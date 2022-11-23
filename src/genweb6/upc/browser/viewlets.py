@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+from Acquisition import aq_inner
+
 from html import escape
+from plone import api
 from plone.app.layout.viewlets.common import TitleViewlet
 from plone.base.utils import safe_text
 from zope.component import getMultiAdapter
@@ -8,6 +11,7 @@ from genweb6.core.browser.viewlets import footerViewlet as footerViewletBase
 from genweb6.core.browser.viewlets import viewletBase
 from genweb6.core.utils import genwebFooterConfig
 from genweb6.core.utils import genwebHeaderConfig
+from genweb6.upc.utils import genwebUPCConfig
 
 import re
 
@@ -46,7 +50,32 @@ class footerViewlet(footerViewletBase):
 
 
 class footerContactViewlet(viewletBase):
-    pass
+
+    def getContactPersonalized(self):
+        return genwebUPCConfig().contacte_BBDD_or_page
+
+    def getContactPage(self):
+        """
+        Funcio que retorna la pagina de contacte personalitzada
+        """
+        context = aq_inner(self.context)
+        lang = self.context.Language()
+
+        if lang == 'ca':
+            customized_page = getattr(context, 'contactepersonalitzat', False)
+        elif lang == 'es':
+            customized_page = getattr(context, 'contactopersonalizado', False)
+        elif lang == 'en':
+            customized_page = getattr(context, 'customizedcontact', False)
+
+        try:
+            state = api.content.get_state(customized_page)
+            if state == 'published':
+                return customized_page.text.raw
+            else:
+                return ''
+        except:
+            return ''
 
 
 class titleViewlet(TitleViewlet, viewletBase):

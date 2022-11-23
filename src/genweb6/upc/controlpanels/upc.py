@@ -58,9 +58,20 @@ class ITableEmailContact(model.Schema):
 class IUPCSettings(model.Schema):
 
     model.fieldset('Contact information', _(u'Contact information'),
-                   fields=['contacte_id', 'contacte_BBDD_or_page', 'contacte_al_peu', 'xarxes_socials',
-                           'treu_icones_xarxes_socials', 'directori_upc', 'directori_filtrat',
-                           'contacte_no_upcmaps', 'contacte_multi_email', 'contact_emails_table'])
+                   fields=['contacte_al_peu', 'contacte_id',
+                           'custom_map_address',
+                           'contacte_BBDD_or_page',
+                           'treu_icones_xarxes_socials', 'xarxes_socials',
+                           'contacte_multi_email', 'contact_emails_table'])
+
+    contacte_al_peu = schema.Bool(
+        title=_(u"contacte_al_peu",
+                default=u"Adreça de contacte al peu"),
+        description=_(u"help_contacte_al_peu",
+                      default=u"La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."),
+        required=False,
+        default=False,
+    )
 
     read_permission(contacte_id='genweb.webmaster')
     write_permission(contacte_id='genweb.manager')
@@ -69,6 +80,12 @@ class IUPCSettings(model.Schema):
                 default=u"ID contacte de la unitat"),
         description=_(u"help_contacte_id",
                       default=u"Afegiu el id de contacte de la base de dades de màsters."),
+        required=False,
+    )
+
+    custom_map_address = schema.TextLine(
+        title=_(u"Adreça del mapa customitzat"),
+        description=_(u"Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."),
         required=False,
     )
 
@@ -81,11 +98,11 @@ class IUPCSettings(model.Schema):
         default=False,
     )
 
-    contacte_al_peu = schema.Bool(
-        title=_(u"contacte_al_peu",
-                default=u"Adreça de contacte al peu"),
-        description=_(u"help_contacte_al_peu",
-                      default=u"La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."),
+    treu_icones_xarxes_socials = schema.Bool(
+        title=_(u"treu_icones_xarxes_socials",
+                default="Treu les icones per compartir en xarxes socials"),
+        description=_(u"help_treu_icones_xarxes_socials",
+                      default=u"Treu les icones per compartir en xarxes socials ..."),
         required=False,
         default=False,
     )
@@ -96,44 +113,6 @@ class IUPCSettings(model.Schema):
         description=_(u"Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"),
         value_type=DictRow(schema=IXarxesSocials),
         required=False,
-    )
-
-    treu_icones_xarxes_socials = schema.Bool(
-        title=_(u"treu_icones_xarxes_socials",
-                default="Treu les icones per compartir en xarxes socials"),
-        description=_(u"help_treu_icones_xarxes_socials",
-                      default=u"Treu les icones per compartir en xarxes socials ..."),
-        required=False,
-        default=False,
-    )
-
-    directori_upc = schema.Bool(
-        title=_(u"directori_upc",
-                default=u"Directori UPC a les eines"),
-        description=_(u"help_directori_upc",
-                      default=u"Es mostrarà a la part superior l'enllaç al Directori UPC."),
-        required=False,
-        default=False,
-    )
-
-    read_permission(directori_filtrat='genweb.webmaster')
-    write_permission(directori_filtrat='genweb.manager')
-    directori_filtrat = schema.Bool(
-        title=_(u"directori_filtrat",
-                default=u"Directori UPC filtrat a les eines"),
-        description=_(u"help_directori_filtrat",
-                      default=u"S'obrirà el Directori UPC, carregant les dades de la unitat."),
-        required=False,
-        default=False,
-    )
-
-    contacte_no_upcmaps = schema.Bool(
-        title=_(u"contacte_no_upcmaps",
-                default=u"Contacte sense UPCmaps"),
-        description=_(u"help_contacte_no_upcmaps",
-                      default=u"Es mostra la informació d'UPCmaps al contacte."),
-        required=False,
-        default=False,
     )
 
     contacte_multi_email = schema.Bool(

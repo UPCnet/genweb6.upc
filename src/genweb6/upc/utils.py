@@ -60,7 +60,8 @@ class genwebUPCUtils(BrowserView):
 
     def getDadesUnitat(self):
         """ Retorna les dades proporcionades pel WebService del SCP """
-        unitat = self.genwebUPCConfig().contacte_id
+        config = self.genwebUPCConfig()
+        unitat = config.contacte_id
         if unitat:
             dades = self._queryInfoUnitatWS(unitat)
             if 'error' in dades:
@@ -69,7 +70,12 @@ class genwebUPCUtils(BrowserView):
                 lang = self.context.Language()
                 if not lang:
                     lang = 'ca'
-                dades['google_maps'] = self.getGoogleMapsURL(dades.get('adreça', ''), lang)
+
+                if config.custom_map_address and config.custom_map_address != "":
+                    dades['google_maps'] = self.getGoogleMapsURL(config.custom_map_address, lang)
+                else:
+                    dades['google_maps'] = self.getGoogleMapsURL(dades.get('adreça', ''), lang)
+
                 return dades
         else:
             return False

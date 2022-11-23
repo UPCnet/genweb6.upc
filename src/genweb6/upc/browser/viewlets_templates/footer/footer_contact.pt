@@ -16,9 +16,10 @@
           Google Maps
         </iframe>
       </div>
-      <div class="col-md-3 offset-md-1 contact">
+      <div class="col-md-3 offset-md-1 contact" tal:define="custom_info view/getContactPersonalized">
         <h2 i18n:translate="">Contacte</h2>
-        <address>
+
+        <address tal:condition="not: custom_info">
           <p tal:content="dades_unitat/adreça | nothing">
             C. Jordi Girona, 1-3. 08034 Barcelona
           </p>
@@ -37,11 +38,16 @@
               contacte@noreply.com
             </a>
           </p>
+          <p tal:condition="dades_unitat/codi_upc | nothing">
+            <a tal:attributes="href string:https://directori.upc.edu/directori/dadesUE.jsp?id=${dades_unitat/codi_upc}" target="_blank"
+               i18n:translate="">Directori UPC</a>
+          </p>
         </address>
-        <p tal:condition="dades_unitat/codi_upc | nothing">
-          <a tal:attributes="href string:https://directori.upc.edu/directori/dadesUE.jsp?id=${dades_unitat/codi_upc}" target="_blank"
-             i18n:translate="">Directori UPC</a>
-        </p>
+
+        <address tal:condition="custom_info">
+          <tal:block tal:replace="structure view/getContactPage"></tal:block>
+        </address>
+
       </div>
       <div class="col-md-3 offset-md-1 xarxes_socials"
            tal:condition="not:upc_config/treu_icones_xarxes_socials"
