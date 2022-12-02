@@ -6,17 +6,19 @@
            i18n:domain="genweb6.upc">
 
   <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat"
-       tal:attributes="class context/@@genweb.utils/class_footer_image">
+       tal:attributes="class context/@@genweb.utils/class_footer_image"
+       tal:define="custom_info view/getContactPersonalized">
     <div class="row">
       <div class="col-md-4 map">
         <h2 i18n:translate="">On som</h2>
         <iframe class="footer-contact-map" width="100%" height="300" frameborder="0"
                 scrolling="no" marginheight="0" marginwidth="0"
-                tal:attributes="src dades_unitat/google_maps | nothing">
+                tal:attributes="src dades_unitat/google_maps | nothing
+                                title dades_unitat/adreça | nothing">
           Google Maps
         </iframe>
       </div>
-      <div class="col-md-3 offset-md-1 contact" tal:define="custom_info view/getContactPersonalized">
+      <div class="col-md-3 offset-md-1 contact">
         <h2 i18n:translate="">Contacte</h2>
 
         <address tal:condition="not: custom_info">
