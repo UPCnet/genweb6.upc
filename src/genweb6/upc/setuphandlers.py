@@ -97,10 +97,6 @@ def setupVarious(context):
     encoded_data = b64encode_file(filename='logo.png', data=logo)
     header_settings.logo = encoded_data
 
-    # logo_responsive = open('{}/genweb6/upc/theme/img/logo-responsive.png'.format(egglocation), 'rb').read()
-    # encoded_data = b64encode_file(filename='logo-responsive.png', data=logo_responsive)
-    # header_settings.logo_responsive = encoded_data
-
     header_settings.logo_alt = "Universitat Politècnica de Catalunya"
     header_settings.logo_url = "https://www.upc.edu/ca"
     header_settings.logo_external_url = True

@@ -6,7 +6,6 @@
            i18n:domain="genweb6.upc">
 
   <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat"
-       tal:attributes="class context/@@genweb.utils/class_footer_image"
        tal:define="custom_info view/getContactPersonalized;
                    tixs upc_config/treu_icones_xarxes_socials;">
 
