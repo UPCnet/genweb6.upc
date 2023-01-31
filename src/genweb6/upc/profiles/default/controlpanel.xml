@@ -2,7 +2,7 @@
 <object name="portal_controlpanel" meta_type="Plone Control Panel Tool">
 
     <configlet
-        title="UPC. Footer contact"
+        title="Contacte"
         action_id="genweb6.upc"
         appId="genweb6.upc"
         category="genweb-design"
