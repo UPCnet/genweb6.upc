@@ -45,6 +45,10 @@
             <a tal:attributes="href string:https://directori.upc.edu/directori/dadesUE.jsp?id=${dades_unitat/codi_upc}" target="_blank"
                i18n:translate="">Directori UPC</a>
           </p>
+          <p>
+            <a tal:attributes="href view/getContactFormURL"
+               i18n:translate="">Formulari de contacte</a>
+          </p>
         </address>
 
         <address tal:condition="custom_info">

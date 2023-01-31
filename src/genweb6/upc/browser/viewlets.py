@@ -27,29 +27,41 @@ class footerViewlet(footerViewletBase):
 
     def getLinksPeu(self):
         lang = self.pref_lang()
+        root_url = self.root_url()
 
-        links = {"ca": {"contact":       {"url": self.root_url() + "/ca/contact", "target": "_self"},
-                        "sitemap":       {"url": self.root_url() + "/ca/sitemap", "target": "_self"},
-                        "accessibility": {"url": self.root_url() + "/ca/accessibility", "target": "_self"},
+        links = {"ca": {"contact":       {},
+                        "sitemap":       {"url": root_url + "/ca/sitemap", "target": "_self"},
+                        "accessibility": {"url": root_url + "/ca/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/ca/avis-legal", "target": "_blank"},
-                        "cookies":       {"url": self.root_url() + "/ca/cookies-policy", "target": "_self"}},
+                        "cookies":       {"url": root_url + "/ca/cookies-policy", "target": "_self"}},
 
-                 "es": {"contact":       {"url": self.root_url() + "/es/contact", "target": "_self"},
-                        "sitemap":       {"url": self.root_url() + "/es/sitemap", "target": "_self"},
-                        "accessibility": {"url": self.root_url() + "/es/accessibility", "target": "_self"},
+                 "es": {"contact":       {},
+                        "sitemap":       {"url": root_url + "/es/sitemap", "target": "_self"},
+                        "accessibility": {"url": root_url + "/es/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/es/aviso-legal", "target": "_blank"},
-                        "cookies":       {"url": self.root_url() + "/es/cookies-policy", "target": "_self"}},
+                        "cookies":       {"url": root_url + "/es/cookies-policy", "target": "_self"}},
 
-                 "en": {"contact":       {"url": self.root_url() + "/en/contact", "target": "_self"},
-                        "sitemap":       {"url": self.root_url() + "/en/sitemap", "target": "_self"},
-                        "accessibility": {"url": self.root_url() + "/en/accessibility", "target": "_self"},
+                 "en": {"contact":       {},
+                        "sitemap":       {"url": root_url + "/en/sitemap", "target": "_self"},
+                        "accessibility": {"url": root_url + "/en/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/en/disclaimer", "target": "_blank"},
-                        "cookies":       {"url": self.root_url() + "/en/cookies-policy", "target": "_self"}}}
+                        "cookies":       {"url": root_url + "/en/cookies-policy", "target": "_self"}}}
 
         return links[lang]
 
 
 class footerContactViewlet(viewletBase):
+
+    def getContactFormURL(self):
+        lang = self.pref_lang()
+        root_url = self.root_url()
+
+        if lang == 'es':
+            return root_url + '/es/contact'
+        elif lang == 'en':
+            return root_url + '/en/contact'
+
+        return root_url + '/ca/contact'
 
     def getContactPersonalized(self):
         return genwebUPCConfig().contacte_BBDD_or_page

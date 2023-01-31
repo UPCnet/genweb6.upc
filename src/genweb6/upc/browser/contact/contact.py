@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
@@ -24,8 +23,8 @@ from zope.schema.interfaces import InvalidValue
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 
-from genweb6.core import _ as _core
 from genweb6.core.utils import pref_lang
+from genweb6.upc import _
 from genweb6.upc.controlpanels.upc import IUPCSettings
 
 import re
@@ -152,21 +151,21 @@ class IContactForm(model.Schema):
     )
 
     privacidad = schema.Bool(
-        title=_core('title_privacy'),
-        description=_core(u'desc_privacy'),
+        title=_(u'title_privacy'),
+        description=_(u'desc_privacy'),
         required=True,
         constraint=is_checked
     )
 
     captcha = schema.TextLine(
-        title=_(''),
-        description=_(''),
+        title='',
+        description='',
         required=True
     )
 
 
 noValueMessage = widget.StaticWidgetAttribute(
-    _core(u'custom message'),
+    _(u'custom message'),
     field=IContactForm['recipient']
 )
 
@@ -201,7 +200,7 @@ class ContactForm(Form):
             self.fields['captcha'].field,
             self.form_instance,
             self.context)
-        error_instance.defaultMessage = _core(u"The entered text does not match the text in the image")
+        error_instance.defaultMessage = _(u"The entered text does not match the text in the image")
         error_instance.update()
         return error_instance
 
@@ -305,7 +304,6 @@ class ContactForm(Form):
     def getURLUPCmaps(self, codi):
         lang = self.context.Language()
         return "https://maps.upc.edu/?iu=%s&lang=%s" % (codi, lang)
-
 
     def getDataContact(self):
         lang = pref_lang()

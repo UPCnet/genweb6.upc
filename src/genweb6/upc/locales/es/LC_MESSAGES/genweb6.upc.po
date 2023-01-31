@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2023-01-31 10:29+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -25,6 +25,14 @@ msgstr "<strong>Aviso para los editores:</strong><br />Este contenido UPC es del
 msgid "APIKEY"
 msgstr "Clave API"
 
+#: ../controlpanels/upc.py:87
+msgid "Adreça del mapa customitzat"
+msgstr ""
+
+#: ../controlpanels/upc.py:88
+msgid "Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."
+msgstr ""
+
 #: ../browser/utils/templates/utils.pt:43
 msgid "Bus SOA"
 msgstr "Bus SOA"
@@ -35,28 +43,28 @@ msgstr "Bus SOA Configuración"
 
 #: ../controlpanels/bus_soa.py:59
 #: ../controlpanels/identitat_digital.py:48
-#: ../controlpanels/upc.py:187
+#: ../controlpanels/upc.py:164
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: ../controlpanels/bus_soa.py:61
 #: ../controlpanels/identitat_digital.py:50
-#: ../controlpanels/upc.py:189
+#: ../controlpanels/upc.py:166
 msgid "Changes canceled."
 msgstr "Cambios cancelados."
 
 #: ../controlpanels/bus_soa.py:56
 #: ../controlpanels/identitat_digital.py:45
-#: ../controlpanels/upc.py:184
+#: ../controlpanels/upc.py:161
 msgid "Changes saved"
 msgstr "Cambios guardados"
 
-#: ../content/packet/__init__.py:9
+#: ../content/packet/templates/view.pt:45
 #: ../profiles/default/types/packet.xml
 msgid "Configure"
 msgstr "Configura"
 
-#: ../controlpanels/upc.py:150
+#: ../controlpanels/upc.py:127
 msgid "Contact emails"
 msgstr "Direcciones de correo"
 
@@ -64,7 +72,7 @@ msgstr "Direcciones de correo"
 msgid "Contact information"
 msgstr "Información de contacto"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:20
+#: ../browser/viewlets_templates/footer/footer_contact.pt:23
 msgid "Contacte"
 msgstr "Contacto"
 
@@ -80,36 +88,36 @@ msgstr "Contenido existente"
 msgid "Create a Genweb UPC"
 msgstr "Crear Genweb UPC"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:42
+#: ../browser/viewlets_templates/footer/footer_contact.pt:45
 msgid "Directori UPC"
 msgstr "DirectoriO UPC"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:34
+#: ../browser/viewlets_templates/footer/footer_contact.pt:38
 #: ../controlpanels/upc.py:53
 msgid "E-mail"
 msgstr "Correo"
 
-#: ../content/packet/packet.py:129
+#: ../content/packet/packet.py:132
 msgid "ERROR. Autoreference"
 msgstr "ERROR. Autorefencia"
 
-#: ../content/packet/packet.py:131
+#: ../content/packet/packet.py:134
 msgid "ERROR. There was a timeout while waiting for '{0}'"
 msgstr "ERROR. Timeout esperando '{0}'"
 
-#: ../content/packet/packet.py:133
+#: ../content/packet/packet.py:136
 msgid "ERROR. This URL does not exist."
 msgstr "ERROR. La URL no existe"
 
-#: ../content/packet/packet.py:105
+#: ../content/packet/packet.py:108
 msgid "ERROR. This element does not exist."
 msgstr "ERROR. El elemento no existe"
 
-#: ../content/packet/packet.py:135
+#: ../content/packet/packet.py:138
 msgid "ERROR. Unexpected exception."
 msgstr "ERROR. Excepción inesperada"
 
-#: ../content/packet/packet.py:107
+#: ../content/packet/packet.py:110
 msgid "ERROR: Unknown identifier. This page does not exist."
 msgstr "<h2>ERROR: Identificador incorrecto. La página no existe.</h2>"
 
@@ -117,7 +125,7 @@ msgstr "<h2>ERROR: Identificador incorrecto. La página no existe.</h2>"
 msgid "Enllaç"
 msgstr "Enlace"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:30
+#: ../browser/viewlets_templates/footer/footer_contact.pt:34
 msgid "Fax"
 msgstr "Fax"
 
@@ -128,6 +136,10 @@ msgstr "Ficha de grado"
 #: ../content/packet/adapters.py:53
 msgid "Fitxa de màster"
 msgstr "Ficha de master"
+
+#: ../browser/viewlets_templates/footer/footer_contact.pt:49
+msgid "Formulari de contacte"
+msgstr ""
 
 #: ../content/packet/adapters.py:87
 msgid "Grups de recerca"
@@ -141,7 +153,7 @@ msgstr "<p>Listado de los grupos de investigación que pertenecen a un departame
 msgid "Icona"
 msgstr "Icono"
 
-#: ../controlpanels/upc.py:96
+#: ../controlpanels/upc.py:111
 msgid "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
 msgstr "Icono que se mostrará, puede encontrar todos los identificadores en el <a href='https://icons.getbootstrap.com/' target='_blank'>siguiente enlace</a>. Ej: bi-facebook"
 
@@ -169,13 +181,13 @@ msgstr "<p>Ficha con la información básica de un máster.</p><p class=\"muted\
 msgid "Informació sobre un pla d'estudis de màster específic"
 msgstr "<p>Disponible para todos los másters excepto los interuniversitarios.</p><p>Plan de estudios de un máster  con acceso a las guías docentes.</p><p class=\"muted\">Indicar el identificador del máster al sistema de información del Servicio de Comunicación.</p><p class=\"muted\">Ejemplo: el identificador  del Máster universitario en Ingeniería de la Energía es <strong>35.</strong></p><p><a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-upc/identificadors-dels-estudis-de-master\" class=\"external-link\">Lista de los identificadores de los estudios de máster <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Abrir en nueva ventana)\"></a><strong>.<br></strong></p>"
 
-#: ../configure.zcml:25
+#: ../configure.zcml:26
 msgid "Installs the genweb6.upc add-on."
 msgstr "Instala el paquete genweb6.upc"
 
-#: ../browser/contact/contact.py:103
+#: ../browser/contact/contact.py:101
 msgid "Invalid email address"
-msgstr "Dirección de correo inválido"
+msgstr "Dirección de correo no válida"
 
 #: ../content/packet/adapters.py:103
 msgid "Investigadors d'un grup de recerca"
@@ -189,15 +201,15 @@ msgstr "<p>Listado de los investigadores de un grupo de investigación.</p><p cl
 msgid "Language"
 msgstr "Idioma"
 
-#: ../browser/contact/contact.py:292
+#: ../browser/contact/contact.py:290
 msgid "Mail sent."
-msgstr "Correo enviado."
+msgstr "Mensaje enviado"
 
 #: ../controlpanels/upc.py:48
 msgid "Name"
 msgstr "Nombre"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:12
+#: ../browser/viewlets_templates/footer/footer_contact.pt:14
 msgid "On som"
 msgstr "Donde estamos"
 
@@ -215,25 +227,26 @@ msgstr "Plan de estudios del máster"
 
 #: ../controlpanels/bus_soa.py:48
 #: ../controlpanels/identitat_digital.py:37
-#: ../controlpanels/upc.py:168
+#: ../controlpanels/upc.py:145
 msgid "Save"
 msgstr "Guardar"
 
-#: ../browser/contact/contact.py:216
+#: ../browser/contact/contact.py:214
 msgid "Send"
-msgstr "envía"
+msgstr "Enviar"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:26
+#: ../browser/viewlets_templates/footer/footer_contact.pt:30
 msgid "Tel."
 msgstr "Tel."
 
+#: ../browser/contact/contact.py:203
+msgid "The entered text does not match the text in the image"
+msgstr "El texto introducido no coindice con el de la imagen"
+
 #. "Configure message"
-#: ../content/packet/templates/view.pt:40
+#: ../content/packet/templates/view.pt:41
 msgid "This packet is not configured yet. Please, do it in the ${configure_url} tab."
 msgstr "Este Contenido UPC aún no está configurado. Por favor, acceda a ${configure_url} para hacerlo."
-
-msgid "Configure"
-msgstr "Configura"
 
 #: ../browser/utils/templates/utils.pt:19
 msgid "Tools of the UPC"
@@ -243,7 +256,7 @@ msgstr "Herramientas de la UPC"
 msgid "Títol"
 msgstr "Título"
 
-#: ../controlpanels/upc.py:160
+#: ../controlpanels/upc.py:137
 msgid "UPC Settings"
 msgstr "Herramientas UPC"
 
@@ -264,7 +277,7 @@ msgstr "URL para acceder al bus"
 msgid "URL to access the digital identity"
 msgstr "URL para acceder a la identidad digital"
 
-#: ../configure.zcml:34
+#: ../configure.zcml:35
 msgid "Uninstalls the genweb6.upc add-on."
 msgstr "Desisntalar paquete de genweb6.upc"
 
@@ -284,8 +297,8 @@ msgstr "Información del usuario alta TFE"
 msgid "User to connect to the bus"
 msgstr "Usuario para conectar el bus"
 
-#: ../browser/viewlets_templates/footer/footer_contact.pt:53
-#: ../controlpanels/upc.py:95
+#: ../browser/viewlets_templates/footer/footer_contact.pt:66
+#: ../controlpanels/upc.py:110
 msgid "Xarxes Socials"
 msgstr "Redes Sociales"
 
@@ -319,38 +332,31 @@ msgid "configurat amb l'identificador:"
 msgstr "configurado con el identificador:"
 
 #. Default: "Página de contacte personalitzada"
-#: ../controlpanels/upc.py:76
+#: ../controlpanels/upc.py:93
 msgid "contacte_BBBDD_or_page"
 msgstr "Página de contacto alternativa"
 
 #. Default: "Adreça de contacte al peu"
-#: ../controlpanels/upc.py:85
+#: ../controlpanels/upc.py:68
 msgid "contacte_al_peu"
 msgstr "Dirección de contacto al pie"
 
 #. Default: "ID contacte de la unitat"
-#: ../controlpanels/upc.py:68
+#: ../controlpanels/upc.py:79
 msgid "contacte_id"
 msgstr "ID contacto de la unidad"
-
-#. Default: "Contacte sense UPCmaps"
-#: ../controlpanels/upc.py:131
-msgid "contacte_no_upcmaps"
-msgstr "Desactivar UPCmaps"
 
 #: ../content/packet/__init__.py:8
 msgid "contingut_genweb"
 msgstr "Contenido existente"
 
-#. Default: "Directori UPC filtrat a les eines"
-#: ../controlpanels/upc.py:122
-msgid "directori_filtrat"
-msgstr "¿Filtrado por unidad?"
+#: ../browser/contact/contact.py:168
+msgid "custom message"
+msgstr "Escoge una opción"
 
-#. Default: "Directori UPC a les eines"
-#: ../controlpanels/upc.py:111
-msgid "directori_upc"
-msgstr "Directorio UPC"
+#: ../browser/contact/contact.py:155
+msgid "desc_privacy"
+msgstr "Los datos recogidos se tratarán tal como se describe en la <a href='https://upc.edu/es/aviso-legal/informacion-y-acceso-a-los-datos-personales' target='_blank'>tabla de información y acceso a los datos personales</a>"
 
 #: ../content/packet/adapters.py:122
 msgid "element"
@@ -369,39 +375,36 @@ msgstr "Ficha de master"
 msgid "genweb-actualitat"
 msgstr "Actualidad UPC"
 
-#: ../configure.zcml:25
+#: ../configure.zcml:26
 msgid "genweb6.upc"
 msgstr "genweb6.upc"
 
-#: ../configure.zcml:34
+#: ../configure.zcml:35
 msgid "genweb6.upc (uninstall)"
 msgstr "genweb6.upc (desinstalar)"
 
 #. Default: "Please enter the message you want to send."
-#: ../browser/contact/contact.py:151
+#: ../browser/contact/contact.py:149
 msgid "genweb_help_message"
-msgstr "Escriba el mensaje que quiera enviar"
+msgstr "Por favor, introduzca el mensaje que quiera enviar."
 
 #. Default: "Message"
-#: ../browser/contact/contact.py:150
+#: ../browser/contact/contact.py:148
 msgid "genweb_message"
 msgstr "Mensaje"
 
 #. Default: "E-Mail"
-#: ../browser/contact/contact.py:139
+#: ../browser/contact/contact.py:137
 msgid "genweb_sender_from_address"
 msgstr "Correo electrónico"
 
-############
-# Contacto #
-############
 #. Default: "Name"
-#: ../browser/contact/contact.py:134
+#: ../browser/contact/contact.py:132
 msgid "genweb_sender_fullname"
 msgstr "Nombre"
 
 #. Default: "Subject"
-#: ../browser/contact/contact.py:145
+#: ../browser/contact/contact.py:143
 msgid "genweb_subject"
 msgstr "Asunto"
 
@@ -414,49 +417,29 @@ msgid "grups_recerca_people"
 msgstr "Investigadores de un grupo de investigación"
 
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
-#: ../controlpanels/upc.py:78
+#: ../controlpanels/upc.py:95
 msgid "help_contacte_BBBDD_or_page"
 msgstr "Por defecto, la información de contacto se alimenta de la base de datos del Servicio de Comunicación."
 
 #. Default: "La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."
-#: ../controlpanels/upc.py:87
+#: ../controlpanels/upc.py:70
 msgid "help_contacte_al_peu"
 msgstr "La dirección y teléfono provenientes de la base de datos del Servicio de Comunicación se visualizan al pie de página."
 
 #. Default: "Afegiu el id de contacte de la base de dades de màsters."
-#: ../controlpanels/upc.py:70
+#: ../controlpanels/upc.py:81
 msgid "help_contacte_id"
 msgstr "Añadir el id de la base de datos del Servicio de Comunicación correspondiente a la unidad."
 
 #. Default: "Es pot seleccionar a qui s'envia el missatge de contacte."
-#: ../controlpanels/upc.py:142
+#: ../controlpanels/upc.py:119
 msgid "help_contacte_multi_email"
 msgstr "Se puede seleccionar la dirección de correo que recibe el mensaje de contacto."
 
-#. Default: "Es mostra la informació d'UPCmaps al contacte."
-#: ../controlpanels/upc.py:133
-msgid "help_contacte_no_upcmaps"
-msgstr "Marque esta opción si desea ocultar la información de UPCmaps en el contacto."
-
-#. Default: "S'obrirà el Directori UPC, carregant les dades de la unitat."
-#: ../controlpanels/upc.py:124
-msgid "help_directori_filtrat"
-msgstr "Se abrirá el Directorio UPC cargando los datos de la unidad."
-
-#. Default: "Es mostrarà a la part superior l'enllaç al Directori UPC."
-#: ../controlpanels/upc.py:113
-msgid "help_directori_upc"
-msgstr "Se mostrará en la parte superior el enlace al Directorio UPC."
-
 #. Default: "Add name and email by language"
-#: ../controlpanels/upc.py:151
+#: ../controlpanels/upc.py:128
 msgid "help_emails_table"
 msgstr "Agregar nombre y correo electrónico por idioma"
-
-#. Default: "Treu les icones per compartir en xarxes socials ..."
-#: ../controlpanels/upc.py:104
-msgid "help_treu_icones_xarxes_socials"
-msgstr "Oculta los iconos para compartir en redes sociales"
 
 #. Default: "Close"
 #: ../content/packet/templates/configure.pt:91
@@ -474,7 +457,7 @@ msgid "label_select"
 msgstr "Identificador"
 
 #. Default: "Seleccionar l'adreça d'enviament"
-#: ../controlpanels/upc.py:140
+#: ../controlpanels/upc.py:117
 msgid "multi_email"
 msgstr "Seleccionar l'adreça d'enviament"
 
@@ -485,7 +468,6 @@ msgstr "Contenido UPC"
 
 #. Default: "Us oferim continguts ja existents al web UPC, que consulten les dades dels <strong>sistemes d'informació de PRISMA, DRAC i del Servei de Comunicació</strong>, perquè incorporeu al vostre web pàgines ja maquetades amb informació d’estudis i de la producció científica. Aquesta és la proposta per ajudar-vos a mantenir els vostres continguts actualitzats. <br /><br />Consulteu tota la informació referent als <a href=\"https://www.upc.edu/comunicacio/ca/serveis-web/continguts-upc\">continguts UPC <img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(obriu en una finestra nova)\"> </a>."
 #: ../content/packet/templates/configure.pt:14
-#, fuzzy
 msgid "packet_help"
 msgstr "Os ofrecemos contenidos ya existentes en la web UPC, que consultan los datos de los <strong>sistemas de información de PRISMA, DRAC y del Servicio de Comunicación, </strong>para que los podáis incorporar en la web  ya maquetadas con información de estudios y de la producción científica. Esta es la propuesta para ayudaros a mantener vuestros contenidos actualizados.<br /><br />Consulte toda la información referente a los <a target=\"_blank\" href=\"https://www.upc.edu/comunicacio/ca/www/continguts-empaquetats\">contenidos UPC.</a>"
 
@@ -497,12 +479,16 @@ msgstr "Plan de estudios del máster"
 msgid "pla_grau"
 msgstr "Plan de estudios de grado"
 
-#. Default: "Recipient"
-#: ../browser/contact/contact.py:128
-msgid "to_address"
-msgstr "Contacta con"
+#: ../browser/contact/contact.py:154
+msgid "title_privacy"
+msgstr ""
 
-#. Default: "Treu les icones per compartir en xarxes socials"
+#. Default: "Recipient"
+#: ../browser/contact/contact.py:126
+msgid "to_address"
+msgstr ""
+
+#. Default: "Treu les icones per compartir en xarxes socials del peu"
 #: ../controlpanels/upc.py:102
 msgid "treu_icones_xarxes_socials"
 msgstr "Oculta los iconos para compartir en redes sociales"
