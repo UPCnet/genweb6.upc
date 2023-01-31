@@ -2,10 +2,10 @@
 <object name="portal_controlpanel" meta_type="Plone Control Panel Tool">
 
     <configlet
-        title="Genweb UPC"
+        title="UPC. Footer contact"
         action_id="genweb6.upc"
         appId="genweb6.upc"
-        category="genweb-advanced"
+        category="genweb-design"
         condition_expr=""
         url_expr="string:${portal_url}/@@upc-controlpanel"
         icon_expr="string:gear"

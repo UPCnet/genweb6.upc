@@ -246,7 +246,7 @@ msgstr "Títol"
 
 #: ../controlpanels/upc.py:160
 msgid "UPC Settings"
-msgstr "Configuració UPC"
+msgstr "Configuració UPC. Contacte peu"
 
 #: ../portlets/upcnews/upcnews.py:25
 msgid "UPCNews"
