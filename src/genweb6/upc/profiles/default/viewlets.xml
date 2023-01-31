@@ -23,7 +23,6 @@
   <viewlet name="genweb.upc.footer.contact"/>
   <viewlet name="genweb.upc.footer"/>
   <viewlet name="genweb.footer"/>
-  <viewlet name="genweb.cookies"/>
   <viewlet name="plone.analytics"/>
   <viewlet name="plone.footer"/>
   <viewlet name="plone.colophon"/>
