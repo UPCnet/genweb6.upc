@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-01-31 10:29+0000\n"
+"POT-Creation-Date: 2023-01-31 10:36+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -386,6 +386,11 @@ msgstr "genweb6.upc"
 #: ../configure.zcml:35
 msgid "genweb6.upc (uninstall)"
 msgstr "genweb6.upc (desinstal·lar)"
+
+#. Default: "Contact"
+#: ../browser/contact/contact.pt:20
+msgid "genweb_formContacte"
+msgstr "Contacte"
 
 #. Default: "Please enter the message you want to send."
 #: ../browser/contact/contact.py:149

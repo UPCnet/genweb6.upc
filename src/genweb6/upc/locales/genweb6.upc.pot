@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-01-31 10:29+0000\n"
+"POT-Creation-Date: 2023-01-31 10:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -381,6 +381,11 @@ msgstr ""
 
 #: ../configure.zcml:35
 msgid "genweb6.upc (uninstall)"
+msgstr ""
+
+#. Default: "Contact"
+#: ../browser/contact/contact.pt:20
+msgid "genweb_formContacte"
 msgstr ""
 
 #. Default: "Please enter the message you want to send."
