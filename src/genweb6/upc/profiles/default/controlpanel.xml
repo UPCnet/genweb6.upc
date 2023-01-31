@@ -8,7 +8,7 @@
         category="genweb-design"
         condition_expr=""
         url_expr="string:${portal_url}/@@upc-controlpanel"
-        icon_expr="string:gear"
+        icon_expr="string:postcard"
         visible="True">
 
         <permission>Genweb: Webmaster Users</permission>
