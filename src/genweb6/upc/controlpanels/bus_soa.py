@@ -6,7 +6,7 @@ from plone.supermodel import model
 from z3c.form import button
 from zope import schema
 
-from genweb6.core import _
+from genweb6.upc import _
 
 
 class IBusSOASettings(model.Schema):

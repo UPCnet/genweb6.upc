@@ -11,7 +11,7 @@ from plone.supermodel import model
 from z3c.form import button
 from zope import schema
 
-from genweb6.core import _
+from genweb6.upc import _
 
 import logging
 
@@ -57,18 +57,8 @@ class ITableEmailContact(model.Schema):
 
 class IUPCSettings(model.Schema):
 
-    model.fieldset('Contact information', _(u'Contact information'),
-                   fields=['contacte_al_peu', 'contacte_id',
-                           'custom_map_address',
-                           'contacte_BBDD_or_page',
-                           'treu_icones_xarxes_socials', 'xarxes_socials',
-                           'contacte_multi_email', 'contact_emails_table'])
-
     contacte_al_peu = schema.Bool(
-        title=_(u"contacte_al_peu",
-                default=u"Adreça de contacte al peu"),
-        description=_(u"help_contacte_al_peu",
-                      default=u"La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."),
+        title=_(u"contacte_al_peu"),
         required=False,
         default=False,
     )
@@ -76,10 +66,7 @@ class IUPCSettings(model.Schema):
     read_permission(contacte_id='genweb.webmaster')
     write_permission(contacte_id='genweb.manager')
     contacte_id = schema.TextLine(
-        title=_(u"contacte_id",
-                default=u"ID contacte de la unitat"),
-        description=_(u"help_contacte_id",
-                      default=u"Afegiu el id de contacte de la base de dades de màsters."),
+        title=_(u"contacte_id"),
         required=False,
     )
 
@@ -90,17 +77,14 @@ class IUPCSettings(model.Schema):
     )
 
     contacte_BBDD_or_page = schema.Bool(
-        title=_(u"contacte_BBBDD_or_page",
-                default=u"Página de contacte personalitzada"),
-        description=_(u"help_contacte_BBBDD_or_page",
-                      default=u"Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."),
+        title=_(u"contacte_BBBDD_or_page"),
+        description=_(u"help_contacte_BBBDD_or_page"),
         required=False,
         default=False,
     )
 
     treu_icones_xarxes_socials = schema.Bool(
-        title=_(u"treu_icones_xarxes_socials",
-                default="Treu les icones per compartir en xarxes socials del peu"),
+        title=_(u"treu_icones_xarxes_socials"),
         required=False,
         default=False,
     )
@@ -114,10 +98,8 @@ class IUPCSettings(model.Schema):
     )
 
     contacte_multi_email = schema.Bool(
-        title=_(u"multi_email",
-                default=u"Seleccionar l'adreça d'enviament"),
-        description=_(u"help_contacte_multi_email",
-                      default=u"Es pot seleccionar a qui s'envia el missatge de contacte."),
+        title=_(u"multi_email"),
+        description=_(u"help_contacte_multi_email"),
         required=False,
         default=False,
     )
@@ -125,7 +107,7 @@ class IUPCSettings(model.Schema):
     directives.widget(contact_emails_table=DataGridFieldFactory)
     contact_emails_table = schema.List(
         title=_(u'Contact emails'),
-        description=_(u'help_emails_table', default=u'Add name and email by language'),
+        description=_(u'help_emails_table'),
         value_type=DictRow(schema=ITableEmailContact),
         required=False,
     )
@@ -134,7 +116,7 @@ class IUPCSettings(model.Schema):
 class UPCSettingsForm(controlpanel.RegistryEditForm):
 
     schema = IUPCSettings
-    label = _(u'UPC Settings')
+    label = _(u'Contact')
 
     def updateFields(self):
         super(UPCSettingsForm, self).updateFields()

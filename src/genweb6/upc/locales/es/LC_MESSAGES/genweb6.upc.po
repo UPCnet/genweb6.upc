@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-01-31 10:36+0000\n"
+"POT-Creation-Date: 2023-02-01 08:00+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -25,13 +25,13 @@ msgstr "<strong>Aviso para los editores:</strong><br />Este contenido UPC es del
 msgid "APIKEY"
 msgstr "Clave API"
 
-#: ../controlpanels/upc.py:87
+#: ../controlpanels/upc.py:74
 msgid "Adreça del mapa customitzat"
-msgstr ""
+msgstr "Google Maps: Nombre de la unidad o dirección a buscar"
 
-#: ../controlpanels/upc.py:88
+#: ../controlpanels/upc.py:75
 msgid "Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."
-msgstr ""
+msgstr "Al rellenar este dato se modificará la dirección del mapa por la indicada en este campo. Ejemplos: Universidad Politécnica de Cataluña o Calle de Jordi Girona, 31, 08034 Barcelona"
 
 #: ../browser/utils/templates/utils.pt:43
 msgid "Bus SOA"
@@ -43,19 +43,19 @@ msgstr "Bus SOA Configuración"
 
 #: ../controlpanels/bus_soa.py:59
 #: ../controlpanels/identitat_digital.py:48
-#: ../controlpanels/upc.py:164
+#: ../controlpanels/upc.py:146
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: ../controlpanels/bus_soa.py:61
 #: ../controlpanels/identitat_digital.py:50
-#: ../controlpanels/upc.py:166
+#: ../controlpanels/upc.py:148
 msgid "Changes canceled."
 msgstr "Cambios cancelados."
 
 #: ../controlpanels/bus_soa.py:56
 #: ../controlpanels/identitat_digital.py:45
-#: ../controlpanels/upc.py:161
+#: ../controlpanels/upc.py:143
 msgid "Changes saved"
 msgstr "Cambios guardados"
 
@@ -64,13 +64,13 @@ msgstr "Cambios guardados"
 msgid "Configure"
 msgstr "Configura"
 
-#: ../controlpanels/upc.py:127
-msgid "Contact emails"
-msgstr "Direcciones de correo"
+#: ../controlpanels/upc.py:119
+msgid "Contact"
+msgstr "Contacto"
 
-#: ../controlpanels/upc.py:60
-msgid "Contact information"
-msgstr "Información de contacto"
+#: ../controlpanels/upc.py:109
+msgid "Contact emails"
+msgstr "Formulario de contacto: Direcciones de envío (especifique los diferentes contactos por ámbito)"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:23
 msgid "Contacte"
@@ -139,7 +139,7 @@ msgstr "Ficha de master"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:49
 msgid "Formulari de contacte"
-msgstr ""
+msgstr "Formulario de contacto"
 
 #: ../content/packet/adapters.py:87
 msgid "Grups de recerca"
@@ -153,7 +153,7 @@ msgstr "<p>Listado de los grupos de investigación que pertenecen a un departame
 msgid "Icona"
 msgstr "Icono"
 
-#: ../controlpanels/upc.py:111
+#: ../controlpanels/upc.py:95
 msgid "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
 msgstr "Icono que se mostrará, puede encontrar todos los identificadores en el <a href='https://icons.getbootstrap.com/' target='_blank'>siguiente enlace</a>. Ej: bi-facebook"
 
@@ -227,7 +227,7 @@ msgstr "Plan de estudios del máster"
 
 #: ../controlpanels/bus_soa.py:48
 #: ../controlpanels/identitat_digital.py:37
-#: ../controlpanels/upc.py:145
+#: ../controlpanels/upc.py:127
 msgid "Save"
 msgstr "Guardar"
 
@@ -243,7 +243,6 @@ msgstr "Tel."
 msgid "The entered text does not match the text in the image"
 msgstr "El texto introducido no coindice con el de la imagen"
 
-#. "Configure message"
 #: ../content/packet/templates/view.pt:41
 msgid "This packet is not configured yet. Please, do it in the ${configure_url} tab."
 msgstr "Este Contenido UPC aún no está configurado. Por favor, acceda a ${configure_url} para hacerlo."
@@ -255,10 +254,6 @@ msgstr "Herramientas de la UPC"
 #: ../controlpanels/upc.py:24
 msgid "Títol"
 msgstr "Título"
-
-#: ../controlpanels/upc.py:137
-msgid "UPC Settings"
-msgstr "Herramientas UPC"
 
 #: ../portlets/upcnews/upcnews.py:25
 msgid "UPCNews"
@@ -298,7 +293,7 @@ msgid "User to connect to the bus"
 msgstr "Usuario para conectar el bus"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:66
-#: ../controlpanels/upc.py:110
+#: ../controlpanels/upc.py:94
 msgid "Xarxes Socials"
 msgstr "Redes Sociales"
 
@@ -332,17 +327,17 @@ msgid "configurat amb l'identificador:"
 msgstr "configurado con el identificador:"
 
 #. Default: "Página de contacte personalitzada"
-#: ../controlpanels/upc.py:93
+#: ../controlpanels/upc.py:80
 msgid "contacte_BBBDD_or_page"
-msgstr "Página de contacto alternativa"
+msgstr "Información de contacto personalizado"
 
-#. Default: "Adreça de contacte al peu"
-#: ../controlpanels/upc.py:68
+#. Default: "Adreça de contacte"
+#: ../controlpanels/upc.py:61
 msgid "contacte_al_peu"
-msgstr "Dirección de contacto al pie"
+msgstr "Mostrar información de contacto al pie con datos institucionales"
 
 #. Default: "ID contacte de la unitat"
-#: ../controlpanels/upc.py:79
+#: ../controlpanels/upc.py:69
 msgid "contacte_id"
 msgstr "ID contacto de la unidad"
 
@@ -422,27 +417,17 @@ msgid "grups_recerca_people"
 msgstr "Investigadores de un grupo de investigación"
 
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
-#: ../controlpanels/upc.py:95
-msgid "help_contacte_BBBDD_or_page"
-msgstr "Por defecto, la información de contacto se alimenta de la base de datos del Servicio de Comunicación."
-
-#. Default: "La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."
-#: ../controlpanels/upc.py:70
-msgid "help_contacte_al_peu"
-msgstr "La dirección y teléfono provenientes de la base de datos del Servicio de Comunicación se visualizan al pie de página."
-
-#. Default: "Afegiu el id de contacte de la base de dades de màsters."
 #: ../controlpanels/upc.py:81
-msgid "help_contacte_id"
-msgstr "Añadir el id de la base de datos del Servicio de Comunicación correspondiente a la unidad."
+msgid "help_contacte_BBBDD_or_page"
+msgstr "Por defecto, la información de contacto se alimenta de la base de datos del Servicio de Comunicación. Al marcar esta opción puede editar esta información desde las siguientes páginas: <a target='_blank' href='/es/enlacespersonalizados'>Catalán</a> | <a target='_blank' href='/en/customizedlinks'>Ingles</a> | <a target='_blank' href='/es/enlacespersonalizados'>Español</a>"
 
 #. Default: "Es pot seleccionar a qui s'envia el missatge de contacte."
-#: ../controlpanels/upc.py:119
+#: ../controlpanels/upc.py:102
 msgid "help_contacte_multi_email"
 msgstr "Se puede seleccionar la dirección de correo que recibe el mensaje de contacto."
 
 #. Default: "Add name and email by language"
-#: ../controlpanels/upc.py:128
+#: ../controlpanels/upc.py:110
 msgid "help_emails_table"
 msgstr "Agregar nombre y correo electrónico por idioma"
 
@@ -462,11 +447,10 @@ msgid "label_select"
 msgstr "Identificador"
 
 #. Default: "Seleccionar l'adreça d'enviament"
-#: ../controlpanels/upc.py:117
+#: ../controlpanels/upc.py:101
 msgid "multi_email"
 msgstr "Seleccionar l'adreça d'enviament"
 
-#. "packet"
 #: ../profiles/default/types/packet.xml
 msgid "packet"
 msgstr "Contenido UPC"
@@ -486,17 +470,17 @@ msgstr "Plan de estudios de grado"
 
 #: ../browser/contact/contact.py:154
 msgid "title_privacy"
-msgstr ""
+msgstr "Doy mi consentimiento a la UPC para el tratamiento de los datos de carácter personal"
 
 #. Default: "Recipient"
 #: ../browser/contact/contact.py:126
 msgid "to_address"
-msgstr ""
+msgstr "Destinatario"
 
 #. Default: "Treu les icones per compartir en xarxes socials del peu"
-#: ../controlpanels/upc.py:102
+#: ../controlpanels/upc.py:87
 msgid "treu_icones_xarxes_socials"
-msgstr "Oculta los iconos para compartir en redes sociales"
+msgstr "Ocultar los iconos de las redes sociales"
 
 #: ../content/packet/adapters.py:122
 msgid "url_contingut"

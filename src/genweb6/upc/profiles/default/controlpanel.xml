@@ -5,7 +5,7 @@
         title="Contacte"
         action_id="genweb6.upc"
         appId="genweb6.upc"
-        category="genweb-design"
+        category="genweb-configuration"
         condition_expr=""
         url_expr="string:${portal_url}/@@upc-controlpanel"
         icon_expr="string:postcard"

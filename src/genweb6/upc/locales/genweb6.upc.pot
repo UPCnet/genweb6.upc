@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-01-31 10:36+0000\n"
+"POT-Creation-Date: 2023-02-01 08:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "APIKEY"
 msgstr ""
 
-#: ../controlpanels/upc.py:87
+#: ../controlpanels/upc.py:74
 msgid "Adreça del mapa customitzat"
 msgstr ""
 
-#: ../controlpanels/upc.py:88
+#: ../controlpanels/upc.py:75
 msgid "Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."
 msgstr ""
 
@@ -44,19 +44,19 @@ msgstr ""
 
 #: ../controlpanels/bus_soa.py:59
 #: ../controlpanels/identitat_digital.py:48
-#: ../controlpanels/upc.py:164
+#: ../controlpanels/upc.py:146
 msgid "Cancel"
 msgstr ""
 
 #: ../controlpanels/bus_soa.py:61
 #: ../controlpanels/identitat_digital.py:50
-#: ../controlpanels/upc.py:166
+#: ../controlpanels/upc.py:148
 msgid "Changes canceled."
 msgstr ""
 
 #: ../controlpanels/bus_soa.py:56
 #: ../controlpanels/identitat_digital.py:45
-#: ../controlpanels/upc.py:161
+#: ../controlpanels/upc.py:143
 msgid "Changes saved"
 msgstr ""
 
@@ -65,12 +65,12 @@ msgstr ""
 msgid "Configure"
 msgstr ""
 
-#: ../controlpanels/upc.py:127
-msgid "Contact emails"
+#: ../controlpanels/upc.py:119
+msgid "Contact"
 msgstr ""
 
-#: ../controlpanels/upc.py:60
-msgid "Contact information"
+#: ../controlpanels/upc.py:109
+msgid "Contact emails"
 msgstr ""
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:23
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Icona"
 msgstr ""
 
-#: ../controlpanels/upc.py:111
+#: ../controlpanels/upc.py:95
 msgid "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 
 #: ../controlpanels/bus_soa.py:48
 #: ../controlpanels/identitat_digital.py:37
-#: ../controlpanels/upc.py:145
+#: ../controlpanels/upc.py:127
 msgid "Save"
 msgstr ""
 
@@ -254,10 +254,6 @@ msgstr ""
 
 #: ../controlpanels/upc.py:24
 msgid "Títol"
-msgstr ""
-
-#: ../controlpanels/upc.py:137
-msgid "UPC Settings"
 msgstr ""
 
 #: ../portlets/upcnews/upcnews.py:25
@@ -298,7 +294,7 @@ msgid "User to connect to the bus"
 msgstr ""
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:66
-#: ../controlpanels/upc.py:110
+#: ../controlpanels/upc.py:94
 msgid "Xarxes Socials"
 msgstr ""
 
@@ -331,18 +327,15 @@ msgstr ""
 msgid "configurat amb l'identificador:"
 msgstr ""
 
-#. Default: "Página de contacte personalitzada"
-#: ../controlpanels/upc.py:93
+#: ../controlpanels/upc.py:80
 msgid "contacte_BBBDD_or_page"
 msgstr ""
 
-#. Default: "Adreça de contacte al peu"
-#: ../controlpanels/upc.py:68
+#: ../controlpanels/upc.py:61
 msgid "contacte_al_peu"
 msgstr ""
 
-#. Default: "ID contacte de la unitat"
-#: ../controlpanels/upc.py:79
+#: ../controlpanels/upc.py:69
 msgid "contacte_id"
 msgstr ""
 
@@ -421,28 +414,15 @@ msgstr ""
 msgid "grups_recerca_people"
 msgstr ""
 
-#. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
-#: ../controlpanels/upc.py:95
+#: ../controlpanels/upc.py:81
 msgid "help_contacte_BBBDD_or_page"
 msgstr ""
 
-#. Default: "La informació provinent de la base de dades de SCP es visualitzen al peu de la pàgina."
-#: ../controlpanels/upc.py:70
-msgid "help_contacte_al_peu"
-msgstr ""
-
-#. Default: "Afegiu el id de contacte de la base de dades de màsters."
-#: ../controlpanels/upc.py:81
-msgid "help_contacte_id"
-msgstr ""
-
-#. Default: "Es pot seleccionar a qui s'envia el missatge de contacte."
-#: ../controlpanels/upc.py:119
+#: ../controlpanels/upc.py:102
 msgid "help_contacte_multi_email"
 msgstr ""
 
-#. Default: "Add name and email by language"
-#: ../controlpanels/upc.py:128
+#: ../controlpanels/upc.py:110
 msgid "help_emails_table"
 msgstr ""
 
@@ -461,8 +441,7 @@ msgstr ""
 msgid "label_select"
 msgstr ""
 
-#. Default: "Seleccionar l'adreça d'enviament"
-#: ../controlpanels/upc.py:117
+#: ../controlpanels/upc.py:101
 msgid "multi_email"
 msgstr ""
 
@@ -492,8 +471,7 @@ msgstr ""
 msgid "to_address"
 msgstr ""
 
-#. Default: "Treu les icones per compartir en xarxes socials del peu"
-#: ../controlpanels/upc.py:102
+#: ../controlpanels/upc.py:87
 msgid "treu_icones_xarxes_socials"
 msgstr ""
 
