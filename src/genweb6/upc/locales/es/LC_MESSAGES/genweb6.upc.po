@@ -480,7 +480,7 @@ msgstr "Destinatario"
 #. Default: "Treu les icones per compartir en xarxes socials del peu"
 #: ../controlpanels/upc.py:87
 msgid "treu_icones_xarxes_socials"
-msgstr "Ocultar los iconos de las redes sociales"
+msgstr "No mostrar los iconos de las redes sociales"
 
 #: ../content/packet/adapters.py:122
 msgid "url_contingut"
