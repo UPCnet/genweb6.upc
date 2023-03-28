@@ -6,10 +6,10 @@
            i18n:domain="genweb6.upc">
 
   <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat"
-       tal:define="custom_info view/getContactPersonalized;
-                   tixs upc_config/treu_icones_xarxes_socials;">
+       tal:define="custom_info view/getContactPersonalized">
 
     <div class="row">
+
       <div class="col-md-4 map">
         <h2 i18n:translate="">On som</h2>
         <iframe class="footer-contact-map" width="100%" height="300" frameborder="0"
@@ -19,7 +19,8 @@
           Google Maps
         </iframe>
       </div>
-      <div tal:attributes="class python:'col-md-3 offset-md-1 contact' if not tixs else 'col-md-7 offset-md-1 contact'">
+
+      <div class="col-md-3 offset-md-1 contact">
         <h2 i18n:translate="">Contacte</h2>
 
         <address tal:condition="not: custom_info">
@@ -56,34 +57,47 @@
         </address>
 
       </div>
-      <div class="col-md-3 offset-md-1 xarxes_socials"
-           tal:condition="not:tixs"
-           tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window;
-                       xarxes_socials upc_config/xarxes_socials">
 
-        <tal:condition condition="xarxes_socials">
+      <div class="col-md-3 offset-md-1">
 
-          <h2 i18n:translate="">Xarxes Socials</h2>
+        <tal:condition tal:condition="not:upc_config/treu_icones_xarxes_socials"
+                       tal:define="xarxes_socials upc_config/xarxes_socials">
 
-          <a tal:repeat="xarxa xarxes_socials" target="_blank"
-             tal:attributes="href xarxa/url;
-                             title string:${xarxa/title}, ${lit_open_in_new_window};
-                             alt string:${xarxa/title}, ${lit_open_in_new_window};">
+          <div class="xarxes_socials" condition="xarxes_socials"
+               tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window">
 
-            <tal:block tal:define="icon xarxa/icon;
-                                   icon_upc python:'gw-icon-' in icon">
+            <h2 i18n:translate="">Xarxes Socials</h2>
 
-              <i tal:condition="not:icon_upc"
-                 tal:attributes="class string:bi ${icon}"></i>
+            <a tal:repeat="xarxa xarxes_socials" target="_blank"
+               tal:attributes="href xarxa/url;
+                               title string:${xarxa/title}, ${lit_open_in_new_window};
+                               alt string:${xarxa/title}, ${lit_open_in_new_window};">
 
-              <i tal:condition="icon_upc"
-                 tal:attributes="class string:${icon}"></i>
+              <tal:block tal:define="icon xarxa/icon;
+                                     icon_upc python:'gw-icon-' in icon">
 
-            </tal:block>
+                <i tal:condition="not:icon_upc"
+                   tal:attributes="class string:bi ${icon}"></i>
 
-          </a>
+                <i tal:condition="icon_upc"
+                   tal:attributes="class string:${icon}"></i>
+
+              </tal:block>
+
+            </a>
+
+          </div>
 
         </tal:condition>
+
+        <div class="logo_genweb">
+
+          <h2 i18n:translate="">Creat amb</h2>
+
+          <img alt="Logo Genweb UPC" title="Genweb UPC"
+               tal:attributes="src view/genwebLogoURL" />
+
+        </div>
 
       </div>
     </div>

@@ -54,13 +54,21 @@
   display: none;
   content: "";
 }
+/* line 42, ../scss/_footer.scss */
+#footer-contact .xarxes_socials + .logo_genweb {
+  margin-top: 3rem;
+}
+/* line 49, ../scss/_footer.scss */
+#footer-contact .logo_genweb img {
+  width: 200px;
+}
 
 @media (max-width: 768px) {
-  /* line 48, ../scss/_footer.scss */
+  /* line 61, ../scss/_footer.scss */
   #footer-contact .map {
     margin-bottom: 1.5rem;
   }
-  /* line 52, ../scss/_footer.scss */
+  /* line 65, ../scss/_footer.scss */
   #footer-contact .contact {
     margin-bottom: 1rem;
   }

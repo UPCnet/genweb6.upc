@@ -89,6 +89,13 @@ class footerContactViewlet(viewletBase):
         except:
             return ''
 
+    def genwebLogoURL(self):
+        footer_config = genwebFooterConfig()
+        if footer_config.theme == 'light-theme':
+            return self.root_url() + '/++theme++genweb6.upc/img/genwebUPC.png'
+        else:
+            return self.root_url() + '/++theme++genweb6.upc/img/genwebUPC-w.png'
+
 
 class titleViewlet(TitleViewlet, viewletBase):
 

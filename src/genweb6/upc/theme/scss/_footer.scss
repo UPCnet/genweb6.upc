@@ -38,7 +38,20 @@
         content: "";
       }
     }
+
+    & + .logo_genweb {
+      margin-top: 3rem;
+    }
   }
+
+  .logo_genweb {
+
+    img {
+      width: 200px;
+    }
+  }
+
+
 }
 
 @media (max-width: 768px) {
