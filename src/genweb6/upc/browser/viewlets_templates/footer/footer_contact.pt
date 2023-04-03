@@ -90,15 +90,6 @@
 
         </tal:condition>
 
-        <div class="logo_genweb">
-
-          <h2 i18n:translate="">Creat amb</h2>
-
-          <img alt="Logo Genweb UPC" title="Genweb UPC"
-               tal:attributes="src view/genwebLogoURL" />
-
-        </div>
-
       </div>
     </div>
   </div>

@@ -33,19 +33,22 @@ class footerViewlet(footerViewletBase):
                         "sitemap":       {"url": root_url + "/ca/sitemap", "target": "_self"},
                         "accessibility": {"url": root_url + "/ca/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/ca/avis-legal", "target": "_blank"},
-                        "cookies":       {"url": root_url + "/ca/cookies-policy", "target": "_self"}},
+                        "cookies":       {"url": root_url + "/ca/cookies-policy", "target": "_self"},
+                        "logo":          {"url": "https://genweb.upc.edu/ca", "target": "_blank"}},
 
                  "es": {"contact":       {},
                         "sitemap":       {"url": root_url + "/es/sitemap", "target": "_self"},
                         "accessibility": {"url": root_url + "/es/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/es/aviso-legal", "target": "_blank"},
-                        "cookies":       {"url": root_url + "/es/cookies-policy", "target": "_self"}},
+                        "cookies":       {"url": root_url + "/es/cookies-policy", "target": "_self"},
+                        "logo":          {"url": "https://genweb.upc.edu/ca", "target": "_blank"}},
 
                  "en": {"contact":       {},
                         "sitemap":       {"url": root_url + "/en/sitemap", "target": "_self"},
                         "accessibility": {"url": root_url + "/en/accessibility", "target": "_self"},
                         "disclaimer":    {"url": "https://www.upc.edu/en/disclaimer", "target": "_blank"},
-                        "cookies":       {"url": root_url + "/en/cookies-policy", "target": "_self"}}}
+                        "cookies":       {"url": root_url + "/en/cookies-policy", "target": "_self"},
+                        "logo":          {"url": "https://genweb.upc.edu/ca", "target": "_blank"}}}
 
         return links[lang]
 
@@ -88,13 +91,6 @@ class footerContactViewlet(viewletBase):
                 return ''
         except:
             return ''
-
-    def genwebLogoURL(self):
-        footer_config = genwebFooterConfig()
-        if footer_config.theme == 'light-theme':
-            return self.root_url() + '/++theme++genweb6.upc/img/genwebUPC.png'
-        else:
-            return self.root_url() + '/++theme++genweb6.upc/img/genwebUPC-w.png'
 
 
 class titleViewlet(TitleViewlet, viewletBase):
