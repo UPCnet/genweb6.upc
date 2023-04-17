@@ -3,8 +3,9 @@ from Products.Five.browser import BrowserView
 
 from plone.memoize import ram
 from plone.registry.interfaces import IRegistry
-from zope.i18nmessageid import MessageFactory
+from time import time
 from zope.component import queryUtility
+from zope.i18nmessageid import MessageFactory
 
 from genweb6.upc.controlpanels.bus_soa import IBusSOASettings
 from genweb6.upc.controlpanels.identitat_digital import IIdentitatDigitalSettings
@@ -23,16 +24,19 @@ def _contact_ws_cachekey(method, self, unitat):
     return (unitat)
 
 
+@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def genwebBusSOAConfig():
     registry = queryUtility(IRegistry)
     return registry.forInterface(IBusSOASettings)
 
 
+@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def genwebIdentitatDigitalConfig():
     registry = queryUtility(IRegistry)
     return registry.forInterface(IIdentitatDigitalSettings)
 
 
+@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def genwebUPCConfig():
     registry = queryUtility(IRegistry)
     return registry.forInterface(IUPCSettings)
