@@ -3,6 +3,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+from bs4 import BeautifulSoup
 from plone.app.contenttypes.interfaces import IFolder
 from plone.dexterity.content import Container
 from pyquery import PyQuery as pq
@@ -136,6 +137,13 @@ class View(BrowserView):
             content = _(u"ERROR. This URL does not exist.")
         except:
             content = _(u"ERROR. Unexpected exception.")
+
+        soup = BeautifulSoup(clean_html, "html.parser")
+        body = soup.find_all("body")
+        if body:
+            class_body = body[0].get("class", [])
+            valid_class = [valid for valid in class_body if valid.startswith('template-') or valid.startswith('portaltype-')]
+            content = str('<div class="existing-content ' + ' '.join(valid_class) + '">' + content + '</div>')
 
         self.content = content
 
