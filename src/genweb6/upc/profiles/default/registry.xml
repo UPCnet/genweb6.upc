@@ -11,7 +11,7 @@
       <element>upc-main</element>
     </value>
     <value key="jscompilation" />
-    <value key="csscompilation">++theme++genweb6.upc/stylesheets/theme.min.css</value>
+    <value key="csscompilation">++theme++genweb6.upc/stylesheets/theme-upc.min.css</value>
 
   </records>
 
