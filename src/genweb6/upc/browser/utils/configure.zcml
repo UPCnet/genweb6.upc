@@ -4,8 +4,6 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="genweb6.upc">
 
-    <include package="z3c.jbot" file="meta.zcml" />
-
     <browser:page
         for="zope.interface.Interface"
         name="user-utils"
