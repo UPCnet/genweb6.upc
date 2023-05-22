@@ -30,7 +30,11 @@
       font-size: 25px;
 
       &:hover {
-        color: var(--bs-primary-hover);
+        color: var(--bs-primary-hover) !important;
+
+        * {
+          color: var(--bs-primary-hover) !important;
+        }
       }
 
       &[target="_blank"]::after {
