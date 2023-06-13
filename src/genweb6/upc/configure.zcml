@@ -13,7 +13,6 @@
     <include package=".controlpanels" />
     <include package=".portlets" />
 
-    <include file="patches.zcml" />
     <include file="permissions.zcml" />
     <include file="upgrades.zcml" />
 
