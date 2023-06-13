@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 import logging
 import os
 
@@ -17,7 +19,8 @@ def purge(self, session, url, httpVerb="PURGE"):
     xcache = resp.headers.get("x-cache", "")
     xerror = ""
     #import ipdb; ipdb.set_trace()
-    ZOPE_HOME = os.environ['ZOPE_HOME']
+    ZOPE_HOME = os.environ['PWD']
+    (scheme, host, path, params, query, fragment) = urlparse(url)
     try:
         f = open(ZOPE_HOME + '/var/log/urls_to_purge', 'a')
         f.write(path + '\n')
