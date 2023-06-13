@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    i18n_domain="genweb">
+
+    <include package="collective.monkeypatcher" />
+
+    <monkey:patch
+        description="Ban caches from varnish"
+        class="plone.cachepurging.purger.DefaultPurger"
+        original="purge"
+        replacement=".patches.purge"
+        />
+
+</configure>
