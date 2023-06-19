@@ -17,4 +17,4 @@ msgstr ""
 "Language: en\n"
 
 msgid "UPCNews"
-msgstr "UPC news"
+msgstr "UPC Today"

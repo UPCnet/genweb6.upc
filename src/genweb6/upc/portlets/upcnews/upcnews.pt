@@ -47,11 +47,6 @@
 
     <div class="portlet-footer">
 
-        <!-- <a class="portlet-show-more small text-decoration-none" target="_blank"
-           tal:attributes="href view/getUrlRSSPremsa">
-            <i class="bi bi-rss"></i>
-        </a> -->
-
         <a class="portlet-show-more small text-decoration-none" target="_blank"
            tal:attributes="href view/getURLPremsa">
             <span i18n:domain="genweb" i18n:translate="more_url">More</span>
