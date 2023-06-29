@@ -5,6 +5,8 @@ from html import escape
 from plone import api
 from plone.app.layout.viewlets.common import TitleViewlet
 from plone.base.utils import safe_text
+from plone.memoize import ram
+from plone.memoize.view import memoize_contextless
 from zope.component import getMultiAdapter
 
 from genweb6.core.browser.viewlets import footerViewlet as footerViewletBase
@@ -14,10 +16,11 @@ from genweb6.core.utils import genwebHeaderConfig
 from genweb6.upc.utils import genwebUPCConfig
 
 import re
-
+from time import time
 
 class footerViewlet(footerViewletBase):
 
+    @ram.cache(lambda *args: time() // (24 * 60 * 60))
     def getSignatura(self):
         lang = self.pref_lang()
         footer_config = genwebFooterConfig()
@@ -25,6 +28,7 @@ class footerViewlet(footerViewletBase):
         signatura = getattr(footer_config, 'signatura_' + lang)
         return upc_signatura + " " + signatura if signatura else upc_signatura
 
+    @memoize_contextless
     def getLinksPeu(self):
         lang = self.pref_lang()
         root_url = self.root_url()
@@ -55,6 +59,7 @@ class footerViewlet(footerViewletBase):
 
 class footerContactViewlet(viewletBase):
 
+    @memoize_contextless
     def getContactFormURL(self):
         lang = self.pref_lang()
         root_url = self.root_url()
@@ -66,9 +71,11 @@ class footerContactViewlet(viewletBase):
 
         return root_url + '/ca/contact'
 
+    @ram.cache(lambda *args: time() // (24 * 60 * 60))
     def getContactPersonalized(self):
         return genwebUPCConfig().contacte_BBDD_or_page
 
+    @memoize_contextless
     def getContactPage(self):
         """
         Funcio que retorna la pagina de contacte personalitzada

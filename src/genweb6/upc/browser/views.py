@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser import BrowserView
-
+from plone.memoize.view import memoize_contextless
 from genweb6.core.utils import portal_url
 
 import requests
@@ -8,6 +8,7 @@ import requests
 
 class Cookies(BrowserView):
 
+    @memoize_contextless
     def html(self):
         lang = self.context.language
         if lang not in ['ca', 'es', 'en']:
@@ -26,6 +27,7 @@ class Cookies(BrowserView):
 
 class Accessibility(BrowserView):
 
+    @memoize_contextless
     def html(self):
         lang = self.context.language
         if lang not in ['ca', 'es', 'en']:
@@ -44,6 +46,7 @@ class Accessibility(BrowserView):
 
 class RSS(BrowserView):
 
+    @memoize_contextless
     def html(self):
         lang = self.context.language
         if lang not in ['ca', 'es', 'en']:
