@@ -89,23 +89,26 @@ def setupVarious(context):
 
     # Setup change password setting
     login_settings = genwebLoginConfig()
-    login_settings.change_password_url = "http://www.upcnet.es/CanviContrasenyaUPC"
+    if not login_settings.change_password_url:
+        login_settings.change_password_url = "http://www.upcnet.es/CanviContrasenyaUPC"
 
     # Setup logo
     header_settings = genwebHeaderConfig()
-    logo = open('{}/genweb6/upc/theme/img/logo.png'.format(egglocation), 'rb').read()
-    encoded_data = b64encode_file(filename='logo.png', data=logo)
-    header_settings.logo = encoded_data
+    if not header_settings.logo:
+        logo = open('{}/genweb6/upc/theme/img/logo.png'.format(egglocation), 'rb').read()
+        encoded_data = b64encode_file(filename='logo.png', data=logo)
+        header_settings.logo = encoded_data
 
-    header_settings.logo_alt = "Universitat Politècnica de Catalunya"
-    header_settings.logo_url = "https://www.upc.edu/ca"
-    header_settings.logo_external_url = True
+        header_settings.logo_alt = "Universitat Politècnica de Catalunya"
+        header_settings.logo_url = "https://www.upc.edu/ca"
+        header_settings.logo_external_url = True
 
     # Setup favicon
     registry = getUtility(IRegistry)
     settings = registry.forInterface(ISiteSchema, prefix="plone")
-    favicon = open('{}/genweb6/upc/theme/img/favicon.ico'.format(egglocation), 'rb').read()
-    encoded_data = b64encode_file(filename='favicon.ico', data=favicon)
-    settings.site_favicon = encoded_data
+    if not settings.site_favicon:
+        favicon = open('{}/genweb6/upc/theme/img/favicon.ico'.format(egglocation), 'rb').read()
+        encoded_data = b64encode_file(filename='favicon.ico', data=favicon)
+        settings.site_favicon = encoded_data
 
     transaction.commit()
