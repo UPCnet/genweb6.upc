@@ -2,7 +2,7 @@
                        upc_config upc_utils/genwebUPCConfig;
                        dades_unitat upc_utils/getDadesUnitat;
                        has_dades_unitat python:dades_unitat and not dades_unitat.get('error', False);"
-           tal:condition="upc_config/contacte_al_peu"
+           tal:condition="python:upc_config.contacte_al_peu or upc_config.contacte_BBDD_or_page"
            i18n:domain="genweb6.upc">
 
   <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat"
@@ -94,5 +94,3 @@
     </div>
   </div>
 </tal:block>
-
-
