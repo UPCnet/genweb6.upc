@@ -134,9 +134,10 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
 
         replace_contact_emails_table = []
         contact_emails_table = data.get('contact_emails_table', [])
-        for contact in contact_emails_table:
-            contact['language'] = contact['language'][0]
-            replace_contact_emails_table.append(contact)
+        if contact_emails_table:
+            for contact in contact_emails_table:
+                contact['language'] = contact['language'][0]
+                replace_contact_emails_table.append(contact)
 
         data['contact_emails_table'] = replace_contact_emails_table
         self.applyChanges(data)
