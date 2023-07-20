@@ -63,7 +63,7 @@
         <tal:condition tal:condition="not:upc_config/treu_icones_xarxes_socials"
                        tal:define="xarxes_socials upc_config/xarxes_socials">
 
-          <div class="xarxes_socials" condition="xarxes_socials"
+          <div class="xarxes_socials" tal:condition="xarxes_socials"
                tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window">
 
             <h2 i18n:translate="">Xarxes Socials</h2>
