@@ -14,7 +14,6 @@ from plone.protect.interfaces import IDisableCSRFProtection
 from zope.component import getAllUtilitiesRegisteredFor
 from zope.component import queryUtility
 from zope.interface import alsoProvides
-from zope.ramcache import ram
 
 import logging
 
@@ -84,8 +83,6 @@ class addGenwebUPC(AddPloneSite):
             else:
                 # we have a keymanager, check csrf protection manually now
                 checkCSRF(self.request)
-
-            ram.caches.clear()
 
             site = addPloneSite(
                 context, site_id,
