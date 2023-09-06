@@ -42,31 +42,31 @@ def uninstall(context):
     # Do something at the end of the uninstallation of this package.
     portal = getSite()
 
-    # Uninstall CAS settings
-    cas_settings = getCASSettings()
-    cas_settings.enabled = False
-    cas_settings.login_text_btn = ""
-
-    # Uninstall LDAP UPC
-    if getattr(portal.acl_users, 'ldapUPC', None):
-        portal.acl_users.manage_delObjects('ldapUPC')
-
-    # Unsetup change password setting
-    login_settings = genwebLoginConfig()
-    login_settings.change_password_url = ""
-
-    # Unsetup logo
-    header_settings = genwebHeaderConfig()
-    header_settings.logo = None
-    header_settings.logo_responsive = None
-    header_settings.logo_alt = ""
-    header_settings.logo_url = ""
-    header_settings.logo_external_url = False
-
-    # Unsetup favicon
-    registry = getUtility(IRegistry)
-    settings = registry.forInterface(ISiteSchema, prefix="plone")
-    settings.site_favicon = None
+    # # Uninstall CAS settings
+    # cas_settings = getCASSettings()
+    # cas_settings.enabled = False
+    # cas_settings.login_text_btn = ""
+    #
+    # # Uninstall LDAP UPC
+    # if getattr(portal.acl_users, 'ldapUPC', None):
+    #     portal.acl_users.manage_delObjects('ldapUPC')
+    #
+    # # Unsetup change password setting
+    # login_settings = genwebLoginConfig()
+    # login_settings.change_password_url = ""
+    #
+    # # Unsetup logo
+    # header_settings = genwebHeaderConfig()
+    # header_settings.logo = None
+    # header_settings.logo_responsive = None
+    # header_settings.logo_alt = ""
+    # header_settings.logo_url = ""
+    # header_settings.logo_external_url = False
+    #
+    # # Unsetup favicon
+    # registry = getUtility(IRegistry)
+    # settings = registry.forInterface(ISiteSchema, prefix="plone")
+    # settings.site_favicon = None
 
 
 def setupVarious(context):
