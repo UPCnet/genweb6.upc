@@ -5,14 +5,15 @@ from Products.CMFPlone.interfaces import ISiteSchema
 from plone.formwidget.namedfile.converter import b64encode_file
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+from zope.component import queryUtility
 from zope.component.hooks import getSite
 from zope.interface import implementer
+from zope.ramcache import ram
 
 from genweb6.core.browser.helpers.helpers_ldap import setSetupLDAPUPC
 from genweb6.core.cas.controlpanel import setupCAS
-from genweb6.core.cas.utils import getCASSettings
-from genweb6.core.utils import genwebHeaderConfig
-from genweb6.core.utils import genwebLoginConfig
+from genweb6.core.controlpanels.header import IHeaderSettings
+from genweb6.core.controlpanels.login import ILoginSettings
 
 import pkg_resources
 import transaction
@@ -88,12 +89,17 @@ def setupVarious(context):
     setSetupLDAPUPC()
 
     # Setup change password setting
-    login_settings = genwebLoginConfig()
+    ram.caches.clear()
+
+    registry = queryUtility(IRegistry)
+    login_settings = registry.forInterface(ILoginSettings)
+
     if not login_settings.change_password_url:
         login_settings.change_password_url = "http://www.upcnet.es/CanviContrasenyaUPC"
 
     # Setup logo
-    header_settings = genwebHeaderConfig()
+    header_settings = registry.forInterface(IHeaderSettings)
+
     if not header_settings.logo:
         logo = open('{}/genweb6/upc/theme/img/logo.png'.format(egglocation), 'rb').read()
         encoded_data = b64encode_file(filename='logo.png', data=logo)
