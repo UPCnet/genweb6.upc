@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.1 (unreleased)
+1.1 (2023-09-20)
 ----------------
 
-- Nothing changed yet.
-
+* [UPD] setuphandlers [Iago López]
+* Fix grunt issues [Ruben Padilla Mateu]
+* [FIX] Grunt issues [Ruben Padilla Mateu]
 
 1.0 (2023-09-07)
 ----------------
