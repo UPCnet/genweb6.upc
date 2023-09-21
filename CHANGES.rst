@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.2 (unreleased)
+1.2 (2023-09-21)
 ----------------
 
-- Nothing changed yet.
-
+* setuphandlers [Iago López]
 
 1.1 (2023-09-20)
 ----------------
