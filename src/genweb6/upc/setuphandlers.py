@@ -5,7 +5,6 @@ from Products.CMFPlone.interfaces import ISiteSchema
 from plone.formwidget.namedfile.converter import b64encode_file
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
-from zope.component import queryUtility
 from zope.component.hooks import getSite
 from zope.interface import implementer
 from zope.ramcache import ram
@@ -91,7 +90,7 @@ def setupVarious(context):
     # Setup change password setting
     ram.caches.clear()
 
-    registry = queryUtility(IRegistry)
+    registry = getUtility(IRegistry)
     login_settings = registry.forInterface(ILoginSettings)
 
     if not login_settings.change_password_url:
@@ -110,7 +109,6 @@ def setupVarious(context):
         header_settings.logo_external_url = True
 
     # Setup favicon
-    registry = getUtility(IRegistry)
     settings = registry.forInterface(ISiteSchema, prefix="plone")
     if not settings.site_favicon:
         favicon = open('{}/genweb6/upc/theme/img/favicon.ico'.format(egglocation), 'rb').read()
