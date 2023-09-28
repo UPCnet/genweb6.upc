@@ -419,7 +419,7 @@ msgstr "Investigadors d'un grup de recerca"
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
 #: ../controlpanels/upc.py:81
 msgid "help_contacte_BBBDD_or_page"
-msgstr "Per defecte, la informació de contacte s'alimenta de la base de dades del Servei de Comunicació. Al marcar aquesta opció podeu editar aquesta informació desde les següents pàgines: <a target='_blank' href='/ca/contactepersonalitzat'>Català</a> | <a target='_blank' href='/en/customizedcontact'>Àngles</a> | <a target='_blank' href='/es/contactopersonalizado'>Castellà</a>"
+msgstr "Per defecte, la informació de contacte s'alimenta de la base de dades del Servei de Comunicació. Al marcar aquesta opció podeu editar aquesta informació desde les següents pàgines: <a target='_blank' href='ca/contactepersonalitzat'>Català</a> | <a target='_blank' href='en/customizedcontact'>Àngles</a> | <a target='_blank' href='es/contactopersonalizado'>Castellà</a>"
 
 #. Default: "Es pot seleccionar a qui s'envia el missatge de contacte."
 #: ../controlpanels/upc.py:102
