@@ -485,3 +485,7 @@ msgstr "Hide social media icons"
 #: ../content/packet/adapters.py:122
 msgid "url_contingut"
 msgstr "Complete content URL"
+
+
+msgid "treu_enllac_contacte"
+msgstr "Hide contact page link"

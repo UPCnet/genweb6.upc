@@ -84,7 +84,12 @@ class genwebUPCUtils(BrowserView):
         else:
             return False
 
-    def getGoogleMapsURL(self, address, lang):
+    def getGoogleMapsURL(self, address, lang=None):
+        if not lang:
+            lang = self.context.Language()
+            if not lang:
+                lang = 'ca'
+
         return "https://maps.google.com/maps?" + \
             "width=100%" + \
             "&height=300" + \

@@ -485,3 +485,6 @@ msgstr "No mostrar les icones de les xarxes socials"
 #: ../content/packet/adapters.py:122
 msgid "url_contingut"
 msgstr "URL completa del contingut"
+
+msgid "treu_enllac_contacte"
+msgstr "No mostrar l'enllaç de la pàgina de contacte"

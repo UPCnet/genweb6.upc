@@ -1,67 +1,86 @@
 <tal:block tal:define="upc_utils context/@@genweb.upc.utils;
                        upc_config upc_utils/genwebUPCConfig;
                        dades_unitat upc_utils/getDadesUnitat;
-                       has_dades_unitat python:dades_unitat and not dades_unitat.get('error', False);"
-           tal:condition="python:upc_config.contacte_al_peu or upc_config.contacte_BBDD_or_page"
+                       has_custom_map upc_config/custom_map_address;
+                       has_dades_unitat python:upc_config.contacte_al_peu and dades_unitat and not dades_unitat.get('error', False);"
+           tal:condition="python:upc_config.contacte_al_peu or upc_config.contacte_BBDD_or_page or has_custom_map"
            i18n:domain="genweb6.upc">
 
-  <div id="footer-contact" role="contentinfo" tal:condition="has_dades_unitat"
+  <div id="footer-contact" role="contentinfo"
        tal:define="custom_info view/getContactPersonalized">
 
     <div class="row">
 
-      <div class="col-md-4 map">
+      <div class="col-md-4 map" tal:condition="python:has_custom_map or has_dades_unitat">
         <h2 i18n:translate="">On som</h2>
         <iframe class="footer-contact-map" width="100%" height="300" frameborder="0"
                 scrolling="no" marginheight="0" marginwidth="0"
+                tal:condition="has_dades_unitat"
                 tal:attributes="src dades_unitat/google_maps | nothing;
                                 title dades_unitat/adreça | nothing">
           Google Maps
         </iframe>
+        <tal:block tal:condition="not:has_dades_unitat">
+          <iframe class="footer-contact-map" width="100%" height="300" frameborder="0"
+                  scrolling="no" marginheight="0" marginwidth="0"
+                  tal:condition="has_custom_map"
+                  tal:attributes="src python:upc_utils.getGoogleMapsURL(has_custom_map);
+                                  title has_custom_map | nothing">
+            Google Maps
+          </iframe>
+        </tal:block>
       </div>
 
-      <div class="col-md-3 offset-md-1 contact">
+      <div class="col-md-3 offset-md-1 contact"
+           tal:condition="python:custom_info or has_dades_unitat">
         <h2 i18n:translate="">Contacte</h2>
 
         <address tal:condition="not: custom_info">
-          <p tal:content="dades_unitat/adreça | nothing">
-            C. Jordi Girona, 1-3. 08034 Barcelona
-          </p>
-          <p tal:condition="dades_unitat/telefon | nothing">
-            <span i18n:translate="">Tel.</span>:
-            <span tal:content="dades_unitat/telefon">93 401 00 00</span>
-          </p>
-          <p tal:condition="dades_unitat/fax | nothing">
-            <span i18n:translate="">Fax</span>:
-            <span tal:content="dades_unitat/fax">93 401 65 04</span>
-          </p>
-          <p tal:condition="dades_unitat/email | nothing">
-            <span i18n:translate="">E-mail</span>:
-            <a tal:content="dades_unitat/email"
-               tal:attributes="href string:mailto:${dades_unitat/email}">
-              contacte@noreply.com
-            </a>
-          </p>
-          <p tal:condition="dades_unitat/codi_upc | nothing">
-            <a tal:attributes="href string:https://directori.upc.edu/directori/dadesUE.jsp?id=${dades_unitat/codi_upc}" target="_blank"
-               i18n:translate="">Directori UPC</a>
-          </p>
-          <p>
+          <tal:block tal:condition="has_dades_unitat">
+            <p tal:content="dades_unitat/adreça | nothing">
+              C. Jordi Girona, 1-3. 08034 Barcelona
+            </p>
+            <p tal:condition="dades_unitat/telefon | nothing">
+              <span i18n:translate="">Tel.</span>:
+              <span tal:content="dades_unitat/telefon">93 401 00 00</span>
+            </p>
+            <p tal:condition="dades_unitat/fax | nothing">
+              <span i18n:translate="">Fax</span>:
+              <span tal:content="dades_unitat/fax">93 401 65 04</span>
+            </p>
+            <p tal:condition="dades_unitat/email | nothing">
+              <span i18n:translate="">E-mail</span>:
+              <a tal:content="dades_unitat/email"
+                tal:attributes="href string:mailto:${dades_unitat/email}">
+                contacte@noreply.com
+              </a>
+            </p>
+            <p tal:condition="dades_unitat/codi_upc | nothing">
+              <a tal:attributes="href string:https://directori.upc.edu/directori/dadesUE.jsp?id=${dades_unitat/codi_upc}" target="_blank"
+                i18n:translate="">Directori UPC</a>
+            </p>
+            <p tal:condition="not:upc_config/treu_enllac_contacte">
+              <a tal:attributes="href view/getContactFormURL"
+                i18n:translate="">Formulari de contacte</a>
+            </p>
+          </tal:block>
+        </address>
+
+        <address tal:condition="custom_info">
+          <tal:block tal:replace="structure view/getContactPage"></tal:block>
+
+          <p tal:condition="not:upc_config/treu_enllac_contacte">
             <a tal:attributes="href view/getContactFormURL"
                i18n:translate="">Formulari de contacte</a>
           </p>
         </address>
 
-        <address tal:condition="custom_info">
-          <tal:block tal:replace="structure view/getContactPage"></tal:block>
-        </address>
-
       </div>
 
-      <div class="col-md-3 offset-md-1">
+      <div class="col-md-3 offset-md-1"
+           tal:condition="not:upc_config/treu_icones_xarxes_socials">
 
-        <tal:condition tal:condition="not:upc_config/treu_icones_xarxes_socials"
-                       tal:define="xarxes_socials upc_config/xarxes_socials">
+        <tal:condition tal:define="xarxes_socials upc_config/xarxes_socials">
 
           <div class="xarxes_socials" tal:condition="xarxes_socials"
                tal:define="lit_open_in_new_window context/@@genweb.utils/lit_open_in_new_window">
@@ -91,6 +110,9 @@
         </tal:condition>
 
       </div>
+
     </div>
+
   </div>
+
 </tal:block>

@@ -10,7 +10,7 @@ from plone.autoform.directives import write_permission
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
-from zope.ramcache import ram 
+from zope.ramcache import ram
 
 from genweb6.upc import _
 
@@ -80,6 +80,12 @@ class IUPCSettings(model.Schema):
     contacte_BBDD_or_page = schema.Bool(
         title=_(u"contacte_BBBDD_or_page"),
         description=_(u"help_contacte_BBBDD_or_page"),
+        required=False,
+        default=False,
+    )
+
+    treu_enllac_contacte = schema.Bool(
+        title=_(u"treu_enllac_contacte"),
         required=False,
         default=False,
     )
