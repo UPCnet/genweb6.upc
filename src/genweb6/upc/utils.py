@@ -125,6 +125,7 @@ class genwebUPCUtils(BrowserView):
                     'email': dades.get('email', ''),
                     'id_scp': dades.get('id', ''),
                     'codi_upc': dades.get('codi_upc', ''),
+                    'google_maps': dades.get('google_maps', ''),
                 },
                 'es': {
                     'adreca_sencera': ((dades.get('campus_es', '') and
@@ -139,6 +140,7 @@ class genwebUPCUtils(BrowserView):
                     'email': dades.get('email', ''),
                     'id_scp': dades.get('id', ''),
                     'codi_upc': dades.get('codi_upc', ''),
+                    'google_maps': dades.get('google_maps', ''),
                 },
                 'en': {
                     'adreca_sencera': ((dades.get('campus_en', '') and
@@ -153,6 +155,7 @@ class genwebUPCUtils(BrowserView):
                     'email': dades.get('email', ''),
                     'id_scp': dades.get('id', ''),
                     'codi_upc': dades.get('codi_upc', ''),
+                    'google_maps': dades.get('google_maps', ''),
                 }
             }
             return dict_contact[idioma]
