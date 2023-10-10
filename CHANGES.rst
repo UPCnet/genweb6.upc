@@ -2,11 +2,13 @@ Changelog
 =========
 
 
-1.3 (unreleased)
+1.3 (2023-10-10)
 ----------------
 
-- Nothing changed yet.
-
+* Añadir nombre de la unidad en el contacto [Iago López]
+* [FIX] Que no pete el contacto si no informan bien un icono [Iago López]
+* Cambios contacto [Iago López]
+* FIX traducción [Iago López]
 
 1.2 (2023-09-21)
 ----------------
