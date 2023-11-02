@@ -60,7 +60,7 @@ class genwebUPCUtils(BrowserView):
             r = requests.get('https://bus-soa.upc.edu/SCP/InfoUnitatv1?id=%s' % unitat, timeout=10)
             return r.json()
         except:
-            return {}
+            return False
 
     def getDadesUnitat(self):
         """ Retorna les dades proporcionades pel WebService del SCP """
@@ -68,7 +68,7 @@ class genwebUPCUtils(BrowserView):
         unitat = config.contacte_id
         if unitat:
             dades = self._queryInfoUnitatWS(unitat)
-            if 'error' in dades:
+            if not dades or 'error' in dades:
                 return False
             else:
                 lang = self.context.Language()
