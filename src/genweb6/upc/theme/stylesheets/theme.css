@@ -18,7 +18,7 @@
 #footer-contact {
   color: var(--bs-body-bg);
   box-shadow: 500px 0 0 0 #F2F5F6, -500px 0 0 0 #F2F5F6;
-  padding: 2em 4em;
+  padding: 2em var(--gw-viewlet-horizontal-width);
 }
 /* line 6, ../scss/_footer.scss */
 #footer-contact h2 {
