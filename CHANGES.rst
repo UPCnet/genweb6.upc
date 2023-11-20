@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.6 (unreleased)
+1.6 (2023-11-20)
 ----------------
 
-- Nothing changed yet.
-
+* Posición viewlet genweb.important [Iago López]
 
 1.5 (2023-11-13)
 ----------------
