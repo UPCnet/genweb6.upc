@@ -20,7 +20,7 @@ from time import time
 
 class footerViewlet(footerViewletBase):
 
-    @ram.cache(lambda *args: time() // (24 * 60 * 60))
+    @memoize_contextless
     def getSignatura(self):
         lang = self.pref_lang()
         footer_config = genwebFooterConfig()
