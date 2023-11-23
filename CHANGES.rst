@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.7 (unreleased)
+1.7 (2023-11-23)
 ----------------
 
-- Nothing changed yet.
-
+* [FIX] Cache signatura footer [Iago López]
 
 1.6 (2023-11-20)
 ----------------
