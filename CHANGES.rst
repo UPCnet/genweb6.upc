@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.8 (unreleased)
+1.8 (2023-11-24)
 ----------------
 
-- Nothing changed yet.
-
+* [UPD] viewlets.xml [Iago López]
 
 1.7 (2023-11-23)
 ----------------
