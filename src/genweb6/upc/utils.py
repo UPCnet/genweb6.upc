@@ -36,7 +36,7 @@ def genwebIdentitatDigitalConfig():
     return registry.forInterface(IIdentitatDigitalSettings)
 
 
-@ram.cache(lambda *args: time() // (24 * 60 * 60))
+#@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def genwebUPCConfig():
     registry = queryUtility(IRegistry)
     return registry.forInterface(IUPCSettings)
