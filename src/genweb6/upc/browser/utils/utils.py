@@ -3,6 +3,8 @@ from Products.Five.browser import BrowserView
 
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+from zope.interface import alsoProvides
+from plone.protect.interfaces import IDisableCSRFProtection
 
 from genweb6.core.controlpanels.footer import IFooterSettings
 from genweb6.core.utils import json_response
@@ -78,3 +80,25 @@ class get_controlpanels_settings(BrowserView):
             settings.update({'error_' + UPC_ID: None})
 
         return settings
+
+class fix_record_upc(BrowserView):
+    """
+Soluciona el problema de KeyError quan la plonesite es mou del Zeo original
+    """
+
+    def __call__(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+        output = []
+        site = self.context.portal_registry
+        registry = getUtility(IRegistry)
+        rec = registry.records
+        keys = [a for a in rec.keys()]
+        for k in keys:
+            try:
+                rec[k]
+            except:
+                output.append('{}, '.format(k))
+                output.append('{}, '.format(site.portal_registry.records._values[k]))
+                del site.portal_registry.records._values[k]
+                del site.portal_registry.records._fields[k]
+        return "S'han purgat les entrades del registre: {}".format(output)

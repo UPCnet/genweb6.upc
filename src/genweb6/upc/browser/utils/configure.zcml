@@ -37,4 +37,12 @@
         permission="cmf.ManagePortal"
         />
 
+    <browser:page
+        for="zope.interface.Interface"
+        name="fix_record_upc"
+        class=".utils.fix_record_upc"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="cmf.ManagePortal"
+        />
+
 </configure>
