@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.10 (unreleased)
+1.10 (2023-12-18)
 -----------------
 
-- Nothing changed yet.
-
+* [ADD] View get_controlpanels_settings [Iago López]
 
 1.9 (2023-12-04)
 ----------------
