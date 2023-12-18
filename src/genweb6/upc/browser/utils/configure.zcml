@@ -29,4 +29,12 @@
         permission="cmf.ManagePortal"
         />
 
+    <browser:page
+        for="zope.interface.Interface"
+        name="get_controlpanels_settings"
+        class=".utils.get_controlpanels_settings"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="cmf.ManagePortal"
+        />
+
 </configure>
