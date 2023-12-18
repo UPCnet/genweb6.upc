@@ -45,19 +45,19 @@ class get_controlpanels_settings(BrowserView):
             try:
                 settings[FOOTER_ID].update({'table_links_ca': footer_settings.table_links_ca})
             except:
-                pass
+                settings[FOOTER_ID].update({'error_table_links_ca': None})
 
             try:
                 settings[FOOTER_ID].update({'table_links_es': footer_settings.table_links_es})
             except:
-                pass
+                settings[FOOTER_ID].update({'error_table_links_es': None})
 
             try:
                 settings[FOOTER_ID].update({'table_links_en': footer_settings.table_links_en})
             except:
-                pass
+                settings[FOOTER_ID].update({'error_table_links_en': None})
         except:
-            pass
+            settings.update({'error_' + FOOTER_ID: None})
 
         # genweb6.upc.controlpanels.upc.IUPCSettings
         try:
@@ -68,13 +68,13 @@ class get_controlpanels_settings(BrowserView):
             try:
                 settings[UPC_ID].update({'xarxes_socials': upc_settings.xarxes_socials})
             except:
-                pass
+                settings[UPC_ID].update({'error_xarxes_socials': None})
 
             try:
                 settings[UPC_ID].update({'contact_emails_table': upc_settings.contact_emails_table})
             except:
-                pass
+                settings[UPC_ID].update({'error_contact_emails_table': None})
         except:
-            pass
+            settings.update({'error_' + UPC_ID: None})
 
         return settings
