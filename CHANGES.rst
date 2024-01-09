@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.11 (unreleased)
+1.11 (2024-01-09)
 -----------------
 
-- Nothing changed yet.
-
+* fix_record_upc [Pilar Marinas]
+* [UPD] View get_controlpanels_settings - Mejora de control de errores [Iago López]
 
 1.10 (2023-12-18)
 -----------------
