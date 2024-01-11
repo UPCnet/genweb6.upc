@@ -7,6 +7,7 @@ from plone.app.registry.browser import controlpanel
 from plone.autoform import directives
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
+from plone.dexterity.interfaces import IDexteritySchema
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
@@ -20,7 +21,7 @@ import logging
 log = logging.getLogger('genweb6.upc')
 
 
-class IXarxesSocials(model.Schema):
+class IXarxesSocials(model.Schema, IDexteritySchema):
 
     title = schema.TextLine(
         title=_(u'Títol'),
@@ -38,7 +39,7 @@ class IXarxesSocials(model.Schema):
     )
 
 
-class ITableEmailContact(model.Schema):
+class ITableEmailContact(model.Schema, IDexteritySchema):
 
     language = schema.Choice(
         title=_(u'Language'),
@@ -57,7 +58,7 @@ class ITableEmailContact(model.Schema):
     )
 
 
-class IUPCSettings(model.Schema):
+class IUPCSettings(model.Schema, IDexteritySchema):
 
     contacte_al_peu = schema.Bool(
         title=_(u"contacte_al_peu"),

@@ -7,6 +7,7 @@ from Products.statusmessages.interfaces import IStatusMessage
 
 from html import escape
 from plone import api
+from plone.dexterity.interfaces import IDexteritySchema
 from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
 from plone.registry.interfaces import IRegistry
 from plone.supermodel import model
@@ -17,10 +18,10 @@ from z3c.form.error import ValueErrorViewSnippet
 from z3c.form.form import Form
 from zope import schema
 from zope.component import getUtility
-from zope.interface import implementer
 from zope.interface import Invalid
-from zope.schema.interfaces import InvalidValue
+from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
+from zope.schema.interfaces import InvalidValue
 from zope.schema.vocabulary import SimpleVocabulary
 
 from genweb6.core.utils import pref_lang
@@ -118,7 +119,7 @@ def is_checked(value):
         return True
 
 
-class IContactForm(model.Schema):
+class IContactForm(model.Schema, IDexteritySchema):
     """Define the fields of our form
     """
 
