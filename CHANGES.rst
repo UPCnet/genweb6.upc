@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.12 (unreleased)
+1.12 (2024-01-15)
 -----------------
 
-- Nothing changed yet.
-
+* Add IDexteritySchema a nuestros contenidos para que si hay imagen haga del plone.app.caching.purge.py el purge class ScalesPurgePaths [Pilar Marinas]
 
 1.11 (2024-01-09)
 -----------------
