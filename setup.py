@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='genweb6.upc',
-    version='1.12',
+    version='1.13.dev0',
     description="Genweb 6 UPC package",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
