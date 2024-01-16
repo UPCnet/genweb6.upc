@@ -263,14 +263,14 @@ class ContactForm(Form):
                 to_name = 'Genweb amb error al contacte'
 
         lang = pref_lang()
-        subject = "[Formulari Contacte] %s" % (escape(safe_unicode(data['asunto'])))
+        subject = "[Formulari Contacte] %s" % data['asunto']
         template = MESSAGE_TEMPLATE_CA
 
         if lang == 'es':
-            subject = "[Formulario de Contacto] %s" % (escape(safe_unicode(data['asunto'])))
+            subject = "[Formulario de Contacto] %s" % data['asunto']
             template = MESSAGE_TEMPLATE_ES
         if lang == 'en':
-            subject = "[Contact Form] %s" % (escape(safe_unicode(data['asunto'])))
+            subject = "[Contact Form] %s" % data['asunto']
             template = MESSAGE_TEMPLATE_EN
 
         template
@@ -281,7 +281,7 @@ class ContactForm(Form):
                                   message=data['mensaje'],
                                   from_name=data['nombre'])
 
-        mailhost.send(escape(safe_unicode(message)),
+        mailhost.send(message,
                       mto=to_address,
                       mfrom=api.portal.get_registry_record('plone.email_from_address'),
                       subject=subject,
