@@ -83,12 +83,12 @@ class footerContactViewlet(viewletBase):
         context = aq_inner(self.context)
         lang = self.context.Language()
 
-        if lang == 'ca':
-            customized_page = getattr(context, 'contactepersonalitzat', False)
-        elif lang == 'es':
+        if lang == 'es':
             customized_page = getattr(context, 'contactopersonalizado', False)
         elif lang == 'en':
             customized_page = getattr(context, 'customizedcontact', False)
+        else:
+            customized_page = getattr(context, 'contactepersonalitzat', False)
 
         try:
             state = api.content.get_state(customized_page)
