@@ -80,15 +80,15 @@ class footerContactViewlet(viewletBase):
         """
         Funcio que retorna la pagina de contacte personalitzada
         """
-        context = aq_inner(self.context)
-        lang = self.context.Language()
+        portal = self.portal()
+        lang = self.pref_lang()
 
         if lang == 'es':
-            customized_page = getattr(context, 'contactopersonalizado', False)
+            customized_page = getattr(portal[lang], 'contactopersonalizado', False)
         elif lang == 'en':
-            customized_page = getattr(context, 'customizedcontact', False)
+            customized_page = getattr(portal[lang], 'customizedcontact', False)
         else:
-            customized_page = getattr(context, 'contactepersonalitzat', False)
+            customized_page = getattr(portal[lang], 'contactepersonalitzat', False)
 
         try:
             state = api.content.get_state(customized_page)
