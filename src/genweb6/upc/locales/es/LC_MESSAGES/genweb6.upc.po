@@ -90,7 +90,7 @@ msgstr "Crear Genweb UPC"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:45
 msgid "Directori UPC"
-msgstr "DirectoriO UPC"
+msgstr "Directorio UPC"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:38
 #: ../controlpanels/upc.py:53
