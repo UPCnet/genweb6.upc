@@ -2,11 +2,13 @@ Changelog
 =========
 
 
-1.13 (unreleased)
+1.13 (2024-01-31)
 -----------------
 
-- Nothing changed yet.
-
+* [Fix] Traducció - Directorio UPC [Iago López]
+* [FIX] viewlet contacto solucionar que no se viera el contacto personalizado cuando un objeto no tiene bien puesto el idioma [Iago López]
+* [FIX] viewlet contacto solucionar que no se viera el contacto personalizado cuando un objeto no tiene bien puesto el idioma [Iago López]
+* [FIX] Codificación mensaje contact [Iago López]
 
 1.12 (2024-01-15)
 -----------------
