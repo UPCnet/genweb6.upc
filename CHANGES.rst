@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.14 (unreleased)
+1.14 (2024-02-20)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] viewlets.xml [Iago López]
+* [UPD] Literal [Iago López]
 
 1.13 (2024-01-31)
 -----------------
