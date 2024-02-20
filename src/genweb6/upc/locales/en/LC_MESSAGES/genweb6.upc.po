@@ -488,4 +488,4 @@ msgstr "Complete content URL"
 
 
 msgid "treu_enllac_contacte"
-msgstr "Hide contact page link"
+msgstr "Hide contact form link"

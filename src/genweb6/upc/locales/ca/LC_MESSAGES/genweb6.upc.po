@@ -487,4 +487,4 @@ msgid "url_contingut"
 msgstr "URL completa del contingut"
 
 msgid "treu_enllac_contacte"
-msgstr "No mostrar l'enllaç de la pàgina de contacte"
+msgstr "No mostrar l'enllaç del formulari de contacte"
