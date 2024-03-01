@@ -7,8 +7,10 @@
  <order manager="plone.abovecontenttitle" skinname="Plone Default">
   <viewlet name="genweb.important"/>
   <viewlet name="plone.socialtags"/>
-  <viewlet name="contentleadimage"/>
   <viewlet name="genweb.socialtools"/>
+ </order>
+ <order manager="plone.abovecontentbody" skinname="Plone Default">
+  <viewlet name="genweb.contentleadimage"/>
  </order>
  <order manager="plone.belowcontent" skinname="Plone Default">
   <viewlet name="plone.documentactions"/>
@@ -54,5 +56,8 @@
   <viewlet name="plone.logo"/>
   <viewlet name="plone.membertools"/>
   <viewlet name="plone.anontools"/>
+ </hidden>
+ <hidden manager="plone.abovecontenttitle" skinname="Plone Default">
+  <viewlet name="contentleadimage"/>
  </hidden>
 </object>
