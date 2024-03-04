@@ -3,10 +3,12 @@ from Acquisition import aq_inner
 
 from html import escape
 from plone import api
+from plone.app.contenttypes.interfaces import IEvent
 from plone.app.layout.viewlets.common import TitleViewlet
 from plone.base.utils import safe_text
 from plone.memoize import ram
 from plone.memoize.view import memoize_contextless
+from zope.annotation.interfaces import IAnnotations
 from zope.component import getMultiAdapter
 
 from genweb6.core.browser.viewlets import footerViewlet as footerViewletBase
@@ -127,3 +129,23 @@ class titleViewlet(TitleViewlet, viewletBase):
             self.site_title = u"%s &mdash; %s" % (genweb_title, marca_UPC)
         else:
             self.site_title = u"%s &mdash; %s &mdash; %s" % (page_title, genweb_title, marca_UPC)
+
+
+class sendEventViewlet(viewletBase):
+
+    def render(self):
+        if IEvent.providedBy(self.context):
+            return super(viewletBase, self).render()
+        else:
+            return ""
+
+
+    def isEventSent(self):
+        """
+        """
+        context = self.context
+        annotations = IAnnotations(context)
+        if 'eventsent' in annotations:
+            return True
+        else:
+            return False

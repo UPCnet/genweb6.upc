@@ -31,4 +31,12 @@
         template="views_templates/html.pt"
         />
 
+    <browser:page
+        for="plone.app.contenttypes.interfaces.IEvent"
+        name="send-event"
+        class=".views.sendEventView"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="cmf.AddPortalContent"
+        />
+
 </configure>

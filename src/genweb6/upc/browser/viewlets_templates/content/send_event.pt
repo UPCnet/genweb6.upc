@@ -1,0 +1,25 @@
+<div i18n:domain="genweb6.upc"
+     tal:define="isEventSent view/isEventSent">
+
+    <div class="alert alert-info alert-dismissible fade show"
+         tal:condition="isEventSent"
+         role="alert">
+        <strong i18n:translate="">ATENCIÓ:</strong>
+        <span i18n:translate="">Aquesta activitat ja s'ha enviat a l'Agenda de la UPC.</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="alert alert-info alert-dismissible fade show"
+         tal:condition="not:isEventSent"
+         role="alert">
+        <strong i18n:translate="">Informació</strong>
+        <span i18n:translate="">Per enviar l'esdeveniment a l'Agenda general de la UPC premeu el botó.</span>
+        <a class="btn btn-success mt-2 text-light"
+           tal:attributes="href string:${context/absolute_url}/send-event"
+           i18n:translate="">
+            Send to the general UPC calendar
+        </a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+</div>

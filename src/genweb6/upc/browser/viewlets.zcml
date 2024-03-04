@@ -36,4 +36,13 @@
         permission="zope2.View"
         />
 
+    <browser:viewlet
+        name="genweb.upc.send_event"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        class=".viewlets.sendEventViewlet"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        template="viewlets_templates/content/send_event.pt"
+        permission="zope2.View"
+        />
+
 </configure>
