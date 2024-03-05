@@ -132,7 +132,7 @@ class View(BrowserView):
             else:
                 content = _(u"ERROR. Autoreference")
         except ReadTimeout:
-            content = _(u"ERROR. There was a timeout while waiting for '{0}'".format(self.get_absolute_url(self.data.url)))
+            content = _(u"ERROR. There was a timeout while waiting for '{0}'".format(url))
         except RequestException:
             content = _(u"ERROR. This URL does not exist.")
         except:
