@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.15 (unreleased)
+1.15 (2024-03-07)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] packet timeout error [Iago López]
+* [ADD] Viewlet enviar evento a la agenda UPC [Iago López]
+* [UPD] Cambiar posicion contentleadimage [Iago López]
 
 1.14 (2024-02-20)
 -----------------
