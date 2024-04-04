@@ -42,7 +42,7 @@
         class=".viewlets.sendEventViewlet"
         layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
         template="viewlets_templates/content/send_event.pt"
-        permission="zope2.View"
+        permission="cmf.AddPortalContent"
         />
 
 </configure>
