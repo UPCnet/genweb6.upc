@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.16 (unreleased)
+1.16 (2024-04-08)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar permiso visualización viewlet enviar a agenda UPC [Iago López]
 
 1.15 (2024-03-07)
 -----------------
