@@ -19,6 +19,8 @@ import json
 from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
 from zExceptions import BadRequest
+import base64
+
 
 class Cookies(BrowserView):
 
@@ -28,9 +30,10 @@ class Cookies(BrowserView):
         if lang not in ['ca', 'es', 'en']:
             lang = 'ca'
 
-        templates = {'ca': '/++theme++genweb6.upc/templates/politica-de-cookies.html',
-                     'es': '/++theme++genweb6.upc/templates/politica-de-cookies-es.html',
-                     'en': '/++theme++genweb6.upc/templates/cookies-policy.html'}
+        templates = {
+            'ca': '/++theme++genweb6.upc/templates/politica-de-cookies.html',
+            'es': '/++theme++genweb6.upc/templates/politica-de-cookies-es.html',
+            'en': '/++theme++genweb6.upc/templates/cookies-policy.html'}
 
         page = requests.get(portal_url() + templates[lang])
         if page.status_code == 200:
@@ -90,6 +93,7 @@ i que podreu trobar al següent enllaç:
 Per a la seva publicació a l'Agenda general de la UPC.
 """
 
+
 class sendEventView(BrowserView):
 
     RECIPIENT_ADDRESS = 'ruben.padilla.mateu@ithinkupc.com'
@@ -102,29 +106,38 @@ class sendEventView(BrowserView):
 
         mailhost, url_tool, membership_tool = self.get_tools()
         portal = url_tool.getPortalObject()
-        web_title = portal.getProperty('title')  
+        web_title = portal.getProperty('title')
 
         created_event_data = None
+        event_creator = EventCreator(event_data)
 
         # Handle event creation on remote website
         try:
-            created_event_data = self.handle_event_creation(event_data)
-            event_data['created_event_url'] = created_event_data['@id']
+            created_event_data = self.handle_event_creation(event_creator)
         except BadRequest as e:
             IStatusMessage(self.request).addStatusMessage(str(e), type='error')
             return self.request.response.redirect(self.context.absolute_url())
 
-        email_charset, from_name, from_address =  self.get_registry_records()
-    
-        message = self.build_email_message(membership_tool, event_data, from_name, from_address, web_title)
+        if created_event_data is None:
+            IStatusMessage(self.request).addStatusMessage(
+                "No s'ha pogut crear l'esdeveniment", type='error')
+            return self.request.response.redirect(self.context.absolute_url())
 
-        self.send_email(mailhost, message, from_name, from_address, web_title, email_charset)
+        email_charset, from_name, from_address = self.get_registry_records()
+
+        message = self.build_email_message(
+            membership_tool, event_data, from_name, from_address, web_title)
+
+        self.send_email(mailhost, message, from_name,
+                        from_address, web_title, email_charset)
         self.handle_annotations()
         self.handle_success()
 
     def get_event_data(self):
         start = self.parse_dates('start')
         end = self.parse_dates('end')
+
+        image_data = self.get_image_data(self.context.image)
 
         return {
             'title': self.context.Title(),
@@ -139,11 +152,11 @@ class sendEventView(BrowserView):
             'contact_phone': getattr(self.context, 'contact_phone', ''),
             'event_url': getattr(self.context, 'event_url', ''),
             'text': getattr(self.context, 'text', ''),
-            'link': self.context.absolute_url(),
+            'event_url': self.context.absolute_url(),
             '@type': self.context.portal_type,
-            # TODO: Add images (?)
+            'imatge': image_data,
         }
-    
+
     def parse_dates(self, field_name):
         """ Get string representation of date fields """
         date = getattr(self.context, field_name, '')
@@ -152,6 +165,22 @@ class sendEventView(BrowserView):
 
         return date
 
+    def get_image_data(self, image):
+        binary_data = image.data
+        b64_data = base64.b64encode(binary_data)
+        b64_string = b64_data.decode('utf-8')
+
+        with open('image.txt', 'w') as f:
+            f.write(b64_string)
+
+        return {
+            'data': b64_string,
+            'size': image.getSize(),
+            'encoding': 'base64',
+            'filename': image.filename,
+            'content-type': image.contentType
+        }
+
     def get_tools(self):
         """ Get Plone tools"""
         mailhost = getToolByName(self.context, 'MailHost')
@@ -159,13 +188,11 @@ class sendEventView(BrowserView):
         membership_tool = self.context.portal_membership
         return mailhost, url_tool, membership_tool
 
-    def handle_event_creation(self, event_data):
-        ec = EventCreator(event_data)
-        
+    def handle_event_creation(self, ec):
         ec.authenticate()
         if not ec.is_authenticated:
             raise BadRequest("L'autenticació ha falat. No es pot fer la petició.")
-        
+
         return ec.create_event()
 
     def get_registry_records(self):
@@ -175,11 +202,14 @@ class sendEventView(BrowserView):
 
         return email_charset, from_name, from_address
 
-    def build_email_message(self, membership_tool, event_data, from_name, from_address, web_title):
+    def build_email_message(
+            self, membership_tool, event_data, from_name, from_address, web_title):
         userid = membership_tool.getAuthenticatedMember().id
 
-        event_date, event_hour = self.get_date_hour_from_isoformat_string(event_data['start'])
-       
+        event_date, event_hour = self.get_date_hour_from_isoformat_string(
+            event_data
+            ['start'])
+
         message = MESSAGE_TEMPLATE % dict(gw_title=web_title,
                                           event_title=event_data['title'],
                                           event_date=event_date,
@@ -189,13 +219,14 @@ class sendEventView(BrowserView):
                                           from_name=from_name,
                                           user_name=userid)
         return message
-    
+
     def get_date_hour_from_isoformat_string(self, date_string):
         """ Get date and hour from isoformat string """
         date = DateTime(date_string)
         return date.strftime('%d/%m/%Y'), date.strftime('%H:%M')
 
-    def send_email(self, mailhost, message, from_name, from_address, web_title, email_charset):
+    def send_email(
+            self, mailhost, message, from_name, from_address, web_title, email_charset):
         source = "%s <%s>" % (from_name, from_address)
         subject = "[Nou esdeveniment] %s" % (web_title)
         mailhost.send(message,
@@ -212,6 +243,7 @@ class sendEventView(BrowserView):
             annotations['eventsent'] = True
 
     def handle_success(self):
-        confirm = _(u"Gràcies per la vostra col·laboració. Les dades de l\'activitat s\'han enviat correctament i seran publicades com més aviat millor.")
+        confirm = _(
+            u"Gràcies per la vostra col·laboració. Les dades de l\'activitat s\'han enviat correctament i seran publicades com més aviat millor.")
         IStatusMessage(self.request).addStatusMessage(confirm, type='info')
         self.request.response.redirect(self.context.absolute_url())

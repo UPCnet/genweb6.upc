@@ -2,7 +2,6 @@ import requests
 import os
 from zExceptions import BadRequest
 
-
 class EventCreator():
 
     def __init__(self, event_data):
@@ -37,6 +36,9 @@ class EventCreator():
             raise BadRequest("Hi ha hagut un error creant l'esdeveniment")
         
         return response.json()
+
+
+
         
     
 
