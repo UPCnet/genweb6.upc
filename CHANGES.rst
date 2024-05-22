@@ -2,11 +2,19 @@ Changelog
 =========
 
 
-1.17 (unreleased)
+1.18 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+1.17 (2024-05-22)
+-----------------
+
+* Some minor changes [ruben.padilla.mateu]
+* FIX images not being setted in the created event [ruben.padilla.mateu]
+* Added event creation on webupcpre [ruben.padilla.mateu]
+* Added event creator class [ruben.padilla.mateu]
 
 1.16 (2024-04-08)
 -----------------
