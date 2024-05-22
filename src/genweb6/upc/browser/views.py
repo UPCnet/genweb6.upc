@@ -96,7 +96,7 @@ Per a la seva publicació a l'Agenda general de la UPC.
 
 class sendEventView(BrowserView):
 
-    RECIPIENT_ADDRESS = 'ruben.padilla.mateu@ithinkupc.com'
+    RECIPIENT_ADDRESS = 'plone.team@upcnet.es'
 
     def __call__(self):
         """ This view creates an event on the UPC Agenda and then informs
@@ -169,9 +169,6 @@ class sendEventView(BrowserView):
         binary_data = image.data
         b64_data = base64.b64encode(binary_data)
         b64_string = b64_data.decode('utf-8')
-
-        with open('image.txt', 'w') as f:
-            f.write(b64_string)
 
         return {
             'data': b64_string,

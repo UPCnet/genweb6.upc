@@ -10,14 +10,14 @@ class EventCreator():
         self.is_authenticated = False
         self.login_name = os.environ.get('home_user', False)
         self.password = os.environ.get('home_pass', False)
-        self.BASE_URL = 'https://webupcpre.upc.edu/'
+        self.BASE_URL = 'https://webupcpre.upc.edu'
         self.headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
 
     def authenticate(self):
         if not self.login_name or not self.password:
             raise BadRequest("No s'han trobat les credencials per fer la petició")
         
-        response = requests.post(f'{self.BASE_URL}@login', headers=self.headers, 
+        response = requests.post(f'{self.BASE_URL}/@login', headers=self.headers, 
                                 json={'login': self.login_name, 'password': self.password})
         
         if not response.ok:
