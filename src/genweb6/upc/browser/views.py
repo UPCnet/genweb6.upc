@@ -152,7 +152,7 @@ class sendEventView(BrowserView):
             'contact_phone': getattr(self.context, 'contact_phone', ''),
             'event_url': getattr(self.context, 'event_url', ''),
             'text': getattr(self.context, 'text', ''),
-            'event_url': self.context.absolute_url(),
+            'created_event_url': self.context.absolute_url(),
             '@type': self.context.portal_type,
             'imatge': image_data,
         }
@@ -166,6 +166,8 @@ class sendEventView(BrowserView):
         return date
 
     def get_image_data(self, image):
+        if image is None:
+            return {}
         binary_data = image.data
         b64_data = base64.b64encode(binary_data)
         b64_string = b64_data.decode('utf-8')
