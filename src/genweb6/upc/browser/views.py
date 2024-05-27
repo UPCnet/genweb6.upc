@@ -20,6 +20,7 @@ from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
 from zExceptions import BadRequest
 import base64
+import logging
 
 
 class Cookies(BrowserView):
@@ -117,10 +118,15 @@ class sendEventView(BrowserView):
         except BadRequest as e:
             IStatusMessage(self.request).addStatusMessage(str(e), type='error')
             return self.request.response.redirect(self.context.absolute_url())
+        except Exception as e:
+            IStatusMessage(self.request).addStatusMessage(
+                "No s'ha pogut enviar l'esdeveniment", type='error')
+            logging.error(f"Error creating event: {str(e)}")
+            return self.request.response.redirect(self.context.absolute_url())
 
         if created_event_data is None:
             IStatusMessage(self.request).addStatusMessage(
-                "No s'ha pogut crear l'esdeveniment", type='error')
+                "No s'ha pogut enviar l'esdeveniment", type='error')
             return self.request.response.redirect(self.context.absolute_url())
 
         email_charset, from_name, from_address = self.get_registry_records()
@@ -138,6 +144,7 @@ class sendEventView(BrowserView):
         end = self.parse_dates('end')
 
         image_data = self.get_image_data(self.context.image)
+        text_data = self.get_text_data(self.context.text)
 
         return {
             'title': self.context.Title(),
@@ -151,7 +158,7 @@ class sendEventView(BrowserView):
             'contact_email': getattr(self.context, 'contact_email', ''),
             'contact_phone': getattr(self.context, 'contact_phone', ''),
             'event_url': getattr(self.context, 'event_url', ''),
-            'text': getattr(self.context, 'text', ''),
+            'text': text_data,
             'created_event_url': self.context.absolute_url(),
             '@type': self.context.portal_type,
             'imatge': image_data,
@@ -179,6 +186,12 @@ class sendEventView(BrowserView):
             'filename': image.filename,
             'content-type': image.contentType
         }
+    
+    def get_text_data(self, text):
+        if text is None:
+            return ''
+        
+        return text.output
 
     def get_tools(self):
         """ Get Plone tools"""
@@ -190,7 +203,7 @@ class sendEventView(BrowserView):
     def handle_event_creation(self, ec):
         ec.authenticate()
         if not ec.is_authenticated:
-            raise BadRequest("L'autenticació ha falat. No es pot fer la petició.")
+            raise BadRequest("L'autenticació ha fallat. No es pot fer la petició.")
 
         return ec.create_event()
 
@@ -243,6 +256,6 @@ class sendEventView(BrowserView):
 
     def handle_success(self):
         confirm = _(
-            u"Gràcies per la vostra col·laboració. Les dades de l\'activitat s\'han enviat correctament i seran publicades com més aviat millor.")
+            u"Gràcies per la vostra col·laboració. Les dades de l\'esdeveniment s\'han enviat correctament i seran publicades com més aviat millor.")
         IStatusMessage(self.request).addStatusMessage(confirm, type='info')
         self.request.response.redirect(self.context.absolute_url())

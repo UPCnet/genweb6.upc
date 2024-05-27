@@ -10,7 +10,7 @@ class EventCreator():
         self.is_authenticated = False
         self.login_name = os.environ.get('home_user', False)
         self.password = os.environ.get('home_pass', False)
-        self.BASE_URL = 'https://webupcpre.upc.edu'
+        self.BASE_URL = os.environ.get('home_url', 'https://webupcpre.upc.edu')
         self.headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
 
     def authenticate(self):
