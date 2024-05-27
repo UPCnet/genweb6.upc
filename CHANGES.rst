@@ -2,11 +2,17 @@ Changelog
 =========
 
 
-1.18 (unreleased)
+1.19 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+1.18 (2024-05-22)
+-----------------
+
+* Merge branch 'master' of github.com:UPCnet/genweb6.upc [ruben.padilla.mateu]
+* FIX image being None [ruben.padilla.mateu]
 
 1.17 (2024-05-22)
 -----------------
