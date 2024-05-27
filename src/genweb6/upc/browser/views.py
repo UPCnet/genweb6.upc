@@ -85,11 +85,11 @@ MESSAGE_TEMPLATE = u"""\
 L'usuari %(user_name)s ha creat un nou esdeveniment en l'agenda del GenWeb \
 "%(gw_title)s":
 
-Títol: "%(event_title)s"
+Títol: "%(gw_event_title)s"
 
 i que podreu trobar al següent enllaç:
 
-%(event_link)s
+%(created_event_link)s
 
 Per a la seva publicació a l'Agenda general de la UPC.
 """
@@ -104,7 +104,6 @@ class sendEventView(BrowserView):
         the administrator of the website about the new event."""
         alsoProvides(self.request, IDisableCSRFProtection)
         event_data = self.get_event_data()
-
         mailhost, url_tool, membership_tool = self.get_tools()
         portal = url_tool.getPortalObject()
         web_title = portal.getProperty('title')
@@ -132,7 +131,7 @@ class sendEventView(BrowserView):
         email_charset, from_name, from_address = self.get_registry_records()
 
         message = self.build_email_message(
-            membership_tool, event_data, from_name, from_address, web_title)
+            membership_tool, event_data['title'], created_event_data['@id'], web_title)
 
         self.send_email(mailhost, message, from_name,
                         from_address, web_title, email_charset)
@@ -186,11 +185,11 @@ class sendEventView(BrowserView):
             'filename': image.filename,
             'content-type': image.contentType
         }
-    
+
     def get_text_data(self, text):
         if text is None:
             return ''
-        
+
         return text.output
 
     def get_tools(self):
@@ -215,27 +214,14 @@ class sendEventView(BrowserView):
         return email_charset, from_name, from_address
 
     def build_email_message(
-            self, membership_tool, event_data, from_name, from_address, web_title):
+            self, membership_tool, gw_event_title, created_event_link, web_title):
         userid = membership_tool.getAuthenticatedMember().id
 
-        event_date, event_hour = self.get_date_hour_from_isoformat_string(
-            event_data
-            ['start'])
-
         message = MESSAGE_TEMPLATE % dict(gw_title=web_title,
-                                          event_title=event_data['title'],
-                                          event_date=event_date,
-                                          event_hour=event_hour,
-                                          event_link=event_data['created_event_url'],
-                                          from_address=from_address,
-                                          from_name=from_name,
+                                          gw_event_title=gw_event_title,
+                                          created_event_link=created_event_link,
                                           user_name=userid)
         return message
-
-    def get_date_hour_from_isoformat_string(self, date_string):
-        """ Get date and hour from isoformat string """
-        date = DateTime(date_string)
-        return date.strftime('%d/%m/%Y'), date.strftime('%H:%M')
 
     def send_email(
             self, mailhost, message, from_name, from_address, web_title, email_charset):
