@@ -21,6 +21,7 @@ from zope.interface import alsoProvides
 from zExceptions import BadRequest
 import base64
 import logging
+from genweb6.core.utils import genwebHeaderConfig
 
 
 class Cookies(BrowserView):
@@ -106,7 +107,7 @@ class sendEventView(BrowserView):
         event_data = self.get_event_data()
         mailhost, url_tool, membership_tool = self.get_tools()
         portal = url_tool.getPortalObject()
-        web_title = portal.getProperty('title')
+        genweb_title = getattr(genwebHeaderConfig(), 'html_title_%s' % portal.language, 'Genweb UPC')
 
         created_event_data = None
         event_creator = EventCreator(event_data)
@@ -131,10 +132,10 @@ class sendEventView(BrowserView):
         email_charset, from_name, from_address = self.get_registry_records()
 
         message = self.build_email_message(
-            membership_tool, event_data['title'], created_event_data['@id'], web_title)
+            membership_tool, event_data['title'], created_event_data['@id'], genweb_title)
 
         self.send_email(mailhost, message, from_name,
-                        from_address, web_title, email_charset)
+                        from_address, genweb_title, email_charset)
         self.handle_annotations()
         self.handle_success()
 
