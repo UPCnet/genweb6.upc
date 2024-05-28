@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.21 (unreleased)
+1.21 (2024-05-28)
 -----------------
 
-- Nothing changed yet.
-
+* Merge branch 'master' of github.com:UPCnet/genweb6.upc [ruben.padilla.mateu]
+* FIX html on site titles and set correct recipients [ruben.padilla.mateu]
 
 1.20 (2024-05-28)
 -----------------
