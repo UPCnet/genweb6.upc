@@ -22,6 +22,7 @@ from zExceptions import BadRequest
 import base64
 import logging
 from genweb6.core.utils import genwebHeaderConfig
+import re
 
 
 class Cookies(BrowserView):
@@ -83,22 +84,19 @@ class RSS(BrowserView):
 
 
 MESSAGE_TEMPLATE = u"""\
-L'usuari %(user_name)s ha creat un nou esdeveniment en l'agenda del GenWeb \
-"%(gw_title)s":
+L'usuari %(user_name)s ha enviat un nou esdeveniment desde el genweb "%(gw_title)s" per a la seva publicació a l'agenda de la WebUPC 
 
-Títol: "%(gw_event_title)s"
+Títol de l'esdeveniment: "%(gw_event_title)s"
 
 i que podreu trobar al següent enllaç:
 
 %(created_event_link)s
-
-Per a la seva publicació a l'Agenda general de la UPC.
 """
 
 
 class sendEventView(BrowserView):
 
-    RECIPIENT_ADDRESS = 'plone.team@upcnet.es'
+    RECIPIENT_ADDRESS = 'info@upc.edu,jordi.miquel@upc.edu'
 
     def __call__(self):
         """ This view creates an event on the UPC Agenda and then informs
@@ -107,7 +105,11 @@ class sendEventView(BrowserView):
         event_data = self.get_event_data()
         mailhost, url_tool, membership_tool = self.get_tools()
         portal = url_tool.getPortalObject()
-        genweb_title = getattr(genwebHeaderConfig(), 'html_title_%s' % portal.language, 'Genweb UPC')
+        genweb_title = getattr(
+            genwebHeaderConfig(),
+            'html_title_%s' % portal.language, 'Genweb UPC')
+
+        genweb_title = self.remove_html_from_string(genweb_title)
 
         created_event_data = None
         event_creator = EventCreator(event_data)
@@ -132,7 +134,9 @@ class sendEventView(BrowserView):
         email_charset, from_name, from_address = self.get_registry_records()
 
         message = self.build_email_message(
-            membership_tool, event_data['title'], created_event_data['@id'], genweb_title)
+            membership_tool, event_data['title'],
+            created_event_data['@id'],
+            genweb_title)
 
         self.send_email(mailhost, message, from_name,
                         from_address, genweb_title, email_charset)
@@ -193,6 +197,10 @@ class sendEventView(BrowserView):
 
         return text.output
 
+    def remove_html_from_string(self, string):
+        clean = re.compile('<.*?>')
+        return re.sub(clean, '', string)
+    
     def get_tools(self):
         """ Get Plone tools"""
         mailhost = getToolByName(self.context, 'MailHost')
