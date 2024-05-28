@@ -2,11 +2,18 @@ Changelog
 =========
 
 
-1.20 (unreleased)
+1.21 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+1.20 (2024-05-28)
+-----------------
+
+* FIX Get site title [ruben.padilla.mateu]
+* Merge branch 'master' of github.com:UPCnet/genweb6.upc [ruben.padilla.mateu]
+* Simplify email message building [ruben.padilla.mateu]
 
 1.19 (2024-05-27)
 -----------------
