@@ -24,6 +24,8 @@
             <strong><tal:omit-tag i18n:translate="" tal:content="packet/packet_key"></tal:omit-tag>,</strong>
             <tal:message i18n:translate="">configurat amb l'identificador:</tal:message>
             <strong><tal:omit-tag tal:content="packet/value"></tal:omit-tag></strong>
+            <br/>
+            <tal:message i18n:translate="">L'opció "Configure" del menú d'edició esquerre us permetrà reconfigurar el contingut.</tal:message>
           </div>
         </div>
         <tal:packet replace="structure view/getPacket"></tal:packet>

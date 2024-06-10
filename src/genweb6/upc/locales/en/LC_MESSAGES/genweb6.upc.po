@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-03-04 06:58+0000\n"
+"POT-Creation-Date: 2024-06-10 11:56+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -67,7 +67,7 @@ msgstr "Changes canceled"
 msgid "Changes saved"
 msgstr "Changes saved"
 
-#: ../content/packet/templates/view.pt:45
+#: ../content/packet/templates/view.pt:47
 #: ../profiles/default/types/packet.xml
 msgid "Configure"
 msgstr "Configure"
@@ -157,9 +157,9 @@ msgstr "Research groups"
 msgid "Grups de recerca d'un departament específic"
 msgstr "<p>List of the research groups belonging to a department.</p><p class=\"muted\"><strong>Parameter:</strong> UPC code of the department.</p><p class=\"muted\">For example, the code of the Department of Electronic Engineering is <strong>710.</strong></p><p><a target=\"_blank\" href=\"https://gpaq.upc.edu/eines/?op=unitats\" class=\"external-link\">UPC codes<img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>UPC code</p>"
 
-#: ../browser/views.py:132
-msgid "Gràcies per la vostra col·laboració. Les dades de l'activitat s'han enviat correctament i seran publicades com més aviat millor."
-msgstr "Thank you for your collaboration. The activity data has been sent correctly and will be published as soon as possible."
+#: ../browser/views.py:253
+msgid "Gràcies per la vostra col·laboració. Les dades de l'esdeveniment s'han enviat correctament i seran publicades com més aviat millor."
+msgstr ""
 
 #: ../controlpanels/upc.py:32
 msgid "Icona"
@@ -212,6 +212,10 @@ msgstr "Researchers in a research group"
 #: ../content/packet/adapters.py:104
 msgid "Investigadors d'un grup de recerca d'un departament específic"
 msgstr "<p>List of the researchers in a research group.</p><p class=\"muted\"><strong>Parameter:</strong> Acronym for the research group as published in DRAC.</p><p class=\"muted\">For example, the acronym for the Architecture, Energy and the Environment research group is AIEM</p><p><a target=\"_blank\" href=\"http://futur.upc.edu/organitzacio/os/Z3J1cHJlY2VyY2E=#produccio\" class=\"external-link\">Research group acronyms<img src=\"++theme++genweb6.theme/img/blank_blau.png\" class=\"img_blank\" alt=\"(Open new window)\"></a>.</p><p class=\"muted\"><strong>Select: </strong>Acronym</p>"
+
+#: ../content/packet/templates/view.pt:28
+msgid "L'opció \"Configure\" del menú d'edició esquerre us permetrà reconfigurar el contingut."
+msgstr "The \"Configure\" option from the left menu will allow you to reconfigure the content."
 
 #: ../controlpanels/upc.py:45
 msgid "Language"
@@ -267,7 +271,7 @@ msgstr "Tel."
 msgid "The entered text does not match the text in the image"
 msgstr "The entered text does not match the text in the image"
 
-#: ../content/packet/templates/view.pt:41
+#: ../content/packet/templates/view.pt:43
 msgid "This packet is not configured yet. Please, do it in the ${configure_url} tab."
 msgstr "This packet is not configured yet. Please, do it in the ${configure_url}."
 

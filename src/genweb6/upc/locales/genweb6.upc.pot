@@ -1,10 +1,10 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+#SOME DESCRIPTIVE TITLE.
+#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-04 06:58+0000\n"
+"POT-Creation-Date: 2024-06-10 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Changes saved"
 msgstr ""
 
-#: ../content/packet/templates/view.pt:45
+#: ../content/packet/templates/view.pt:47
 #: ../profiles/default/types/packet.xml
 msgid "Configure"
 msgstr ""
@@ -158,8 +158,8 @@ msgstr ""
 msgid "Grups de recerca d'un departament específic"
 msgstr ""
 
-#: ../browser/views.py:132
-msgid "Gràcies per la vostra col·laboració. Les dades de l'activitat s'han enviat correctament i seran publicades com més aviat millor."
+#: ../browser/views.py:253
+msgid "Gràcies per la vostra col·laboració. Les dades de l'esdeveniment s'han enviat correctament i seran publicades com més aviat millor."
 msgstr ""
 
 #: ../controlpanels/upc.py:32
@@ -212,6 +212,10 @@ msgstr ""
 
 #: ../content/packet/adapters.py:104
 msgid "Investigadors d'un grup de recerca d'un departament específic"
+msgstr ""
+
+#: ../content/packet/templates/view.pt:28
+msgid "L'opció \"Configure\" del menú d'edició esquerre us permetrà reconfigurar el contingut."
 msgstr ""
 
 #: ../controlpanels/upc.py:45
@@ -268,7 +272,7 @@ msgstr ""
 msgid "The entered text does not match the text in the image"
 msgstr ""
 
-#: ../content/packet/templates/view.pt:41
+#: ../content/packet/templates/view.pt:43
 msgid "This packet is not configured yet. Please, do it in the ${configure_url} tab."
 msgstr ""
 
