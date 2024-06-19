@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.22 (unreleased)
+1.22 (2024-06-19)
 -----------------
 
-- Nothing changed yet.
-
+* Added configure message on contingut upc [ruben.padilla.mateu]
 
 1.21 (2024-05-28)
 -----------------
