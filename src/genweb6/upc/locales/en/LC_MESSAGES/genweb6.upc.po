@@ -231,7 +231,7 @@ msgstr "Name"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:15
 msgid "On som"
-msgstr "Where are we"
+msgstr "Where we are"
 
 #: ../controlpanels/bus_soa.py:29
 msgid "Password"
