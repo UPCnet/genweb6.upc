@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.23 (unreleased)
+1.23 (2024-07-17)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar traduccion footer [Iago López]
 
 1.22 (2024-06-19)
 -----------------
