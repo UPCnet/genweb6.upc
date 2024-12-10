@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.24 (unreleased)
+1.24 (2024-12-10)
 -----------------
 
-- Nothing changed yet.
-
+* [ADD] SEO behavior [Iago López]
 
 1.23 (2024-07-17)
 -----------------
