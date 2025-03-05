@@ -105,7 +105,11 @@ def setupVarious(context):
         header_settings.logo = encoded_data
 
         header_settings.logo_alt = "Universitat Politècnica de Catalunya"
+        header_settings.logo_alt_es = "Universitat Politècnica de Catalunya"
+        header_settings.logo_alt_en = "Universitat Politècnica de Catalunya"
         header_settings.logo_url = "https://www.upc.edu/ca"
+        header_settings.logo_url_es = "https://www.upc.edu/es"
+        header_settings.logo_url_en = "https://www.upc.edu/en"
         header_settings.logo_external_url = True
 
     # Setup favicon

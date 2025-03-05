@@ -11,4 +11,12 @@
     <include file="views.zcml" />
     <include file="viewlets.zcml" />
 
+    <browser:page
+        name="setup_header_languages"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".helpers_touchers.setup_header_languages"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="cmf.ManagePortal"
+    />
+
 </configure>
