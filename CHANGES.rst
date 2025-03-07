@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.25 (unreleased)
+1.25 (2025-03-07)
 -----------------
 
-- Nothing changed yet.
-
+* [ADD] default logo_alt and logo_url for en and es [Clàudia Andreu]
 
 1.24 (2024-12-10)
 -----------------
