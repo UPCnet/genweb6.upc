@@ -6,6 +6,7 @@ from plone.formwidget.namedfile.converter import b64encode_file
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 from zope.component.hooks import getSite
+from zope.globalrequest import getRequest
 from zope.interface import implementer
 from zope.ramcache import ram
 
@@ -83,6 +84,10 @@ def setupVarious(context):
 
     # Setup CAS settings
     setupCAS("https://sso.upc.edu/CAS/", "genweb", "UPC")
+
+    url = getRequest().URL
+    if url and any(x in url for x in ['fepre.upc.edu', '.pre.upc.edu']):
+        setupCAS("https://sso.pre.upc.edu/CAS/", "genweb", "UPC")
 
     # Setup LDAP UPC
     setSetupLDAPUPC()
