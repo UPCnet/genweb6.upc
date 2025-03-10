@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.26 (unreleased)
+1.26 (2025-03-10)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] SSO PRE condition [Iago López]
 
 1.25 (2025-03-07)
 -----------------
