@@ -522,7 +522,7 @@ msgstr "No mostrar les icones de les xarxes socials"
 #. Default: "Thank you for your feedback."
 #: ../browser/contact/contact_feedback.pt:19
 msgid "upc_heading_send_feedback_confirm"
-msgstr "Gràcies pel vostre comentari.""
+msgstr "Gràcies pel vostre comentari."
 
 #. Default: "Thank you for your feedback. An email has been sent to us with your questions or comments. We will respond as soon as possible."
 #: ../browser/contact/contact_feedback.pt:24
