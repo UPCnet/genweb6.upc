@@ -86,11 +86,11 @@ msgstr "Contacto"
 
 #: ../content/packet/adapters.py:120
 msgid "Contingut d'una pàgina externa"
-msgstr "<p>Muestra la parte que especifiquemos de la página existente</p><p class=\"muted\">Especificar la URL y el id o la clase dentro del contenido</p>"
+msgstr "<p>Si quieres incrustar una página de este mismo genweb utiliza el tipo de contenido <a href='https://genweb.upc.edu/resolveuid/72aca79c0d7149f0b06b04bca9c07ea3' target='_blank'>Contenido existente</a> escogiendo la opción de contenido interno.</p><p>Se mostrarán los contenidos de la URL que indicamos, a partir del id, class o tag que configuramos.</p>"
 
 #: ../content/packet/adapters.py:119
 msgid "Contingut existent"
-msgstr "Contenido existente"
+msgstr "Contenido de otra web"
 
 #: ../browser/add_genweb_upc/add.pt:10
 msgid "Create a Genweb UPC"
