@@ -324,7 +324,7 @@ msgstr "User to connect to the bus"
 #: ../browser/viewlets_templates/footer/footer_contact.pt:91
 #: ../controlpanels/upc.py:97
 msgid "Xarxes Socials"
-msgstr "Social Networks"
+msgstr "Social networks list"
 
 #: ../content/packet/adapters.py:106
 msgid "acronim"
