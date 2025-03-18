@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-06-10 11:56+0000\n"
+"POT-Creation-Date: 2025-03-18 08:35+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -513,6 +513,16 @@ msgstr "No mostrar enlace al formulario de contacto"
 #: ../controlpanels/upc.py:96
 msgid "treu_icones_xarxes_socials"
 msgstr "No mostrar los iconos de las redes sociales"
+
+#. Default: "Thank you for your feedback."
+#: ../browser/contact/contact_feedback.pt:19
+msgid "upc_heading_send_feedback_confirm"
+msgstr "Gracias por tu feedback"
+
+#. Default: "Thank you for your feedback. An email has been sent to us with your questions or comments. We will respond as soon as possible."
+#: ../browser/contact/contact_feedback.pt:24
+msgid "upc_message_send_feedback_confirm"
+msgstr "Gracias por tu feedback. Un correo electrónico ha sido enviado con tus preguntas o comentarios. Te responderemos lo antes posible."
 
 #: ../content/packet/adapters.py:122
 msgid "url_contingut"

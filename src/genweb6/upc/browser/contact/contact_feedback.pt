@@ -4,7 +4,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="genweb6.upc">
 
 <head>
     <metal:noborder fill-slot="top_slot"
@@ -18,12 +18,11 @@
 
     <h1 class="documentFirstHeading"
         i18n:translate="upc_heading_send_feedback_confirm">
-        Site Administrator has been contacted.
+        Thank you for your feedback.
     </h1>
 
     <p i18n:translate="upc_message_send_feedback_confirm">
-        A mail has now been sent to the site administrator regarding your
-        questions and/or comments.
+    Thank you for your feedback. An email has been sent to us with your questions or comments. We will respond as soon as possible.
     </p>
 </div>
 

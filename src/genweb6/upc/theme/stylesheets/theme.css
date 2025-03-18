@@ -69,3 +69,7 @@
     margin-bottom: 1rem;
   }
 }
+
+.documentContents a[href^="#"] { /* Solo aplica a la tabla de contenidos */
+  scroll-margin-top: 120px; /* Ajusta según el tamaño de tu menú */
+}

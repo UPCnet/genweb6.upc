@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-10 11:56+0000\n"
+"POT-Creation-Date: 2025-03-18 08:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -505,6 +505,16 @@ msgstr ""
 
 #: ../controlpanels/upc.py:96
 msgid "treu_icones_xarxes_socials"
+msgstr ""
+
+#. Default: "Thank you for your feedback."
+#: ../browser/contact/contact_feedback.pt:19
+msgid "upc_heading_send_feedback_confirm"
+msgstr ""
+
+#. Default: "Thank you for your feedback. An email has been sent to us with your questions or comments. We will respond as soon as possible."
+#: ../browser/contact/contact_feedback.pt:24
+msgid "upc_message_send_feedback_confirm"
 msgstr ""
 
 #: ../content/packet/adapters.py:122
