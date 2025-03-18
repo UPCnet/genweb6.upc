@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-06-10 11:56+0000\n"
+"POT-Creation-Date: 2025-03-14 11:08+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -29,13 +29,13 @@ msgstr "Clau API"
 msgid "ATENCIÓ:"
 msgstr "ATENCIÓ:"
 
-#: ../controlpanels/upc.py:77
+#: ../controlpanels/upc.py:84
 msgid "Adreça del mapa customitzat"
-msgstr "Google Maps: Nom de la unitat o adreça a cercar"
+msgstr "Personalitzar adreça de Google Maps: Nom de la unitat o adreça a cercar"
 
-#: ../controlpanels/upc.py:78
+#: ../controlpanels/upc.py:85
 msgid "Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."
-msgstr "Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp. Exemples: Universidad Politécnica de Cataluña o Carrer de Jordi Girona, 31, 08034 Barcelona"
+msgstr "Aquesta adreça prevaldrà sobre la que ve per defecte. Exemple: Universidad Politécnica de Cataluña o Carrer de Jordi Girona, 31, 08034 Barcelona"
 
 #: ../browser/viewlets_templates/content/send_event.pt:8
 msgid "Aquesta activitat ja s'ha enviat a l'Agenda de la UPC."
@@ -51,19 +51,19 @@ msgstr "Configuració Bus SOA"
 
 #: ../controlpanels/bus_soa.py:64
 #: ../controlpanels/identitat_digital.py:52
-#: ../controlpanels/upc.py:162
+#: ../controlpanels/upc.py:169
 msgid "Cancel"
 msgstr "Cancel·la"
 
 #: ../controlpanels/bus_soa.py:66
 #: ../controlpanels/identitat_digital.py:54
-#: ../controlpanels/upc.py:164
+#: ../controlpanels/upc.py:171
 msgid "Changes canceled."
 msgstr "S'han cancel·lat els canvis."
 
 #: ../controlpanels/bus_soa.py:61
 #: ../controlpanels/identitat_digital.py:49
-#: ../controlpanels/upc.py:159
+#: ../controlpanels/upc.py:166
 msgid "Changes saved"
 msgstr "Canvis desats"
 
@@ -72,13 +72,13 @@ msgstr "Canvis desats"
 msgid "Configure"
 msgstr "Configura"
 
-#: ../controlpanels/upc.py:128
+#: ../controlpanels/upc.py:135
 msgid "Contact"
 msgstr "Contacte"
 
-#: ../controlpanels/upc.py:118
+#: ../controlpanels/upc.py:125
 msgid "Contact emails"
-msgstr "Formulari de contacte: Adreces d’enviament (especifiqueu els diferents contactes per àmbit)"
+msgstr "Adreces d’enviament (especifiqueu els diferents contactes per àmbit)"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:36
 msgid "Contacte"
@@ -146,6 +146,7 @@ msgid "Fitxa de màster"
 msgstr "Fitxa de màster"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:66
+#: ../controlpanels/upc.py:105
 msgid "Formulari de contacte"
 msgstr "Formulari de contacte"
 
@@ -165,9 +166,9 @@ msgstr ""
 msgid "Icona"
 msgstr "Icona"
 
-#: ../controlpanels/upc.py:104
+#: ../controlpanels/upc.py:98
 msgid "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
-msgstr "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
+msgstr "Icona que es mostrarà, podeu trobar tots els identificadors en els següents enllaços: <br/> Preferentment icones de <a href='https://icons.getbootstrap.com/' target='_blank'>Bootstrap</a> (icones natives de bootstrap disponibles) Ex: bi-facebook <br/> Alternativament a <a href='https://fontawesome.com/icons' target='_blank'>Font Awesome</a> (per a exemple Bluesky) Ex: fa-brands fa-bluesky"
 
 #: ../browser/utils/templates/utils.pt:26
 msgid "Identitat Digital"
@@ -251,7 +252,7 @@ msgstr "Pla d'estudis de màster"
 
 #: ../controlpanels/bus_soa.py:50
 #: ../controlpanels/identitat_digital.py:39
-#: ../controlpanels/upc.py:136
+#: ../controlpanels/upc.py:143
 msgid "Save"
 msgstr "Desa"
 
@@ -321,7 +322,7 @@ msgid "User to connect to the bus"
 msgstr "Usuari per conectar-se al bus"
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:91
-#: ../controlpanels/upc.py:103
+#: ../controlpanels/upc.py:97
 msgid "Xarxes Socials"
 msgstr "Xarxes Socials"
 
@@ -355,7 +356,7 @@ msgid "configurat amb l'identificador:"
 msgstr "configurat amb l'identificador:"
 
 #. Default: "Página de contacte personalitzada"
-#: ../controlpanels/upc.py:83
+#: ../controlpanels/upc.py:77
 msgid "contacte_BBBDD_or_page"
 msgstr "Informació de contacte personalitzat"
 
@@ -445,19 +446,23 @@ msgid "grups_recerca_people"
 msgstr "Investigadors d'un grup de recerca"
 
 #. Default: "Per defecte, la informació de contacte prové de la base de dades de SCP, sota petició."
-#: ../controlpanels/upc.py:84
+#: ../controlpanels/upc.py:78
 msgid "help_contacte_BBBDD_or_page"
-msgstr "Per defecte, la informació de contacte s'alimenta de la base de dades del Servei de Comunicació. Al marcar aquesta opció podeu editar aquesta informació desde les següents pàgines: <a target='_blank' href='ca/contactepersonalitzat'>Català</a> | <a target='_blank' href='en/customizedcontact'>Àngles</a> | <a target='_blank' href='es/contactopersonalizado'>Castellà</a>"
+msgstr "En aquestes pàgines pots editar la informació de contacte (recorda que han d’estar publicades): <a target='_blank' href='ca/contactepersonalitzat'>Català</a> | <a target='_blank' href='en/customizedcontact'>Àngles</a> | <a target='_blank' href='es/contactopersonalizado'>Castellà</a>"
 
 #. Default: "Es pot seleccionar a qui s'envia el missatge de contacte."
-#: ../controlpanels/upc.py:111
+#: ../controlpanels/upc.py:118
 msgid "help_contacte_multi_email"
-msgstr "Es pot seleccionar a qui s'envia el missatge de contacte."
+msgstr "Es pot seleccionar a qui s'envia el missatge de contacte des del camp de sota."
 
 #. Default: "Add name and email by language"
-#: ../controlpanels/upc.py:119
+#: ../controlpanels/upc.py:126
 msgid "help_emails_table"
 msgstr "Afegeix nom i correu electrònic per idioma"
+
+#: ../controlpanels/upc.py:111
+msgid "help_treu_enllac_contacte"
+msgstr "El formulari de contacte s'envia a l'adreça configurada en crear la instància Genweb, però podem seleccionar altres adreces d'enviament alternatives."
 
 #. Default: "Close"
 #: ../content/packet/templates/configure.pt:91
@@ -475,7 +480,7 @@ msgid "label_select"
 msgstr "Identificador"
 
 #. Default: "Seleccionar l'adreça d'enviament"
-#: ../controlpanels/upc.py:110
+#: ../controlpanels/upc.py:117
 msgid "multi_email"
 msgstr "Seleccionar l'adreça d'enviament"
 
@@ -505,14 +510,24 @@ msgstr "Dono el meu consentiment a la UPC per al tractament de les dades de car�
 msgid "to_address"
 msgstr "Destinatari"
 
-#: ../controlpanels/upc.py:90
+#: ../controlpanels/upc.py:110
 msgid "treu_enllac_contacte"
 msgstr "No mostrar l'enllaç del formulari de contacte"
 
 #. Default: "Treu les icones per compartir en xarxes socials del peu"
-#: ../controlpanels/upc.py:96
+#: ../controlpanels/upc.py:90
 msgid "treu_icones_xarxes_socials"
 msgstr "No mostrar les icones de les xarxes socials"
+
+#. Default: "Site Administrator has been contacted."
+#: ../browser/contact/contact_feedback.pt:19
+msgid "upc_heading_send_feedback_confirm"
+msgstr ""
+
+#. Default: "A mail has now been sent to the site administrator regarding your questions and/or comments."
+#: ../browser/contact/contact_feedback.pt:24
+msgid "upc_message_send_feedback_confirm"
+msgstr ""
 
 #: ../content/packet/adapters.py:122
 msgid "url_contingut"

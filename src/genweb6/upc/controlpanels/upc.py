@@ -73,12 +73,6 @@ class IUPCSettings(model.Schema, IDexteritySchema):
         required=False,
     )
 
-    custom_map_address = schema.TextLine(
-        title=_(u"Adreça del mapa customitzat"),
-        description=_(u"Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."),
-        required=False,
-    )
-
     contacte_BBDD_or_page = schema.Bool(
         title=_(u"contacte_BBBDD_or_page"),
         description=_(u"help_contacte_BBBDD_or_page"),
@@ -86,10 +80,10 @@ class IUPCSettings(model.Schema, IDexteritySchema):
         default=False,
     )
 
-    treu_enllac_contacte = schema.Bool(
-        title=_(u"treu_enllac_contacte"),
+    custom_map_address = schema.TextLine(
+        title=_(u"Adreça del mapa customitzat"),
+        description=_(u"Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."),
         required=False,
-        default=False,
     )
 
     treu_icones_xarxes_socials = schema.Bool(
@@ -104,6 +98,19 @@ class IUPCSettings(model.Schema, IDexteritySchema):
         description=_(u"Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"),
         value_type=DictRow(schema=IXarxesSocials),
         required=False,
+    )
+
+    model.fieldset(
+        'contact_emails',
+        label=_(u'Formulari de contacte'),
+        fields=['treu_enllac_contacte', 'contacte_multi_email', 'contact_emails_table']
+    )
+
+    treu_enllac_contacte = schema.Bool(
+        title=_(u"treu_enllac_contacte"),
+        description=_(u"help_treu_enllac_contacte"),
+        required=False,
+        default=False,
     )
 
     contacte_multi_email = schema.Bool(
