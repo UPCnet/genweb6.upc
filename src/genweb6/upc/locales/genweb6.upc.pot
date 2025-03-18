@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-18 08:35+0000\n"
+"POT-Creation-Date: 2025-03-18 11:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,11 @@ msgstr ""
 msgid "ATENCIÓ:"
 msgstr ""
 
-#: ../controlpanels/upc.py:77
+#: ../controlpanels/upc.py:84
 msgid "Adreça del mapa customitzat"
 msgstr ""
 
-#: ../controlpanels/upc.py:78
+#: ../controlpanels/upc.py:85
 msgid "Al omplir aquesta dada es modificará la direcció del mapa per la indicada en aquest camp."
 msgstr ""
 
@@ -52,19 +52,19 @@ msgstr ""
 
 #: ../controlpanels/bus_soa.py:64
 #: ../controlpanels/identitat_digital.py:52
-#: ../controlpanels/upc.py:162
+#: ../controlpanels/upc.py:169
 msgid "Cancel"
 msgstr ""
 
 #: ../controlpanels/bus_soa.py:66
 #: ../controlpanels/identitat_digital.py:54
-#: ../controlpanels/upc.py:164
+#: ../controlpanels/upc.py:171
 msgid "Changes canceled."
 msgstr ""
 
 #: ../controlpanels/bus_soa.py:61
 #: ../controlpanels/identitat_digital.py:49
-#: ../controlpanels/upc.py:159
+#: ../controlpanels/upc.py:166
 msgid "Changes saved"
 msgstr ""
 
@@ -73,11 +73,11 @@ msgstr ""
 msgid "Configure"
 msgstr ""
 
-#: ../controlpanels/upc.py:128
+#: ../controlpanels/upc.py:135
 msgid "Contact"
 msgstr ""
 
-#: ../controlpanels/upc.py:118
+#: ../controlpanels/upc.py:125
 msgid "Contact emails"
 msgstr ""
 
@@ -147,6 +147,7 @@ msgid "Fitxa de màster"
 msgstr ""
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:66
+#: ../controlpanels/upc.py:105
 msgid "Formulari de contacte"
 msgstr ""
 
@@ -166,7 +167,7 @@ msgstr ""
 msgid "Icona"
 msgstr ""
 
-#: ../controlpanels/upc.py:104
+#: ../controlpanels/upc.py:98
 msgid "Icona que es mostrarà, podeu trobar tots els identificadors en el <a href='https://icons.getbootstrap.com/' target='_blank'>següent enllaç</a>. Ex: bi-facebook"
 msgstr ""
 
@@ -252,7 +253,7 @@ msgstr ""
 
 #: ../controlpanels/bus_soa.py:50
 #: ../controlpanels/identitat_digital.py:39
-#: ../controlpanels/upc.py:136
+#: ../controlpanels/upc.py:143
 msgid "Save"
 msgstr ""
 
@@ -322,7 +323,7 @@ msgid "User to connect to the bus"
 msgstr ""
 
 #: ../browser/viewlets_templates/footer/footer_contact.pt:91
-#: ../controlpanels/upc.py:103
+#: ../controlpanels/upc.py:97
 msgid "Xarxes Socials"
 msgstr ""
 
@@ -355,7 +356,7 @@ msgstr ""
 msgid "configurat amb l'identificador:"
 msgstr ""
 
-#: ../controlpanels/upc.py:83
+#: ../controlpanels/upc.py:77
 msgid "contacte_BBBDD_or_page"
 msgstr ""
 
@@ -442,16 +443,20 @@ msgstr ""
 msgid "grups_recerca_people"
 msgstr ""
 
-#: ../controlpanels/upc.py:84
+#: ../controlpanels/upc.py:78
 msgid "help_contacte_BBBDD_or_page"
 msgstr ""
 
-#: ../controlpanels/upc.py:111
+#: ../controlpanels/upc.py:118
 msgid "help_contacte_multi_email"
 msgstr ""
 
-#: ../controlpanels/upc.py:119
+#: ../controlpanels/upc.py:126
 msgid "help_emails_table"
+msgstr ""
+
+#: ../controlpanels/upc.py:111
+msgid "help_treu_enllac_contacte"
 msgstr ""
 
 #. Default: "Close"
@@ -469,7 +474,7 @@ msgstr ""
 msgid "label_select"
 msgstr ""
 
-#: ../controlpanels/upc.py:110
+#: ../controlpanels/upc.py:117
 msgid "multi_email"
 msgstr ""
 
@@ -499,11 +504,11 @@ msgstr ""
 msgid "to_address"
 msgstr ""
 
-#: ../controlpanels/upc.py:90
+#: ../controlpanels/upc.py:110
 msgid "treu_enllac_contacte"
 msgstr ""
 
-#: ../controlpanels/upc.py:96
+#: ../controlpanels/upc.py:90
 msgid "treu_icones_xarxes_socials"
 msgstr ""
 

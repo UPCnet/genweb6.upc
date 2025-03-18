@@ -69,7 +69,25 @@
     margin-bottom: 1rem;
   }
 }
+/* line 5, ../scss/_upc_controlpanel.scss */
+body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
 
-.documentContents a[href^="#"] { /* Solo aplica a la tabla de contenidos */
-  scroll-margin-top: 120px; /* Ajusta según el tamaño de tu menú */
+/* line 20, ../scss/_upc_controlpanel.scss */
+html[lang='ca'] body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
+  content: 'Xarxes Socials';
+}
+
+/* line 33, ../scss/_upc_controlpanel.scss */
+html[lang='en'] body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
+  content: 'Social Networks';
+}
+
+/* line 46, ../scss/_upc_controlpanel.scss */
+html[lang='es'] body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
+  content: 'Redes Sociales';
 }
