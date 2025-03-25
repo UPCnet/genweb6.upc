@@ -2,11 +2,16 @@ Changelog
 =========
 
 
-1.27 (unreleased)
+1.27 (2025-03-25)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar literal pie contacto, dónde [Iago López]
+* [FIX] .po [Iago López]
+* [MERGE] branch upc_controlpanel_changes [Iago López]
+* [UPD] contact feedback message [Clàudia Andreu]
+* [UPD] Estilos + literales upc controlpanel [Iago López]
+* [UPD] Literales contenido UPC [Iago López]
+* [UPD] Reorganizar y cambiar literales controlpanel contacto [Iago López]
 
 1.26 (2025-03-10)
 -----------------
