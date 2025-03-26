@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.28 (unreleased)
+1.28 (2025-03-26)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar literales [Iago López]
 
 1.27 (2025-03-25)
 -----------------
