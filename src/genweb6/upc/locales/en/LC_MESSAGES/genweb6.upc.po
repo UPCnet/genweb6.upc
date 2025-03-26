@@ -86,7 +86,7 @@ msgstr "Contact"
 
 #: ../content/packet/adapters.py:120
 msgid "Contingut d'una pàgina externa"
-msgstr "<p>If you want to embed a page from this same genweb, use the content type <a href='https://genweb.upc.edu/resolveuid/72aca79c0d7149f0b06b04bca9c07ea3' target='_blank'>Existing Content</a> choosing the Internal content option.</p><p>They will show us the contents of the URL that we indicate, based on the id, class or tag that we configure.</p>"
+msgstr "<p>They will show us the contents of the URL that we indicate, based on the id, class or tag that we configure.</p><p>If you want to embed a page from this same genweb, it is recommended to use the content type <a href='https://genweb.upc.edu/resolveuid/72aca79c0d7149f0b06b04bca9c07ea3' target='_blank'>Existing Content</a> choosing the Internal content option.</p>"
 
 #: ../content/packet/adapters.py:119
 msgid "Contingut existent"

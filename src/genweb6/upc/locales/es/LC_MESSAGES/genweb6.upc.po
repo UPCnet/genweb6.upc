@@ -86,7 +86,7 @@ msgstr "Contacto"
 
 #: ../content/packet/adapters.py:120
 msgid "Contingut d'una pàgina externa"
-msgstr "<p>Si quieres incrustar una página de este mismo genweb utiliza el tipo de contenido <a href='https://genweb.upc.edu/resolveuid/72aca79c0d7149f0b06b04bca9c07ea3' target='_blank'>Contenido existente</a> escogiendo la opción de contenido interno.</p><p>Se mostrarán los contenidos de la URL que indicamos, a partir del id, class o tag que configuramos.</p>"
+msgstr "<p>Se mostrarán los contenidos de la URL que indicamos, a partir del id, class o tag que configuramos.</p><p>Si quieres incrustar una página de este mismo genweb se recomienda utilizar el tipo de contenido <a href='https://genweb.upc.edu/resolveuid/72aca79c0d7149f0b06b04bca9c07ea3' target='_blank'>Contenido existente</a> escogiendo la opción de contenido interno.</p>"
 
 #: ../content/packet/adapters.py:119
 msgid "Contingut existent"
