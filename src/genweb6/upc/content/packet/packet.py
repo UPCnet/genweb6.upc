@@ -79,6 +79,7 @@ class View(BrowserView):
         portal_url = getToolByName(self.context, "portal_url")
         portal = portal_url.getPortalObject()
         url_portal_nginx = portal.absolute_url()  # url (per dns) del lloc
+        clean_html = ''
 
         try:
             url = self.get_absolute_url(url % adapter.packet_fields)
@@ -111,24 +112,27 @@ class View(BrowserView):
                         content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
                 else:
                     # link extern, pyreq
-                    raw_html = requests.get(url, timeout=5, verify=False)
-                    clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
-                    doc = pq(clean_html)
-                    match = re.search(r'This page does not exist', clean_html)
-                    self.title = self.context.Title()  # titol per defecte
-                    if not match:
-                        if packet_type == 'contingut_genweb':
-                            element = adapter.packet_fields['element']
-                            if not element:
-                                element = "#content-core"
-                        else:
-                            element = "#content-nucli"
-                        content = pq('<div/>').append(
-                            doc(element).outerHtml()).html(method='html')
-                        if not content:
-                            content = _(u"ERROR. This element does not exist.") + " " + element
+                    raw_html = requests.get(url, timeout=2, verify=False)
+                    if not raw_html.text.strip():
+                        content = _(u"ERROR. No content was received from the requested page.")
                     else:
-                        content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
+                        clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
+                        doc = pq(clean_html)
+                        match = re.search(r'This page does not exist', clean_html)
+                        self.title = self.context.Title()  # titol per defecte
+                        if not match:
+                            if packet_type == 'contingut_genweb':
+                                element = adapter.packet_fields['element']
+                                if not element:
+                                    element = "#content-core"
+                            else:
+                                element = "#content-nucli"
+                            content = pq('<div/>').append(
+                                doc(element).outerHtml()).html(method='html')
+                            if not content:
+                                content = _(u"ERROR. This element does not exist.") + " " + element
+                        else:
+                            content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
             else:
                 content = _(u"ERROR. Autoreference")
         except ReadTimeout:
