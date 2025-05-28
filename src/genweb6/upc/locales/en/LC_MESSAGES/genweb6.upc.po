@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-03-18 11:32+0000\n"
+"POT-Creation-Date: 2025-05-28 08:23+0000\n"
 "PO-Revision-Date: 2022-05-09 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
@@ -105,27 +105,31 @@ msgstr "Directory UPC"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: ../content/packet/packet.py:133
+#: ../content/packet/packet.py:137
 msgid "ERROR. Autoreference"
 msgstr "ERROR. Autoreference"
 
-#: ../content/packet/packet.py:135
+#: ../content/packet/packet.py:117
+msgid "ERROR. No content was received from the requested page."
+msgstr "ERROR. No content was received from the requested page."
+
+#: ../content/packet/packet.py:139
 msgid "ERROR. There was a timeout while waiting for '{0}'"
 msgstr "ERROR. There was a timeout while waiting for '{0}'"
 
-#: ../content/packet/packet.py:137
+#: ../content/packet/packet.py:141
 msgid "ERROR. This URL does not exist."
 msgstr "ERROR. This URL does not exist."
 
-#: ../content/packet/packet.py:109
+#: ../content/packet/packet.py:110
 msgid "ERROR. This element does not exist."
 msgstr "ERROR. This element does not exist."
 
-#: ../content/packet/packet.py:139
+#: ../content/packet/packet.py:143
 msgid "ERROR. Unexpected exception."
 msgstr "ERROR. Unexpected exception."
 
-#: ../content/packet/packet.py:111
+#: ../content/packet/packet.py:112
 msgid "ERROR: Unknown identifier. This page does not exist."
 msgstr "<h2>ERROR: Unknown identifier. This page does not exist.</h2>"
 

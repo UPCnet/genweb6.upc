@@ -113,7 +113,7 @@ class View(BrowserView):
                 else:
                     # link extern, pyreq
                     raw_html = requests.get(url, timeout=2, verify=False)
-                    if not raw_html.text.strip():
+                    if not raw_html.text:
                         content = _(u"ERROR. No content was received from the requested page.")
                     else:
                         clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
