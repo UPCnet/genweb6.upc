@@ -88,6 +88,7 @@ class View(BrowserView):
             parent_url = re.findall('https?://(.*)', self.context.absolute_url())[0].strip('/')  # url del pare netejada
             root_url = re.findall('https?://(.*)', url_portal_nginx)[0].strip('/')  # url (per dns) del lloc netejada
             if link_url != parent_url:
+                is_ok = False
                 if link_url.startswith(root_url):
                     # link intern, search through the catalog
                     relative_path = '/' + re.findall(root_url + '(.*)', link_url)[0]
@@ -106,33 +107,35 @@ class View(BrowserView):
                             element = "#content-nucli"
                         content = pq('<div/>').append(
                             doc(element).outerHtml()).html(method='html')
+
                         if not content:
                             content = _(u"ERROR. This element does not exist.") + " " + element
+                        else:
+                            is_ok = True
                     else:
                         content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
                 else:
                     # link extern, pyreq
                     raw_html = requests.get(url, timeout=2, verify=False)
-                    if not raw_html.text:
-                        content = _(u"ERROR. No content was received from the requested page.")
-                    else:
-                        clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
-                        doc = pq(clean_html)
-                        match = re.search(r'This page does not exist', clean_html)
-                        self.title = self.context.Title()  # titol per defecte
-                        if not match:
-                            if packet_type == 'contingut_genweb':
-                                element = adapter.packet_fields['element']
-                                if not element:
-                                    element = "#content-core"
-                            else:
-                                element = "#content-nucli"
-                            content = pq('<div/>').append(
-                                doc(element).outerHtml()).html(method='html')
-                            if not content:
-                                content = _(u"ERROR. This element does not exist.") + " " + element
+                    clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
+                    doc = pq(clean_html)
+                    match = re.search(r'This page does not exist', clean_html)
+                    self.title = self.context.Title()  # titol per defecte
+                    if not match:
+                        if packet_type == 'contingut_genweb':
+                            element = adapter.packet_fields['element']
+                            if not element:
+                                element = "#content-core"
                         else:
-                            content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
+                            element = "#content-nucli"
+                        content = pq('<div/>').append(
+                            doc(element).outerHtml()).html(method='html')
+                        if not content:
+                            content = _(u"ERROR. This element does not exist.") + " " + element
+                        else:
+                            is_ok = True
+                    else:
+                        content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
             else:
                 content = _(u"ERROR. Autoreference")
         except ReadTimeout:
@@ -142,12 +145,13 @@ class View(BrowserView):
         except:
             content = _(u"ERROR. Unexpected exception.")
 
-        soup = BeautifulSoup(clean_html, "html.parser")
-        body = soup.find_all("body")
-        if body:
-            class_body = body[0].get("class", [])
-            valid_class = [valid for valid in class_body if valid.startswith('template-') or valid.startswith('portaltype-')]
-            content = str('<div class="existing-content ' + ' '.join(valid_class) + '">' + content + '</div>')
+        if is_ok:
+            soup = BeautifulSoup(clean_html, "html.parser")
+            body = soup.find_all("body")
+            if body:
+                class_body = body[0].get("class", [])
+                valid_class = [valid for valid in class_body if valid.startswith('template-') or valid.startswith('portaltype-')]
+                content = str('<div class="existing-content ' + ' '.join(valid_class) + '">' + content + '</div>')
 
         self.content = content
 
