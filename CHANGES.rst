@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.29 (unreleased)
+1.29 (2025-06-03)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] Continguts existents - donde llamamos el BeautifulSoup [«Iago]
+* [UPD] Traducciones contenido existente [«Iago]
+* [UPD] reduced timeout and [ADD] user feedback for empty response [Clàudia Andreu]
 
 1.28 (2025-03-26)
 -----------------
