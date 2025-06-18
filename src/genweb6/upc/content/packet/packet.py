@@ -116,7 +116,7 @@ class View(BrowserView):
                         content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
                 else:
                     # link extern, pyreq
-                    raw_html = requests.get(url, timeout=2, verify=False)
+                    raw_html = requests.get(url, timeout=5, verify=False)
                     clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
                     doc = pq(clean_html)
                     match = re.search(r'This page does not exist', clean_html)
