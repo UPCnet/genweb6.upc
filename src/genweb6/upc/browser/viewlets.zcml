@@ -26,12 +26,18 @@
 
     </configure>
 
-    <!-- TITLE -->
-
     <browser:viewlet
         name="plone.htmlhead.title"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".viewlets.titleViewlet"
+        layer="..interfaces.IGenweb6UpcLayer"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="plone.htmlhead.dublincore"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".viewlets.dublinCoreViewlet"
         layer="..interfaces.IGenweb6UpcLayer"
         permission="zope2.View"
         />

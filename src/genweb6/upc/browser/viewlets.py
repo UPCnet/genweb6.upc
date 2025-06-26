@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
+from Products.CMFCore.utils import getToolByName
 
 from html import escape
 from plone import api
 from plone.app.contenttypes.interfaces import IEvent
+from plone.app.layout.viewlets.common import DublinCoreViewlet
 from plone.app.layout.viewlets.common import TitleViewlet
 from plone.base.utils import safe_text
 from plone.memoize import ram
@@ -114,6 +116,10 @@ class titleViewlet(TitleViewlet, viewletBase):
         )
 
         page_title = escape(safe_text(context_state.object_title()))
+        seo_title = getattr(self.context, 'seo_title', None)
+        if seo_title:
+            page_title = escape(safe_text(seo_title))
+
         portal_title = escape(safe_text(portal_state.navigation_root_title()))
 
         genweb_title = getattr(genwebHeaderConfig(), 'html_title_%s' % self.pref_lang(), 'Genweb UPC')
@@ -129,6 +135,21 @@ class titleViewlet(TitleViewlet, viewletBase):
             self.site_title = u"%s &mdash; %s" % (genweb_title, marca_UPC)
         else:
             self.site_title = u"%s &mdash; %s &mdash; %s" % (page_title, genweb_title, marca_UPC)
+
+
+class dublinCoreViewlet(DublinCoreViewlet):
+
+    def update(self):
+        super().update()
+
+        self.metatags = list(self.metatags)
+        if hasattr(self.context, 'seo_description'):
+            for index, (key, value) in enumerate(self.metatags):
+                if key == "description":
+                    self.metatags.pop(index)
+                    break
+
+            self.metatags.append(("description", self.context.seo_description))
 
 
 class sendEventViewlet(viewletBase):
