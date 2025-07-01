@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.31 (unreleased)
+1.31 (2025-07-01)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar URL CAS [«Iago]
+* [UPD] SEO title + description [«Iago]
 
 1.30 (2025-06-18)
 -----------------
