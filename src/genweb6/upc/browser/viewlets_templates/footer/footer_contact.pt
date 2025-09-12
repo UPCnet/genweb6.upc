@@ -17,7 +17,7 @@
                 scrolling="no" marginheight="0" marginwidth="0"
                 tal:condition="has_dades_unitat"
                 tal:attributes="src dades_unitat/google_maps | nothing;
-                                title dades_unitat/adreça | nothing">
+                                title dades_unitat/adreca_sencera | nothing">
           Google Maps
         </iframe>
         <tal:block tal:condition="not:has_dades_unitat">
