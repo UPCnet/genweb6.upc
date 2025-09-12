@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.32 (unreleased)
+1.32 (2025-09-12)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] title iframe contact map [Iago López]
 
 1.31 (2025-07-01)
 -----------------
