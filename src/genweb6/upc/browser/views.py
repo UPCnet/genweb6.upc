@@ -96,7 +96,7 @@ i que podreu trobar al següent enllaç:
 
 class sendEventView(BrowserView):
 
-    RECIPIENT_ADDRESS = 'info@upc.edu,jordi.miquel@upc.edu'
+    RECIPIENT_ADDRESS = 'agenda.web@upc.edu'
 
     def __call__(self):
         """ This view creates an event on the UPC Agenda and then informs
