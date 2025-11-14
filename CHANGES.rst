@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.33 (unreleased)
+1.33 (2025-11-14)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] Add .DS_Store a gitignore [Pilar Marinas]
+* [UPD] Actualizar correos a donde se envian las peticiones de evento para la UPC [Iago López]
 
 1.32 (2025-09-12)
 -----------------
