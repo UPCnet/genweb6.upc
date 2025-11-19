@@ -14,7 +14,7 @@
         name="configure"
         for="genweb6.upc.content.packet.packet.Ipacket"
         class=".packet.Configure"
-        permission="zope2.View"
+        permission="cmf.ModifyPortalContent"
         />
 
     <adapter
