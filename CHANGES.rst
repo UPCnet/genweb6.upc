@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.34 (unreleased)
+1.34 (2025-11-25)
 -----------------
 
-- Nothing changed yet.
-
+* [RENDIMIENTO] List meta tags comentar la llamada a getMemberInfo para evitar consultas LDAP innecesarias [Pilar Marinas]
+* [UPD] Cambiar permiso para ver la vista configure [Iago López]
 
 1.33 (2025-11-14)
 -----------------
