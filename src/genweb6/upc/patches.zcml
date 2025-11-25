@@ -5,11 +5,19 @@
 
     <include package="collective.monkeypatcher" />
 
-    <monkey:patch
+    <!-- Desactivado porque no se usa creo que se usaba para purgar varnish en GW4 y ahora lo hacemos con varnish -->
+    <!-- <monkey:patch
         description="Ban caches from varnish"
         class="plone.cachepurging.purger.DefaultPurger"
         original="purge"
         replacement=".patches.purge"
+        /> -->
+
+    <monkey:patch
+        description="List meta tags comentar la llamada a getMemberInfo para evitar consultas LDAP innecesarias"
+        class="Products.CMFPlone.PloneTool.PloneTool"
+        original="listMetaTags"
+        replacement=".patches.listMetaTags"
         />
 
 </configure>
