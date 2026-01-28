@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.35 (unreleased)
+1.35 (2026-01-28)
 -----------------
 
-- Nothing changed yet.
-
+* [ADD] Añadir setup metadades [Iago López]
 
 1.34 (2025-11-25)
 -----------------
