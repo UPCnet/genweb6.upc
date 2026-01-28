@@ -14,7 +14,9 @@ from genweb6.core.browser.helpers.helpers_ldap import setSetupLDAPUPC
 from genweb6.core.cas.controlpanel import setupCAS
 from genweb6.core.controlpanels.header import IHeaderSettings
 from genweb6.core.controlpanels.login import ILoginSettings
+from genweb6.core.controlpanels.netejar_metadades import IMetadadesSettings
 
+import os
 import pkg_resources
 import transaction
 
@@ -123,5 +125,18 @@ def setupVarious(context):
         favicon = open('{}/genweb6/upc/theme/img/favicon.ico'.format(egglocation), 'rb').read()
         encoded_data = b64encode_file(filename='favicon.ico', data=favicon)
         settings.site_favicon = encoded_data
+
+    metadades_settings = registry.forInterface(IMetadadesSettings)
+    metadades_servei_apikey = os.environ.get("metadades_servei_apikey", "")
+    if not metadades_settings.api_url and metadades_servei_apikey:
+        metadades_settings.api_url = "https://utilitatspdf.upc.edu/api/netejaMetadadesPDF"
+        metadades_settings.api_key = metadades_servei_apikey
+
+    metadades_indicadors_apikey = os.environ.get("metadades_indicadors_apikey", "")
+    if not metadades_settings.indicadors_api_url and metadades_indicadors_apikey:
+        metadades_settings.indicadors_api_url = "https://indicadorstic.upc.edu/indicadorstic/"
+        metadades_settings.indicadors_api_key = metadades_indicadors_apikey
+        metadades_settings.indicadors_servei_id = "NetejaMetadades"
+        metadades_settings.indicadors_categoria_id = "indicadorMetadades"
 
     transaction.commit()
