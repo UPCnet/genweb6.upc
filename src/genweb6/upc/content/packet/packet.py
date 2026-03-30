@@ -116,7 +116,7 @@ class View(BrowserView):
                         content = _(u"ERROR: Unknown identifier. This page does not exist." + url)
                 else:
                     # link extern, pyreq
-                    raw_html = requests.get(url, timeout=5, verify=False)
+                    raw_html = requests.get(url, timeout=10, verify=False)
                     clean_html = re.sub(r'[\n\r]?', r'', raw_html.text)
                     doc = pq(clean_html)
                     match = re.search(r'This page does not exist', clean_html)
@@ -152,6 +152,9 @@ class View(BrowserView):
                 class_body = body[0].get("class", [])
                 valid_class = [valid for valid in class_body if valid.startswith('template-') or valid.startswith('portaltype-')]
                 content = str('<div class="existing-content ' + ' '.join(valid_class) + '">' + content + '</div>')
+
+            if packet_type == 'contingut_genweb':
+                content = utils.safe_html_transform(content, self.context)
 
         self.content = content
 
