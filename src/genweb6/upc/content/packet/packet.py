@@ -73,7 +73,7 @@ class View(BrowserView):
     def getHTML(self):
         packet_type = self.getType()
         adapter = getAdapter(self.context, IpacketDefinition, packet_type)
-        adapter.packet_fields.update({'lang': utils.pref_lang()})
+        adapter.packet_fields.update({'lang': utils.pref_lang(), 'url': self.context.absolute_url()})
 
         url = adapter.URL_schema
         portal_url = getToolByName(self.context, "portal_url")
