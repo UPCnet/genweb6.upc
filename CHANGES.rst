@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.37 (unreleased)
+1.37 (2026-04-07)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Peticiones a grau y masters añadir url desde donde se llama [Iago López]
+* [UPD] Contenidos existentes añadir filtro de safe_html_transform, ahora se tiene en cuenta la configuracion de filter-controlpanel [Iago López]
 
 1.36 (2026-02-11)
 -----------------
