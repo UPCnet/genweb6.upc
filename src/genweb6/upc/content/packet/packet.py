@@ -153,9 +153,6 @@ class View(BrowserView):
                 valid_class = [valid for valid in class_body if valid.startswith('template-') or valid.startswith('portaltype-')]
                 content = str('<div class="existing-content ' + ' '.join(valid_class) + '">' + content + '</div>')
 
-            if packet_type == 'contingut_genweb':
-                content = utils.safe_html_transform(content, self.context)
-
         self.content = content
 
     def get_absolute_url(self, url):
