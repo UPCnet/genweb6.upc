@@ -39,4 +39,12 @@
         permission="cmf.AddPortalContent"
         />
 
+    <browser:page
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="export-packets-json"
+        class=".views.ExportPacketsJSON"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="cmf.ManagePortal"
+        />
+
 </configure>

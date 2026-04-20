@@ -9,7 +9,7 @@ from plone import api
 from plone.memoize.view import memoize_contextless
 from zope.annotation.interfaces import IAnnotations
 
-from genweb6.core.utils import portal_url
+from genweb6.core.utils import portal_url, json_response
 from genweb6.upc import _
 from genweb6.upc.browser.utils.event_creator import EventCreator
 
@@ -22,6 +22,7 @@ from zExceptions import BadRequest
 import base64
 import logging
 from genweb6.core.utils import genwebHeaderConfig
+from genweb6.upc.content.packet import PACKETS_KEY
 import re
 
 
@@ -254,3 +255,52 @@ class sendEventView(BrowserView):
             u"Gràcies per la vostra col·laboració. Les dades de l\'esdeveniment s\'han enviat correctament i seran publicades com més aviat millor.")
         IStatusMessage(self.request).addStatusMessage(confirm, type='info')
         self.request.response.redirect(self.context.absolute_url())
+
+
+class ExportPacketsJSON(BrowserView):
+    """Llista tots els continguts ``packet`` amb URL, tipus (adapter) i valor."""
+
+    def _packet_row(self, obj):
+        annotations = IAnnotations(obj)
+        tipus = annotations.get(PACKETS_KEY + '.type')
+        fields = annotations.get(PACKETS_KEY + '.fields')
+        mapui = annotations.get(PACKETS_KEY + '.mapui') or {}
+
+        valor = None
+        if fields is not None and mapui and tipus in ('grups_recerca', 'grups_recerca_people'):
+            codi_key = mapui.get('codi')
+            element_key = mapui.get('element')
+            main = fields.get(codi_key) if codi_key else None
+            if element_key:
+                valor = {
+                    'principal': main,
+                    'element': fields.get(element_key),
+                }
+            else:
+                valor = main
+
+            return {
+                'url': obj.absolute_url(),
+                'tipus': tipus,
+                'valor': valor,
+            }
+        return None
+
+    @json_response
+    def __call__(self):
+        portal = api.portal.get()
+        catalog = getToolByName(portal, 'portal_catalog')
+        base_path = '/'.join(portal.getPhysicalPath())
+        brains = catalog(portal_type='packet', path=base_path)
+
+        items = []
+        for brain in brains:
+            try:
+                obj = brain.getObject()
+            except Exception:
+                continue
+            content = self._packet_row(obj)
+            if content:
+                items.append(content)
+
+        return {'count': len(items), 'items': items, 'site': base_path}
