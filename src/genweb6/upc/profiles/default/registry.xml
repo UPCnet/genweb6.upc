@@ -15,4 +15,12 @@
 
   </records>
 
+  <!-- folder_contents (pat-structure): plone.icon.contenttype mas portal type normalizado -->
+  <record name="plone.icon.contenttype/packet">
+    <field type="plone.registry.field.TextLine">
+      <title>UPC packet</title>
+    </field>
+    <value key="resource">++plone++bootstrap-icons/box.svg</value>
+  </record>
+
 </registry>
