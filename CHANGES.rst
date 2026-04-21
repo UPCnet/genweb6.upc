@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.38 (unreleased)
+1.38 (2026-04-21)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Registrar iconos que se usan en los tipos de contenido creados [Iago López]
+* [ADD] Crear vista export-packets-json para extraer todos los contenidos packet de tipo reserca en un json [Iago López]
+* [UPD] Retirar cambio de filtrar como el Tiny contenido existentes [Iago López]
 
 1.37 (2026-04-07)
 -----------------
