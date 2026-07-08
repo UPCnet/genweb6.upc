@@ -86,6 +86,12 @@ class IUPCSettings(model.Schema, IDexteritySchema):
         required=False,
     )
 
+    model.fieldset(
+        'xarxes_socials',
+        label=_(u'Xarxes Socials'),
+        fields=['treu_icones_xarxes_socials', 'xarxes_socials'],
+    )
+
     treu_icones_xarxes_socials = schema.Bool(
         title=_(u"treu_icones_xarxes_socials"),
         required=False,

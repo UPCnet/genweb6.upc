@@ -1,51 +1,12 @@
 body.template-upc-controlpanel {
 
-  #formfield-form-widgets-treu_icones_xarxes_socials {
+  #formfield-form-widgets-fieldset-xarxes_socials,
+  #formfield-form-widgets-fieldset-contact_emails {
 
-    &::before {
+    h2 {
       font-size: 1.8rem;
       font-weight: 500;
       margin-bottom: 1rem;
-      display: block;
-    }
-  }
-}
-
-html[lang='ca'] {
-
-  body.template-upc-controlpanel {
-
-    #formfield-form-widgets-treu_icones_xarxes_socials {
-
-      &::before {
-        content: 'Xarxes Socials';
-      }
-    }
-  }
-}
-
-html[lang='en'] {
-
-  body.template-upc-controlpanel {
-
-    #formfield-form-widgets-treu_icones_xarxes_socials {
-
-      &::before {
-        content: 'Social Networks';
-      }
-    }
-  }
-}
-
-html[lang='es'] {
-
-  body.template-upc-controlpanel {
-
-    #formfield-form-widgets-treu_icones_xarxes_socials {
-
-      &::before {
-        content: 'Redes Sociales';
-      }
     }
   }
 }

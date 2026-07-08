@@ -1,93 +1,51 @@
-/* line 5, ../scss/_portlet_upcnews.scss */
 .portlet.portlet-upcnews ul.list-group li:first-child {
-  padding-top: 0px;
-}
-/* line 9, ../scss/_portlet_upcnews.scss */
+  padding-top: 0px; }
 .portlet.portlet-upcnews ul.list-group .external-url-icon::before {
   font-size: 100%;
   vertical-align: top;
-  padding-top: 0.7em;
-}
-/* line 16, ../scss/_portlet_upcnews.scss */
+  padding-top: 0.7em; }
 .portlet.portlet-upcnews a[target="_blank"]::after {
   display: none;
-  content: "";
-}
+  content: ""; }
 
-/* line 1, ../scss/_footer.scss */
 #footer-contact {
   color: var(--bs-body-bg);
   box-shadow: 500px 0 0 0 #F2F5F6, -500px 0 0 0 #F2F5F6;
-  padding: 2em var(--gw-viewlet-horizontal-width);
-}
-/* line 6, ../scss/_footer.scss */
-#footer-contact h2 {
-  text-transform: capitalize;
-  font-variant: all-small-caps;
-  color: var(--bs-white);
-  font-weight: 500;
-  font-size: 2.25rem !important;
-}
-/* line 14, ../scss/_footer.scss */
-#footer-contact a {
-  color: var(--bs-white);
-  text-decoration: none;
-  font-weight: 400;
-}
-/* line 19, ../scss/_footer.scss */
-#footer-contact a:hover {
-  font-weight: 500;
-}
-/* line 26, ../scss/_footer.scss */
-#footer-contact .xarxes_socials a {
-  margin-right: 0.5em;
-  color: var(--bs-gray-200);
-  text-decoration: none;
-  font-size: 25px;
-}
-/* line 32, ../scss/_footer.scss */
-#footer-contact .xarxes_socials a:hover {
-  color: var(--bs-primary-hover) !important;
-}
-/* line 35, ../scss/_footer.scss */
-#footer-contact .xarxes_socials a:hover * {
-  color: var(--bs-primary-hover) !important;
-}
-/* line 40, ../scss/_footer.scss */
-#footer-contact .xarxes_socials a[target="_blank"]::after {
-  display: none;
-  content: "";
-}
+  padding: 2em var(--gw-viewlet-horizontal-width); }
+  #footer-contact h2 {
+    text-transform: capitalize;
+    font-variant: all-small-caps;
+    color: var(--bs-white);
+    font-weight: 500;
+    font-size: 2.25rem !important; }
+  #footer-contact a {
+    color: var(--bs-white);
+    text-decoration: none;
+    font-weight: 400; }
+    #footer-contact a:hover {
+      font-weight: 500; }
+  #footer-contact .xarxes_socials a {
+    margin-right: 0.5em;
+    color: var(--bs-gray-200);
+    text-decoration: none;
+    font-size: 25px; }
+    #footer-contact .xarxes_socials a:hover {
+      color: var(--bs-primary-hover) !important; }
+      #footer-contact .xarxes_socials a:hover * {
+        color: var(--bs-primary-hover) !important; }
+    #footer-contact .xarxes_socials a[target="_blank"]::after {
+      display: none;
+      content: ""; }
 
 @media (max-width: 768px) {
-  /* line 52, ../scss/_footer.scss */
   #footer-contact .map {
-    margin-bottom: 1.5rem;
-  }
-  /* line 56, ../scss/_footer.scss */
+    margin-bottom: 1.5rem; }
   #footer-contact .contact {
-    margin-bottom: 1rem;
-  }
-}
-/* line 5, ../scss/_upc_controlpanel.scss */
-body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
+    margin-bottom: 1rem; } }
+body.template-upc-controlpanel #formfield-form-widgets-fieldset-xarxes_socials h2,
+body.template-upc-controlpanel #formfield-form-widgets-fieldset-contact_emails h2 {
   font-size: 1.8rem;
   font-weight: 500;
-  margin-bottom: 1rem;
-  display: block;
-}
+  margin-bottom: 1rem; }
 
-/* line 20, ../scss/_upc_controlpanel.scss */
-html[lang='ca'] body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
-  content: 'Xarxes Socials';
-}
-
-/* line 33, ../scss/_upc_controlpanel.scss */
-html[lang='en'] body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
-  content: 'Social Networks';
-}
-
-/* line 46, ../scss/_upc_controlpanel.scss */
-html[lang='es'] body.template-upc-controlpanel #formfield-form-widgets-treu_icones_xarxes_socials::before {
-  content: 'Redes Sociales';
-}
+/*# sourceMappingURL=theme.css.map */
