@@ -14,10 +14,8 @@
 
                 <div class="d-flex flex-row">
 
-                    <a class="external-url-icon text-decoration-none pe-4"
-                       target="_blank"
-                       tal:attributes="href entry/url | nothing;
-                                       title entry/summary | nothing"></a>
+                    <span class="external-url-icon text-decoration-none pe-4"
+                          aria-hidden="true"></span>
 
                     <div>
 
