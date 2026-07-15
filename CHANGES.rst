@@ -2,11 +2,17 @@ Changelog
 =========
 
 
-1.39 (unreleased)
+1.39 (2026-07-15)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] Add accessible names to footer social links and upcnews icon (WCAG 1.12) [Clàudia Andreu]
+*  [Clàudia Andreu]
+* Replace empty icon links with descriptive visually-hidden text and a [Clàudia Andreu]
+* decorative external-url span in the UPC news portlet. [Clàudia Andreu]
+* [FIX] Move social networks heading from CSS to HTML fieldset [Clàudia Andreu]
+*  [Clàudia Andreu]
+* Replace ::before content in the UPC control panel with a translatable [Clàudia Andreu]
+* fieldset label and style the rendered h2, per accessibility audit 1.6. [Clàudia Andreu]
 
 1.38 (2026-04-21)
 -----------------
