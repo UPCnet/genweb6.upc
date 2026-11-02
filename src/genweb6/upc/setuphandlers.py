@@ -85,11 +85,11 @@ def setupVarious(context):
     egglocation = pkg_resources.get_distribution('genweb6.upc').location
 
     # Setup CAS settings
-    setupCAS("https://login.upc.edu/realms/upc/protocol/cas/", "genweb", "UPC")
+    setupCAS("https://login.upc.edu/realms/upc/protocol/cas", "genweb", "UPC")
 
     url = getRequest().URL
     if url and any(x in url for x in ['fepre.upc.edu', '.pre.upc.edu']):
-        setupCAS("https://login.pre.upc.edu/realms/upc/protocol/cas/", "genweb", "UPC")
+        setupCAS("https://login.pre.upc.edu/realms/upc/protocol/cas", "genweb", "UPC")
 
     # Setup LDAP UPC
     setSetupLDAPUPC()
