@@ -63,7 +63,7 @@ class get_controlpanels_settings(BrowserView):
 
         # genweb6.upc.controlpanels.upc.IUPCSettings
         try:
-            upc_settings = registry.forInterface(IUPCSettings)
+            upc_settings = registry.forInterface(IUPCSettings, check=False)
             UPC_ID = 'genweb6.upc.controlpanels.upc.IUPCSettings'
             settings.update({UPC_ID: {}})
 

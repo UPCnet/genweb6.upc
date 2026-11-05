@@ -8,9 +8,13 @@ from plone.autoform import directives
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
 from plone.dexterity.interfaces import IDexteritySchema
+from plone.registry.interfaces import IRegistry
 from plone.supermodel import model
 from z3c.form import button
+from z3c.form.interfaces import WidgetActionExecutionError
 from zope import schema
+from zope.component import getUtility
+from zope.interface import Invalid
 from zope.ramcache import ram
 
 from genweb6.upc import _
@@ -86,6 +90,14 @@ class IUPCSettings(model.Schema, IDexteritySchema):
         required=False,
     )
 
+    read_permission(google_maps_api_key='genweb.manager')
+    write_permission(google_maps_api_key='genweb.manager')
+    google_maps_api_key = schema.TextLine(
+        title=_(u"API Key de Google Maps"),
+        description=_(u"API Key de Google Cloud amb la Maps Embed API habilitada. Si es deixa buit, el mapa es mostra amb el format antic."),
+        required=False,
+    )
+
     model.fieldset(
         'xarxes_socials',
         label=_(u'Xarxes Socials'),
@@ -135,10 +147,25 @@ class IUPCSettings(model.Schema, IDexteritySchema):
     )
 
 
+def registerMissingUPCRecords():
+    """ Registra els camps nous que encara no són al registre (webs sense upgrade) """
+    registry = getUtility(IRegistry)
+    prefix = IUPCSettings.__identifier__ + '.'
+    names = schema.getFieldNames(IUPCSettings)
+    missing = [name for name in names if prefix + name not in registry.records]
+    if missing:
+        registry.registerInterface(
+            IUPCSettings, omit=[name for name in names if name not in missing])
+
+
 class UPCSettingsForm(controlpanel.RegistryEditForm):
 
     schema = IUPCSettings
     label = _(u'Contact')
+
+    def getContent(self):
+        registry = getUtility(IRegistry)
+        return registry.forInterface(self.schema, check=False)
 
     def updateFields(self):
         super(UPCSettingsForm, self).updateFields()
@@ -153,6 +180,22 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
             self.status = self.formErrorsMessage
             return
 
+        # Només hi és si l'usuari té permís per editar el camp (genweb.manager)
+        if 'google_maps_api_key' in data:
+            from genweb6.upc.utils import validateGoogleMapsAPIKey
+
+            api_key = (data['google_maps_api_key'] or '').strip() or None
+            data['google_maps_api_key'] = api_key
+            if api_key and api_key != self.getContent().google_maps_api_key:
+                valid = validateGoogleMapsAPIKey(api_key, self.context.absolute_url() + '/')
+                if valid is False:
+                    raise WidgetActionExecutionError(
+                        'google_maps_api_key',
+                        Invalid(_(u"L'API Key no és vàlida o no està autoritzada per a aquest domini.")))
+                if valid is None:
+                    IStatusMessage(self.request).addStatusMessage(
+                        _(u"No s'ha pogut comprovar l'API Key de Google Maps. S'ha desat igualment."), "warning")
+
         replace_contact_emails_table = []
         contact_emails_table = data.get('contact_emails_table', [])
         if contact_emails_table:
@@ -161,6 +204,7 @@ class UPCSettingsForm(controlpanel.RegistryEditForm):
                 replace_contact_emails_table.append(contact)
 
         data['contact_emails_table'] = replace_contact_emails_table
+        registerMissingUPCRecords()
         self.applyChanges(data)
         ram.caches.clear()
 

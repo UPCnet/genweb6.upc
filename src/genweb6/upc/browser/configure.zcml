@@ -19,4 +19,12 @@
         permission="cmf.ManagePortal"
     />
 
+    <browser:page
+        name="setup_google_maps_apikey"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".helpers_touchers.setup_google_maps_apikey"
+        layer="genweb6.upc.interfaces.IGenweb6UpcLayer"
+        permission="cmf.ManagePortal"
+    />
+
 </configure>

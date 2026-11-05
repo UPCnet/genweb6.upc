@@ -13,4 +13,13 @@
       profile="genweb6.upc:default"
       />
 
+  <genericsetup:upgradeDepends
+      title="Add Google Maps API Key"
+      description="Register google_maps_api_key field in UPC contact settings"
+      source="1000"
+      destination="1001"
+      import_steps="plone.app.registry"
+      profile="genweb6.upc:default"
+      />
+
 </configure>

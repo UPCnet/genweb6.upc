@@ -4,6 +4,7 @@ from Products.Five.browser import BrowserView
 from plone.memoize import ram
 from plone.registry.interfaces import IRegistry
 from time import time
+from urllib.parse import quote
 from zope.component import queryUtility
 from zope.i18nmessageid import MessageFactory
 
@@ -39,7 +40,28 @@ def genwebIdentitatDigitalConfig():
 #@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def genwebUPCConfig():
     registry = queryUtility(IRegistry)
-    return registry.forInterface(IUPCSettings)
+    # check=False: les webs sense l'upgrade aplicat no tenen tots els camps al registre
+    return registry.forInterface(IUPCSettings, check=False)
+
+
+def validateGoogleMapsAPIKey(api_key, referer):
+    """ Comprova l'API Key contra la Maps Embed API enviant com a referer la URL de la web.
+        Retorna True si és vàlida, False si Google la rebutja i None si no s'ha pogut comprovar.
+    """
+    try:
+        r = requests.get('https://www.google.com/maps/embed/v1/place',
+                         params={'key': api_key, 'q': 'UPC'},
+                         headers={'Referer': referer},
+                         timeout=10)
+    except Exception:
+        logger.warning('No s\'ha pogut validar l\'API Key de Google Maps')
+        return None
+
+    if r.status_code == 200:
+        return True
+    if 400 <= r.status_code < 500:
+        return False
+    return None
 
 
 class genwebUPCUtils(BrowserView):
@@ -90,6 +112,14 @@ class genwebUPCUtils(BrowserView):
             if not lang:
                 lang = 'ca'
 
+        api_key = self.genwebUPCConfig().google_maps_api_key
+        if api_key:
+            return "https://www.google.com/maps/embed/v1/place?" + \
+                "key=" + quote(api_key) + \
+                "&q=" + quote(address) + \
+                "&language=" + lang
+
+        # Format antic sense API Key
         return "https://maps.google.com/maps?" + \
             "width=100%" + \
             "&height=300" + \
